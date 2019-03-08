@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d434d4acc9848604a9b120794eeb8117, type: 3}
+  m_Name: Sophia1
+  m_EditorClassIdentifier: 
+  questID: 0
+  npcName: Sophia
+  questDialogue:
+  - Oh, Hero! The Bandits are trying to harass me again
+  - It seems like this is part of their revenge, after you saved me back then
+  - "They are probably afraid of you. That\u2019s why they just trying to damage my
+    bar by breaking the window with some rocks\u2026"
+  - "Today is probably just rocks...but I\u2019m afraid tomorrow, it\u2019ll be something
+    more dangerous\u2026"
+  - "Hero...can I ask your help to give more examples out of them so they won\u2019t
+    mess with both of us anymore"
+  defaultDialogue: selesaikan dulu quest sebelumnya
+  rewardDialogue:
+  - "\u201CI heard from the bar patrons that after what you did to them. The Bandits
+    are now moving further away from our town.\u201D"
+  - "\u201CThanks to you, Hero! Now the town won\u2019t have so much Bandit problem
+    anymore.\u201D"
+  confirmDialogue: "\u201COh! I am so so Happy! Thank you, Hero! I know you would
+    do it!\u201D"
+  declineDialogue: "\u201CAh!...I know that I\u2019m probably asking too much, after
+    all your help back then...I am sorry...\u201D"
+  objective: Defeat 30 Bandits
+  goldReward: 150
+  questStatus: 0
+  targetEnemyID: 0
+  questMode: 0
+  currentQuantityQuest: 0
+  tartgetQuantityQuest: 30
+  locationID: 0

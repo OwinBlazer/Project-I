@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d434d4acc9848604a9b120794eeb8117, type: 3}
+  m_Name: Sophia2
+  m_EditorClassIdentifier: 
+  questID: 0
+  npcName: Sophia
+  questDialogue:
+  - "\u201CWhere is it?! *Geezz*\u201D"
+  - "Player find Sophia is currently looking at something but she couldn\u2019t find
+    what she\u2019s looking for.."
+  - "\u201CUmmm\u2026.this is troublesome. I wonder where did I put that key to the
+    basement\u2026\u201D"
+  - "\u201C!\u201D"
+  - "\u201COh! Hero...I\u2019m sorry for noticing you late.\u201D"
+  - "\u201CI am trying to find my bar\u2019s basement key so I can get new drink stocks
+    but\u2026.\u201D"
+  - " \u201C....ever since that last time, those bandits came harassing my bar, I
+    couldn\u2019t really locate my key anywhere\u201D"
+  - "\u201CWAIT!...Is it possible that...No...that couldn\u2019t be\u2026.but...ummm\u2026..hmmm\u2026.\u201D"
+  - "\u201CHero\u2026.I have a suspicion that in the chaos back then, one of those
+    bandits might have stole it\u201D"
+  - "\u201CI understand this is just a suspicion, but would you kindly investigate
+    this for me, Hero?\u201D"
+  defaultDialogue: selesaikan dulu quest sebelumnya
+  rewardDialogue:
+  - "\u201CI knew it, they are the one who stole the key!\u201D\r\n"
+  - "\r\u201CThank you, Hero! With this, everyone can get their favorite drinks again.\u201D\r\n"
+  confirmDialogue: "\u201CThank you so much, Hero! I am looking forward for your great
+    news.\u201D"
+  declineDialogue: "\u201COh no...what should I do then?...\u201D"
+  objective: "Find the bandits who stole the Basement\u2019s Key"
+  goldReward: 50
+  questStatus: 0
+  targetID: 1
+  questMode: 1
+  currentQuantityQuest: 0
+  tartgetQuantityQuest: 1
+  locationID: 0

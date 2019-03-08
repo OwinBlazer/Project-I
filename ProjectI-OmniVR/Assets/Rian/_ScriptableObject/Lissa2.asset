@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d434d4acc9848604a9b120794eeb8117, type: 3}
+  m_Name: Lissa2
+  m_EditorClassIdentifier: 
+  questID: 1
+  npcName: Lissa
+  questDialogue:
+  - "\u201CHey there, adventurer! I have some good news for you!\u201D"
+  - "\u201CAccording to some guards, they saw the goblins retreating from around the
+    village vicinity\u201D"
+  - "\u201CNow do you know what this means?\u201D"
+  - "\u201CWe should hit them while they are hurting!\u201D"
+  - " \u201CLet\u2019s create more havoc in their population so they will stop their
+    attack for good!\u201D"
+  - "\u201CAre you up to it?\u201D"
+  defaultDialogue: selesaikan dulu quest sebelumnya
+  rewardDialogue:
+  - "\u201CWow...I am amazed! You manage to surprise me again!\u201D"
+  - "\u201CI thought that this time, this would prove too much for you\u201D"
+  - "\u201CThe report I got from the guards mentioned that the goblins put a voracious
+    fight with you, as you push them into a corner\u201D"
+  - "\u201CBut you manage to push them back by yourself!\u201D"
+  - "\r\u201C....that or maybe they are not as tough as we all think...hah!\u201D\r\n"
+  - "\r\u201CWell! A promise is a promise! Here\u2019s your reward!\u201D\r\n"
+  confirmDialogue: "\u201CYou\u2019ll do it?! I thought you are going to chicken out!
+    Have fun, go mad then!\u201D"
+  declineDialogue: "\u201COh?! You chickening out? That\u2019s disappointing!\u201D"
+  objective: Create as much damage within time limit
+  goldReward: 300
+  questStatus: 0
+  targetEnemyID: 1
+  questMode: 0
+  currentQuantityQuest: 0
+  tartgetQuantityQuest: 0
+  locationID: 0

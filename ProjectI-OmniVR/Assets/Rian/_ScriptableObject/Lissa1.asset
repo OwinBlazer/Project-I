@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d434d4acc9848604a9b120794eeb8117, type: 3}
+  m_Name: Lissa1
+  m_EditorClassIdentifier: 
+  questID: 0
+  npcName: Lissa
+  questDialogue:
+  - "\u201CGreat! Just great!\u201D\r"
+  - "\u201CThose good for nothing guards will probably start acting once all our village\u2019s
+    life stock all already dead!\""
+  - "\u201CTck! What can I do stop those stupid goblins\u2026\u201D"
+  - "\u201CHmmm?\u201D"
+  - "\u201COh!...it\u2019s you...\u201D"
+  - "\u201CI heard from the Bar lady that you are the hero who single handedly defeat
+    all those bandits!\u201D"
+  - "\u201CIf what she said is true then I am sure some goblins won\u2019t be too
+    big of a problem for you!\u201D\n"
+  - "\u201CSo hear me out, adventurer!\u201D"
+  - "\u201CMy name is Lisa...Lisa Ningrom. I\u2019m the daughter of the local lord
+    and also the acting captain of the village guards in this area.\u201D"
+  - "\u201CSo you see...This village has been under goblins\u2019 invasion problem
+    for some time now.\u201D"
+  - "\u201CThe ranch farmers have been reporting about such attack to my dad...the
+    local Lord of this region but my dad couldn\u2019t spare any guards because of
+    the recent Bandit attack\u201D"
+  - "\u201CAs a noble, it is my job to listen to what my subject is experiencing\u2026and
+    those local ranch farmers are asking me to help with their goblin issues\u201D"
+  - "\u201CNow...I am a lady of reason...if you can sorted out this problem then I
+    will reward you reasonably!\u201D"
+  - "\u201CWill you help taking care of these pesky goblins issue?\u201D"
+  defaultDialogue: selesaikan dulu quest sebelumnya
+  rewardDialogue:
+  - "\u201CWow! You did it! You are back!\u201D"
+  - "\u201CTo be honest, I thought you already a goblin meal by now\u2026\u201D"
+  - "\u201CI heard from some patrolling guards that they saw you single handedly defeating
+    all those pesky goblins\u201D "
+  - "\u201CNobody ever went alone to defeat a group of goblins and coming back alive.\u201D"
+  - "\u201CThat\u2019s what the local guard captain said to me after I sent you in
+    a mission.\u201D"
+  - "\u201CSo glad that he\u2019s wrong! I thought I made a big mistake by sending
+    you to your doom.\u201D"
+  - "\u201CWell...I guess the Bar lady was right all along.\u201D"
+  - "\u201CYou sure more capable than your looks...that\u2019s for sure!\u201D "
+  - "\u201CHere\u2019s your reward! and this won\u2019t be the last time I assure
+    you\u201D"
+  confirmDialogue: "\u201CHope you are as good as what the Bar lady said!\u201D"
+  declineDialogue: "\u201CI guess the bar lady exaggerate about you way too much...\u201D"
+  objective: Defeat 60 Goblins
+  goldReward: 200
+  questStatus: 0
+  targetEnemyID: 1
+  questMode: 0
+  currentQuantityQuest: 0
+  tartgetQuantityQuest: 60
+  locationID: 0
