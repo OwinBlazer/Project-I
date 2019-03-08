@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Kevin/_Scene/Procedural.unity
+- path: Assets/_Owin/OmniVR/Feature-QuestTracker/ProjI-QuestTracker.unity
   isLoaded: 1
   isActive: 1
