@@ -66,7 +66,7 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 				}
 			}else{
 				//goblin is waiting for animation finish
-				if(currentInterval<attackAnim.length+startUpTime){
+				if(currentInterval<attackAnim.length+startUpTime+backOffAnim.length){
 					currentInterval+=Time.deltaTime;
 				}else{
 					currentInterval = 0;

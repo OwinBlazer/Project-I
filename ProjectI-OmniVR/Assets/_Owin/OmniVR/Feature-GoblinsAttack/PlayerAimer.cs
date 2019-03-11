@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAimer : MonoBehaviour {
-	[SerializeField]GoblinSoloAI goblinSoloAI;
 	[SerializeField]float rotationSpeed;
 	[SerializeField]float buffer;
 	[SerializeField]Transform targetTransform;
@@ -67,7 +66,7 @@ public class PlayerAimer : MonoBehaviour {
 		}else{
 			//gradually return to parent (0.0)
 			//preferrably before the next interval of attack
-			//@@@@@@REQUEST WALK ANIMATION TO GOBLIN SOLO AI@@@@@@@@@@@@@@@
+			//@@@@@@REQUEST WALK ANIMATION TO RELEVANT AI@@@@@@@@@@@@@@@
 			transform.position = Vector3.MoveTowards(transform.position,transform.parent.position,Time.deltaTime*backOffDist);
 		}
 	}

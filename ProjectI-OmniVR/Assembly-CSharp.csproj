@@ -127,6 +127,8 @@
      <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Advanced\TerrainController.cs" />
      <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Simple\GenerateMeshSimple.cs" />
      <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Simple\TerrainControllerSimple.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttack_Hitbox.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditSoloAI.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\GoblinAttack_Hitbox.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\GoblinPlatoonHandler.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\GoblinSoloAI.cs" />
