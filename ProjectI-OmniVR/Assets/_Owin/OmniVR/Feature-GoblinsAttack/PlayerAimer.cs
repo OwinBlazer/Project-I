@@ -13,6 +13,8 @@ public class PlayerAimer : MonoBehaviour {
 	private Vector3 optimalSpot;
 	private Vector3 backDashSpot;
 	private float dashIn, stayDur, backOff, distanceFromPlayer, dashTimer, movDist, backOffDist;
+	private bool willBackDash;
+	private float backDashMoveTime;
 	private void Start(){
 		isAiming = false;
 		dashTimer = 0;
@@ -27,6 +29,8 @@ public class PlayerAimer : MonoBehaviour {
 			//find optimal spot for dashing into
 			Vector3 distanceVector = targetTransform.position-transform.position;
 			optimalSpot = transform.position +  (new Vector3(distanceVector.x,0,distanceVector.z))* (movDist-distanceFromPlayer)/movDist;
+			backDashSpot = transform.parent.position+(transform.parent.position-optimalSpot).normalized*backOffDist;
+			backDashMoveTime = backOffDist+ movDist-distanceFromPlayer;
 		}
 	}
 
@@ -52,7 +56,7 @@ public class PlayerAimer : MonoBehaviour {
 
 			}else if(dashTimer<dashIn+stayDur+backOff){
 				//time to back away
-				transform.position = Vector3.MoveTowards(transform.position,backDashSpot, (backOffDist+ movDist-distanceFromPlayer)*Time.deltaTime/backOff);
+				transform.position = Vector3.MoveTowards(transform.position,backDashSpot, backDashMoveTime*Time.deltaTime/backOff);
 				
 			}else{
 				//dash reset
@@ -68,7 +72,7 @@ public class PlayerAimer : MonoBehaviour {
 		}
 	}
 	
-	public void DashAtPlayer(float dashIn, float stayDur, float dashOut, float distanceFromPlayer, float dashOutDistance){
+	public void DashAtPlayer(float dashIn, float stayDur, float dashOut, float distanceFromPlayer, float dashOutDistance, bool willBackDash){
 		//dashes towards the player, stays, then moves back
 		//Debug.Log("Can dash has been turned on!");
 		canDash = true;
@@ -77,7 +81,7 @@ public class PlayerAimer : MonoBehaviour {
 		this.backOff = dashOut;
 		this.distanceFromPlayer = distanceFromPlayer;
 		backOffDist = dashOutDistance;
-		backDashSpot = transform.parent.position+(transform.parent.position-optimalSpot).normalized*backOffDist;
+		this.willBackDash = willBackDash;
 	}
 	public void ResetRotation(){
 		transform.rotation = Quaternion.Euler(Vector3.zero);
@@ -85,6 +89,13 @@ public class PlayerAimer : MonoBehaviour {
 	public void TriggerDash(){
 		if(canDash){
 			isDashing = true;
+		}
+	}
+
+	public void AttackHasHit(){
+		if(!willBackDash){
+			backDashSpot = transform.parent.position;
+			backDashMoveTime = movDist-distanceFromPlayer;
 		}
 	}
 	private bool BufferedFloatEqual(float f1, float f2, float buffer){

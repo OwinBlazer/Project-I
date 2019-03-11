@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class GoblinSoloAI : MonoBehaviour {
 	[SerializeField]Animator anim;
-	[SerializeField]AnimationClip attackClip;
 	[SerializeField]PlayerAimer aimer;
 	private float waitTime;
 	private float currWaitTime;
 	private Transform player;
+	private float swarmBuffer;
+	private Vector3 swarmSpot;
+	private float swarmSpeed;
 	//ActID legend ==> 0 = idle | 1 = aim | 2 = attack
 
 	// Use this for initialization
@@ -19,6 +21,11 @@ public class GoblinSoloAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//going to ideal spot
+		if((swarmSpot-transform.position).sqrMagnitude>swarmBuffer*swarmBuffer){
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition,swarmSpot,swarmSpeed*Time.deltaTime);
+		}
+
 		if(anim.GetInteger("ActID")==1){
 			//if prepping for attack, wait for start up time, then attack
 			if(currWaitTime<waitTime){
@@ -43,16 +50,27 @@ public class GoblinSoloAI : MonoBehaviour {
 		aimer.RotateAt(player);
 	}
 
-	public void DashAtPlayer(float dashIn, float stayDur, float dashOut, float distanceFromPlayer, float dashOutDistance){
-		aimer.DashAtPlayer(dashIn, stayDur, dashOut, distanceFromPlayer,dashOutDistance);
+	public void DashAtPlayer(float dashIn, float stayDur, float dashOut, float distanceFromPlayer, float dashOutDistance, bool willBackDash){
+		aimer.DashAtPlayer(dashIn, stayDur, dashOut, distanceFromPlayer,dashOutDistance, willBackDash);
 	}
 	public void FinishAttack(){
-		//resets anim
+		//Goes to backing off anim
+		anim.SetInteger("ActID",3);
+	}
+	public void ReturnToIdle(){
+		//Resets anim
 		anim.SetInteger("ActID",0);
 	}
-	public void InitializeParameters(float waitTime, Transform player){
+	public void AttackHasHit(){
+		aimer.AttackHasHit();
+	}
+	public void InitializeParameters(float waitTime, Transform player, float swarmBuffer, float swarmSpeed){
 		this.waitTime = waitTime;
 		this.player = player;
-
+		this.swarmBuffer = swarmBuffer;
+		this.swarmSpeed = swarmSpeed;
+	}
+	public void SetSwarmSpot(Vector3 newSpot){
+		swarmSpot = newSpot;
 	}
 }

@@ -11,13 +11,16 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 	[Tooltip("The tendency for more goblins to attack at once. 0 is none of them will attack. 1 is all of them may attack. more than that increases the likelyhood of all 5 attacking at once")][SerializeField]float aggroLevel;
 	[SerializeField]float attackInterval;
 	[SerializeField]AnimationClip attackAnim;
+	[SerializeField]AnimationClip backOffAnim;
 	[Space]
-	[Tooltip("Time required for goblin to jump into attack position. Adjust with animation.")][SerializeField]float dashInTime;
-	[Tooltip("Time required for goblin wait at dash in position. Adjust with animation.")][SerializeField]float stayTime;
-	[Tooltip("Time required for goblin to jump back. Adjust with animation.")][SerializeField]float dashOutTime;
+	[Tooltip("Time required for goblin wait at dash in position")][SerializeField]float stayTime;
 	[Tooltip("How far a goblin will back off after attacking, relative to its optimal swarm spot")][SerializeField]float dashOutDistance;
 	[Tooltip("The distance in Unity units between a goblin's stop spot and a player's standing spot (since we don't want the goblin to just sit on the player)")][SerializeField]float optimalDistanceFromPlayer;
+	[Tooltip("If true, goblin will backdash even when the player has been hit. If not, upon hit goblin returns to original position")][SerializeField]private bool willBackDash;
+	[Space]
 	[Tooltip("How far from the center of this gameobject will the goblin's swarm distance be")][SerializeField] private Transform maxSwarmDistance;
+	[Tooltip("Distance of the goblin to its swarm spot")][SerializeField]private float swarmBuffer;
+	[Tooltip("Dictates the speed at which the goblin moves to its swarm spot")][SerializeField]private float swarmSpeed;
 	
 	private List<int> attackingGoblinIndex = new List<int>();
 	private float currentInterval;
@@ -25,8 +28,7 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 	private int goblinQty;
 	private bool isEngaging;
 	private bool isAttacking;
-	private List<Vector3> IdealSwarmSpot = new List<Vector3>();
-	private float SwarmSize;
+	private float swarmSize;
 	
 	// Use this for initialization
 	void Start () {
@@ -41,15 +43,14 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 		for(int i=0;i<transform.childCount;i++){
 			GoblinSoloAI tempGoblin = transform.GetChild(i).GetComponent<GoblinSoloAI>();
 			goblinList.Add(tempGoblin);
-			tempGoblin.InitializeParameters(startUpTime, player.transform);
+			tempGoblin.InitializeParameters(startUpTime, player.transform, swarmBuffer,swarmSpeed);
 		}
-		SwarmSize = Mathf.Abs(maxSwarmDistance.localPosition.x);
+		swarmSize = Mathf.Abs(maxSwarmDistance.localPosition.x)*2;
+		UpdateIdealSpot();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//@@@@@make goblins run to their ideal spots
-		//divide swarm size into spots via goblin quantity
 		
 		if(isEngaging){
 			//engage means goblin platoon is already in position
@@ -82,8 +83,13 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 			//if isLiving@@@@@@
 			allGoblinIndex.Add(i);
 		}
-		
+		for(int i=0;i<allGoblinIndex.Count;i++){
+			goblinList[allGoblinIndex[i]].SetSwarmSpot(new Vector3(maxSwarmDistance.localPosition.x+((i+1)*swarmSize/(float)(allGoblinIndex.Count+1)),
+																	maxSwarmDistance.localPosition.y,
+																	maxSwarmDistance.localPosition.z));
+		}
 	}
+	
 	private void PrepareAttack(){
 		List<int> allGoblinIndex = new List<int>();
 		attackingGoblinIndex.Clear();
@@ -95,8 +101,11 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 		}
 
 		//choose attacking number of goblins
-		//increase likeliness of higher amounts by using Aggro Level @@@@@@@@@@@
-		attackingQty = Random.Range(1,allGoblinIndex.Count);
+		//increase likeliness of higher amounts by using Aggro Level
+		attackingQty = (int)Mathf.Floor(Random.Range(1,allGoblinIndex.Count*aggroLevel));
+		if(attackingQty>allGoblinIndex.Count){
+			attackingQty = allGoblinIndex.Count;
+		}
 
 		//lists attacking goblins index, based from living goblins
 		for(int i=0;i<attackingQty;i++){
@@ -109,7 +118,7 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 		//Prep by enable dash
 		
 		foreach(int index in attackingGoblinIndex){
-			goblinList[index].DashAtPlayer(dashInTime,stayTime,dashOutTime,optimalDistanceFromPlayer, dashOutDistance);
+			goblinList[index].DashAtPlayer(attackAnim.length,stayTime,backOffAnim.length,optimalDistanceFromPlayer, dashOutDistance, willBackDash);
 		}
 
 		//prep By Aiming
