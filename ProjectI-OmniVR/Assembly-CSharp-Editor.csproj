@@ -418,20 +418,20 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{58FC8D10-8938-ED94-9F86-2833256100F3}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{F14023B5-EEDA-6ED5-7FD6-A55315E60673}</Project>      <Name>Oculus.VR.Editor</Name>    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
-      <Project>{39453275-F1A7-39A5-E9E9-30730ACA016F}</Project>      <Name>Oculus.VR.Scripts.Editor</Name>    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{A58BF658-96AC-F3B0-0778-179E53BF45E5}</Project>      <Name>Oculus.VR</Name>    </ProjectReference>
     <ProjectReference Include="ProceduralToolkit.LibTessDotNet.csproj">
       <Project>{6E6E44C7-765A-3A7B-35D6-A5E4CE752458}</Project>      <Name>ProceduralToolkit.LibTessDotNet</Name>    </ProjectReference>
     <ProjectReference Include="ProceduralToolkit.ClipperLib.csproj">
       <Project>{492A11C3-F00E-3507-4B08-F6EE24B56758}</Project>      <Name>ProceduralToolkit.ClipperLib</Name>    </ProjectReference>
     <ProjectReference Include="ProceduralToolkit.csproj">
       <Project>{3F5DDFBF-F1FC-B761-E3E7-A777320BC7C2}</Project>      <Name>ProceduralToolkit</Name>    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.Editor.csproj">
+      <Project>{F14023B5-EEDA-6ED5-7FD6-A55315E60673}</Project>      <Name>Oculus.VR.Editor</Name>    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
+      <Project>{39453275-F1A7-39A5-E9E9-30730ACA016F}</Project>      <Name>Oculus.VR.Scripts.Editor</Name>    </ProjectReference>
     <ProjectReference Include="ProceduralToolkit.Editor.csproj">
       <Project>{3722796F-514B-186A-CFD5-E7EAA4F99D56}</Project>      <Name>ProceduralToolkit.Editor</Name>    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.csproj">
+      <Project>{A58BF658-96AC-F3B0-0778-179E53BF45E5}</Project>      <Name>Oculus.VR</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

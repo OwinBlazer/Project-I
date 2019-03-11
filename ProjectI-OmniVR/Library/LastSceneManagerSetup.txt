@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Owin/OmniVR/Feature-QuestTracker/ProjI-QuestTracker.unity
+- path: Assets/_Owin/OmniVR/Feature-GoblinsAttack/ProjI-GoblinAttacks.unity
   isLoaded: 1
   isActive: 1
