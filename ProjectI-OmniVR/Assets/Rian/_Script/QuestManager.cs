@@ -18,12 +18,12 @@ public class QuestManager : MonoBehaviour {
     public PlayerSO playerSO;
     public bool isReward;
     public bool isConfirm;
+    public bool isLast;
 
     private void Start()
     {
         questSentences = new Queue<string>();
     }
-
 
     public void StartDialogue(Quest quest)
     {
@@ -33,6 +33,7 @@ public class QuestManager : MonoBehaviour {
         decisionButton.SetActive(false);
         continueButton.SetActive(true);
         PanelQuest.SetActive(true);
+        isLast = false;
 
         foreach (string sentence in quest.questDialogue)
         {
@@ -69,6 +70,7 @@ public class QuestManager : MonoBehaviour {
         rewardTxt.gameObject.SetActive(true);
         rewardTxt.text = "Reward : " + questing.goldReward.ToString() + " G";
         questSentences.Clear();
+        isLast = false;
 
         //questSentences.Enqueue(quest.rewardDialogue);
         foreach (string sentence in quest.rewardDialogue)
@@ -76,10 +78,6 @@ public class QuestManager : MonoBehaviour {
             questSentences.Enqueue(sentence);
         }
         DisplayNextSentence();
-
-        //string questSentence = questSentences.Dequeue();
-        //questDialogueTxt.text = questSentence;
-        //StartCoroutine(TypeSentence(questSentence));
 
     }
 
@@ -107,23 +105,22 @@ public class QuestManager : MonoBehaviour {
 
     public void DisplayNextSentence()
     {
-
-        string questSentence = questSentences.Dequeue();
-        questDialogueTxt.text = questSentence;
-        StartCoroutine(TypeSentence(questSentence));
+        continueButton.SetActive(false);
 
         if (isReward == false)
         {
             if (questSentences.Count == 1)
             {
                 DecisionDialogue();
+                isLast = true;
             }
         }
-        else if(isReward == true)
+        else if (isReward == true)
         {
             if (questSentences.Count == 1)
             {
                 declineButton.SetActive(true);
+                isLast = true;
             }
         }
 
@@ -132,6 +129,10 @@ public class QuestManager : MonoBehaviour {
             EndOfDialogue();
             return;
         }
+
+        string questSentence = questSentences.Dequeue();
+        questDialogueTxt.text = questSentence;
+        StartCoroutine(TypeSentence(questSentence));
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -142,6 +143,8 @@ public class QuestManager : MonoBehaviour {
             questDialogueTxt.text += letter;
             yield return null;
         }
+        if (isLast == false)
+            continueButton.SetActive(true);
     }
 
     void DecisionDialogue()
@@ -161,7 +164,7 @@ public class QuestManager : MonoBehaviour {
         PanelQuest.SetActive(false);
         isReward = false;
         isConfirm = false;
-        if(questing.questStatus == 2)
+        if (questing.questStatus == 2)
         {
             RewardConfirm();
         }
@@ -171,7 +174,6 @@ public class QuestManager : MonoBehaviour {
     {
         questing.questStatus = 1;
         isConfirm = true;
-        //Decline();
         playerSO.activQuest.Add(questing);
         ConfirmDeclineDialogue();
     }
