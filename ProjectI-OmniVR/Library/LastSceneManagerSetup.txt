@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Rian/_Scene/BarScene.unity
+- path: Assets/_Owin/OmniVR/Feature-SoundLoader/ProjI-SoundLoader.unity
   isLoaded: 1
   isActive: 1

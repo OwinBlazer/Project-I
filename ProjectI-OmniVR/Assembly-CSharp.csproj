@@ -136,6 +136,12 @@
      <Compile Include="Assets\_Owin\OmniVR\Feature-QuestTracker\QuestBox.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-QuestTracker\QuestBoxPool.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-QuestTracker\QuestTracker.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\AudioOption.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\BGMPlayer.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\BGMSoundChooser.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\BGMusicLoader.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\SFXPlayer.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\SFXSoundSelector.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\AttachToBody.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\AttachToHead.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\Combat_ItemHandler.cs" />
@@ -164,6 +170,7 @@
      <Compile Include="Assets\_Owin\OmniVR\Script\Projectile_Grenade.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\Projectile_Grenade_V2.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\VRTK_GrabWhenTouch.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\ScriptableObject\PlayerSettingData.cs" />
      <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\Resource\SampleDataReader.cs" />
      <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\SampleData.cs" />
      <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\VRTK_UIDropDragSingle.cs" />
