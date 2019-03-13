@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Owin/OmniVR/Feature-SoundLoader/ProjI-SoundLoader.unity
+- path: Assets/_Owin/OmniVR/Feature-BanditAttacks/ProjI-BanditAttacks.unity
   isLoaded: 1
   isActive: 1

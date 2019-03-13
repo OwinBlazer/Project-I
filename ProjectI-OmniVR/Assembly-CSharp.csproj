@@ -128,8 +128,10 @@
      <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Simple\GenerateMeshSimple.cs" />
      <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Simple\TerrainControllerSimple.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttack_Hitbox.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttackTrigger.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditSoloAI.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\GoblinAttack_Hitbox.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\GoblinAttackTrigger.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\GoblinPlatoonHandler.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\GoblinSoloAI.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\PlayerAimer.cs" />
@@ -176,6 +178,10 @@
      <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\VRTK_UIDropDragSingle.cs" />
      <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\VRTK_UIDropSingleData.cs" />
      <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\VRTK_UIDropZoneSingle.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
      <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
      <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
      <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />

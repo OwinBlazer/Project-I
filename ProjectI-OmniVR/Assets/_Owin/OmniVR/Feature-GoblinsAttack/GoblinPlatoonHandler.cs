@@ -32,26 +32,25 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		InitializeParameters();
+	}
+	public void InitializeParameters(){
 		isEngaging=false;
 		isAttacking=false;
-		//debug@@@@@@
-		isEngaging = true;
-		//-------------------------
 		currentInterval = 0;
 		currStartUpTime = 0;
 		goblinQty = transform.childCount;
-		for(int i=0;i<transform.childCount;i++){
+		for(int i=0;i<goblinQty;i++){
 			GoblinSoloAI tempGoblin = transform.GetChild(i).GetComponent<GoblinSoloAI>();
 			goblinList.Add(tempGoblin);
 			tempGoblin.InitializeParameters(startUpTime, player.transform, swarmBuffer,swarmSpeed);
 		}
 		swarmSize = Mathf.Abs(maxSwarmDistance.localPosition.x)*2;
+		maxSwarmDistance.parent.localPosition = Vector3.zero; 
 		UpdateIdealSpot();
 	}
-	
 	// Update is called once per frame
 	void Update () {
-		
 		if(isEngaging){
 			//engage means goblin platoon is already in position
 			if(!isAttacking){
@@ -73,6 +72,8 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 					isAttacking = false;
 				}
 			}
+		}else{
+			UpdateIdealSpot();
 		}
 	}
 	private void UpdateIdealSpot(){
@@ -81,12 +82,15 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 		//lists living goblins index@@@@@
 		for(int i=0;i<goblinQty;i++){
 			//if isLiving@@@@@@
-			allGoblinIndex.Add(i);
+			//Living Goblin-> Active in the hierarchy!
+			if(transform.GetChild(i).gameObject.activeSelf){
+				allGoblinIndex.Add(i);
+			}
 		}
 		for(int i=0;i<allGoblinIndex.Count;i++){
-			goblinList[allGoblinIndex[i]].SetSwarmSpot(new Vector3(maxSwarmDistance.localPosition.x+((i+1)*swarmSize/(float)(allGoblinIndex.Count+1)),
-																	maxSwarmDistance.localPosition.y,
-																	maxSwarmDistance.localPosition.z));
+			goblinList[allGoblinIndex[i]].SetSwarmSpot(new Vector3(maxSwarmDistance.position.x+((i+1)*swarmSize/(float)(allGoblinIndex.Count+1)),
+																	maxSwarmDistance.position.y,
+																	maxSwarmDistance.position.z));
 		}
 	}
 	
@@ -97,7 +101,10 @@ public class GoblinPlatoonHandler : MonoBehaviour {
 		//lists living goblins index@@@@@
 		for(int i=0;i<goblinQty;i++){
 			//if isLiving@@@@@@
-			allGoblinIndex.Add(i);
+			//Living Goblin-> Active in the hierarchy!
+			if(transform.GetChild(i).gameObject.activeSelf){
+				allGoblinIndex.Add(i);
+			}
 		}
 
 		//choose attacking number of goblins

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33854886160930516}
   - component: {fileID: 65890769524299220}
   - component: {fileID: 23652384783362792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23525872302983156}
   - component: {fileID: 54753952725731444}
   - component: {fileID: 114064441665001396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,8 @@ GameObject:
   - component: {fileID: 114384574666500264}
   - component: {fileID: 95798188686459636}
   - component: {fileID: 54814497009254946}
-  m_Layer: 0
+  - component: {fileID: 195824630691467518}
+  m_Layer: 8
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +79,7 @@ GameObject:
   - component: {fileID: 33864412975659178}
   - component: {fileID: 23321195603295956}
   - component: {fileID: 65732552337860588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4802059502164184}
   - component: {fileID: 114641522317493208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1663359814455668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 0, z: 0}
+  m_LocalPosition: {x: -1.09, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802059502164184}
@@ -162,14 +163,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961909130227820}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4067103319971964}
   m_Father: {fileID: 4147608522700062}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23321195603295956
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -404,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   aimer: {fileID: 114641522317493208}
+  navAgent: {fileID: 195824630691467518}
 --- !u!114 &114641522317493208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,7 +417,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06c4acc8b9d86149a7125d129488e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goblinSoloAI: {fileID: 0}
   rotationSpeed: 50
   buffer: 0.1
   targetTransform: {fileID: 0}
+--- !u!195 &195824630691467518
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663359814455668}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

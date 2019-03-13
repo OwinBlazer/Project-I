@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class GoblinSoloAI : MonoBehaviour {
 	[SerializeField]Animator anim;
 	[SerializeField]PlayerAimer aimer;
+	[SerializeField]NavMeshAgent navAgent;
 	private float waitTime;
 	private float currWaitTime;
 	private Transform player;
@@ -23,7 +24,15 @@ public class GoblinSoloAI : MonoBehaviour {
 	void Update () {
 		//going to ideal spot
 		if((swarmSpot-transform.position).sqrMagnitude>swarmBuffer*swarmBuffer){
-			transform.localPosition = Vector3.MoveTowards(transform.localPosition,swarmSpot,swarmSpeed*Time.deltaTime);
+			if(anim.GetInteger("ActID")!=1){
+				navAgent.SetDestination(swarmSpot);
+				navAgent.isStopped = false;
+			}
+		}else{
+			if(anim.GetInteger("ActID")==0){
+				aimer.RotateAt(player);
+			}
+			navAgent.isStopped = true;
 		}
 
 		if(anim.GetInteger("ActID")==1){

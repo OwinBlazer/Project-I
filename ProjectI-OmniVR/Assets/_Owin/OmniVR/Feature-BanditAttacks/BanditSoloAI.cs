@@ -24,17 +24,16 @@ public class BanditSoloAI : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator>();
+		InitializeParameter();
+	}
+	
+	public void InitializeParameter(){anim = GetComponent<Animator>();
 		isEngaging=false;
 		isAttacking=false;
 		aimer = GetComponentInChildren<PlayerAimer>();
-		//debug@@@@@@
-		isEngaging = true;
-		//-------------------------
 		currentInterval = 0;
 		currStartUpTime = 0;
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		

@@ -35,7 +35,10 @@ public class PlayerAimer : MonoBehaviour {
 
 	public void Update(){
 		if(isAiming){
-			Quaternion targetDir = Quaternion.LookRotation(new Vector3(transform.position.x,0,transform.position.z)-new Vector3(targetTransform.position.x,0,targetTransform.position.z),Vector3.up);
+			Quaternion targetDir =
+			Quaternion.LookRotation(new Vector3(transform.position.x,0,transform.position.z)
+			-new Vector3(targetTransform.position.x,0,targetTransform.position.z),Vector3.up);
+			
 			transform.rotation = Quaternion.RotateTowards(transform.rotation,targetDir,rotationSpeed*Time.deltaTime);
 
 			if(BufferedFloatEqual(targetDir.eulerAngles.y,transform.rotation.eulerAngles.y,buffer)){
