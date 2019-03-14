@@ -6,8 +6,10 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Quest : ScriptableObject
 {
+    public bool priority;
 
     public int questID;
+
     public string npcName;
 
     [TextArea(3, 10)]
@@ -46,4 +48,5 @@ public class Quest : ScriptableObject
 
     public int itemChance;//
 
+    public int WeaponId;//0 : all Weapon, 1: handGund, 2:ShootGun, 3 : SMG, 4 : Javelin, 5 : Shield, 101: All Upgraded Weapon
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Owin/OmniVR/Feature-BanditAttacks/ProjI-BanditAttacks.unity
+- path: Assets/Rian/_Scene/BarScene.unity
   isLoaded: 1
   isActive: 1

@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 492}
   m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
-  controlID: 28
+  controlID: 222
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 29
+  controlID: 223
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 30
+  controlID: 224
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,8 +177,8 @@ MonoBehaviour:
     y: 0
     width: 620
     height: 528
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 206, y: 121}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 113
+  controlID: 94
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 152
+  controlID: 165
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -496,9 +496,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.51162136, y: -17.069288, z: 25.729181}
+    m_Target: {x: 3.0222168, y: -6.7773438, z: 13.682617}
     speed: 2
-    m_Value: {x: 0.51162136, y: -17.069288, z: 25.729181}
+    m_Value: {x: 3.0222168, y: -6.7773438, z: 13.682617}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -526,17 +526,17 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.29294875, y: -0.0022975751, z: 0.00070401037, w: -0.9561252}
+    m_Target: {x: -0.43393397, y: 0.12897246, z: -0.06292202, w: -0.8894427}
     speed: 2
-    m_Value: {x: -0.29294875, y: -0.0022975751, z: 0.00070401037, w: -0.9561252}
+    m_Value: {x: -0.43393397, y: 0.12897246, z: -0.06292202, w: -0.8894427}
   m_Size:
-    m_Target: 32.081146
+    m_Target: 9.818257
     speed: 2
-    m_Value: 32.081146
+    m_Value: 9.818257
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_ShowGlobalGrid: 1
   m_LastSceneViewRotation: {x: 0.025808752, y: 0.0024399299, z: -0.00006231209, w: 0.99966395}
   m_LastSceneViewOrtho: 0
@@ -730,9 +730,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 32630000
-    m_LastClickedID: 25394
-    m_ExpandedIDs: 2e09ffffe0e7ffffd8fbffff00000000665b0000f45b0000
+    m_SelectedIDs: c8830000
+    m_LastClickedID: 33736
+    m_ExpandedIDs: ceb4feff40a2ffffc8e6ffff26f0ffff000000006082000072830000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -793,20 +793,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Owin/OmniVR/Feature-BanditAttacks
+    - Assets/Rian/_Script
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_Owin/OmniVR/Feature-BanditAttacks
+  - Assets/Rian/_Script
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\nico\Downloads\Magang_Edwin\GithubRoot\Project-I\ProjectI-OmniVR
+  m_LastProjectPath: C:\Users\Rian Oscar\Documents\GitHub\Project-I\ProjectI-OmniVR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 1a310000
-    m_LastClickedID: 12570
-    m_ExpandedIDs: 00000000801400002217000002280000182b0000be2e0000ea3100007232000000ca9a3b
+    scrollPos: {x: 0, y: 276}
+    m_SelectedIDs: 54580000
+    m_LastClickedID: 22612
+    m_ExpandedIDs: 00000000ae5700004e5a0000026b0000026e00009a710000c07400004675000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -834,7 +834,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000801400002217000002280000182b0000be2e0000ea31000072320000
+    m_ExpandedIDs: 00000000ae5700004e5a0000026b0000026e00009a710000c074000046750000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

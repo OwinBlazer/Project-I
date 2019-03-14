@@ -172,10 +172,24 @@ public class QuestManager : MonoBehaviour {
 
     public void ConfirmQuest()
     {
-        questing.questStatus = 1;
-        isConfirm = true;
-        playerSO.activQuest.Add(questing);
-        ConfirmDeclineDialogue();
+        if (playerSO.priorityQuest == null)
+        {
+            if (questing.priority == true)
+            {
+                playerSO.priorityQuest = questing;
+            }
+            else
+            {
+                playerSO.activQuest.Add(questing);
+            }
+            questing.questStatus = 1;
+            isConfirm = true;
+            ConfirmDeclineDialogue();
+        }
+        else
+        {
+            Decline();
+        }
     }
 
     public void RewardConfirm()
@@ -187,3 +201,4 @@ public class QuestManager : MonoBehaviour {
     }
 
 }
+
