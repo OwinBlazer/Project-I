@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Rian/_Scene/BarScene.unity
+- path: Assets/_Owin/OmniVR/01_Feature-GoblinV2/Feature-GoblinV2.unity
   isLoaded: 1
   isActive: 1

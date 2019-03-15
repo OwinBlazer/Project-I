@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 492}
   m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
-  controlID: 222
+  controlID: 111
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 223
+  controlID: 112
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 224
+  controlID: 54
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 206, y: 121}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 94
+  controlID: 113
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,8 +252,8 @@ MonoBehaviour:
     y: 0
     width: 556
     height: 419
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 20}
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 165
+  controlID: 152
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -377,8 +377,8 @@ MonoBehaviour:
     y: 0
     width: 381
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 25}
   m_Panes:
   - {fileID: 25}
@@ -496,9 +496,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.0222168, y: -6.7773438, z: 13.682617}
+    m_Target: {x: 1.6113281, y: -4.3408203, z: 11.314453}
     speed: 2
-    m_Value: {x: 3.0222168, y: -6.7773438, z: 13.682617}
+    m_Value: {x: 1.6113281, y: -4.3408203, z: 11.314453}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -526,13 +526,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.43393397, y: 0.12897246, z: -0.06292202, w: -0.8894427}
+    m_Target: {x: -0.18990621, y: -0.057398994, z: 0.011122202, w: -0.98005986}
     speed: 2
-    m_Value: {x: -0.43393397, y: 0.12897246, z: -0.06292202, w: -0.8894427}
+    m_Value: {x: -0.18990621, y: -0.057398994, z: 0.011122202, w: -0.98005986}
   m_Size:
-    m_Target: 9.818257
+    m_Target: 9.753742
     speed: 2
-    m_Value: 9.818257
+    m_Value: 9.753742
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -730,9 +730,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c8830000
-    m_LastClickedID: 33736
-    m_ExpandedIDs: ceb4feff40a2ffffc8e6ffff26f0ffff000000006082000072830000
+    m_SelectedIDs: 7e7d0000
+    m_LastClickedID: 0
+    m_ExpandedIDs: e6ceffff88dbffff14f0ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -793,20 +793,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Rian/_Script
+    - Assets/_Owin/OmniVR/01_Feature-GoblinV2
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Rian/_Script
+  - Assets/_Owin/OmniVR/01_Feature-GoblinV2
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\Rian Oscar\Documents\GitHub\Project-I\ProjectI-OmniVR
+  m_LastProjectPath: C:\Users\nico\Downloads\Magang_Edwin\GithubRoot\Project-I\ProjectI-OmniVR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 276}
-    m_SelectedIDs: 54580000
-    m_LastClickedID: 22612
-    m_ExpandedIDs: 00000000ae5700004e5a0000026b0000026e00009a710000c07400004675000000ca9a3b
+    scrollPos: {x: 0, y: 180}
+    m_SelectedIDs: 0e7c0000
+    m_LastClickedID: 31758
+    m_ExpandedIDs: 00000000ba5700005a5a0000106b0000106e0000a8710000ce7400005475000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -834,7 +834,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae5700004e5a0000026b0000026e00009a710000c074000046750000
+    m_ExpandedIDs: 00000000ba5700005a5a0000106b0000106e0000a8710000ce74000054750000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
