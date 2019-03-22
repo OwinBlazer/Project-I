@@ -22,7 +22,7 @@ public class AI_GoblinAttack : AI_EnemyAttack_Melee {
     private float currTimer;
     private bool attackHasHit;
     private bool canAttack;
-    private void Start(){
+    private void OnEnable(){
         InitializeParameters();
     }
     public void InitializeParameters(){
@@ -33,6 +33,8 @@ public class AI_GoblinAttack : AI_EnemyAttack_Melee {
         isDashOut = false;
         attackHasHit = false;
         canAttack = false;
+        base.SetIsAttacking(false);
+        base.SetIsEngaging(false);
     }
     private void Update(){
         if(base.GetIsEngaging()){

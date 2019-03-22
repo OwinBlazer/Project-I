@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Projectile_Grenade : MonoBehaviour {
 GrenadeHandler grenadeHandler;
-Rigidbody rigidbody;
 private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 	[SerializeField]float lifetime;
 	[SerializeField] float throwHeight;
@@ -12,14 +11,14 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 	[SerializeField]float returnDelay;
 	[SerializeField]float explosionForce;
 	[SerializeField]float explosionRadius;
-	[SerializeField]ParticleSystem particleSystem;
+	[SerializeField]ParticleSystem ps;
 	[SerializeField]GameObject model;
 	float currLifetime;
 	private static Quaternion quaternionZero = Quaternion.Euler(0,0,0);
 	Rigidbody rb;
 	// Use this for initialization
 	void Start () {
-		particleSystem.Stop();
+		ps.Stop();
 		rb = GetComponent<Rigidbody>();
 		//InitProjectile();
 	}
@@ -36,7 +35,7 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 			currLifetime = 0;
 			Debug.Log("Boom");
 			ApplyExplodeForce();
-			Invoke("ReturnToPool",particleSystem.main.duration);
+			Invoke("ReturnToPool",ps.main.duration);
 		}
 	}
 	private void ReturnToPool(){
@@ -51,11 +50,11 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 
 	private void InitProjectile(){
 		model.SetActive(true);
-		particleSystem.gameObject.SetActive(false);
-		particleSystem.Stop();
-		particleSystem.gameObject.transform.SetParent(this.transform);
-		particleSystem.transform.localPosition = Vector3.zero;
-		particleSystem.transform.rotation = Quaternion.Euler(Vector3.zero);
+		ps.gameObject.SetActive(false);
+		ps.Stop();
+		ps.gameObject.transform.SetParent(this.transform);
+		ps.transform.localPosition = Vector3.zero;
+		ps.transform.rotation = Quaternion.Euler(Vector3.zero);
 		currLifetime = 0;
 		rb.velocity = Vector3.zero;
 		rb.rotation = quaternionZero;
@@ -64,10 +63,10 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 	}
 
 	private void ApplyExplodeForce(){
-		particleSystem.gameObject.SetActive(true);
-		particleSystem.Play();
-		particleSystem.gameObject.transform.SetParent(null);
-		particleSystem.transform.rotation = quaternionZero;
+		ps.gameObject.SetActive(true);
+		ps.Play();
+		ps.gameObject.transform.SetParent(null);
+		ps.transform.rotation = quaternionZero;
 		model.SetActive(false);
 		foreach(Rigidbody rb in explosionTargets){
 			if(rb!=null){

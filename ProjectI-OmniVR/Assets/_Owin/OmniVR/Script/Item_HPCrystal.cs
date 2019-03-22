@@ -5,23 +5,23 @@ using VRTK;
 public class Item_HPCrystal : CombatItem {
     [SerializeField]float RecoveryValue;
     [Tooltip("How long the particle effect lasts")][SerializeField]float particleTime;
-    [SerializeField]ParticleSystem particleSystem;
+    [SerializeField]ParticleSystem ps;
     public override void UseItem(object x, InteractableObjectEventArgs y)
     {
         Debug.Log("Healing crystal used! Healed "+RecoveryValue+"HP");
-        particleSystem.transform.parent = null;
-        particleSystem.Play();
+        ps.transform.parent = null;
+        ps.Play();
         Invoke("ResetParticle",particleTime);
         base.UseItem(x,y);
     }
     private void ResetParticle(){
-        particleSystem.Stop();
-        particleSystem.transform.SetParent(transform);
-        particleSystem.transform.localPosition = Vector3.zero;
+        ps.Stop();
+        ps.transform.SetParent(transform);
+        ps.transform.localPosition = Vector3.zero;
     }
     // Use this for initialization
     void Start () {
-		particleSystem.Stop();
+		ps.Stop();
 	}
 	
 

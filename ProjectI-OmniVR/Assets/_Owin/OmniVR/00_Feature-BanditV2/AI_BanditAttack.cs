@@ -23,6 +23,9 @@ public class AI_BanditAttack : AI_EnemyAttack_Melee {
     private void Start(){
         InitializeParameters();
     }
+    private void OnEnable(){
+        InitializeParameters();
+    }
     public void InitializeParameters(){
         isFirstStrike = true;
         currTimer = 0;
@@ -30,6 +33,8 @@ public class AI_BanditAttack : AI_EnemyAttack_Melee {
         isDashIn = false;
         isDashOut = false;
         attackHasHit = false;
+        base.SetIsAttacking(false);
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@RESET THE HP OF THE BANDITS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     }
     private void Update(){
         if(base.GetIsEngaging()){
@@ -122,5 +127,17 @@ public class AI_BanditAttack : AI_EnemyAttack_Melee {
     private Vector3 GetDashOutVect(){
         Vector3 launchDir = transform.position-new Vector3(base.GetTarget().position.x,transform.position.y-jumpHeight,base.GetTarget().position.z);
         return launchDir.normalized*dashOutForce;
+    }
+
+    public void SetBanditParam(float atkInterval, float startUpTime){
+        intervalTime = atkInterval;
+        this.startUpTime = startUpTime;
+    }
+
+    public float GetAtkInterval(){
+        return intervalTime;
+    }
+    public float GetStartUpTime(){
+        return startUpTime;
     }
 }

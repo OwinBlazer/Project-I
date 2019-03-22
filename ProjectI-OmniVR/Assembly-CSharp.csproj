@@ -130,8 +130,10 @@
      <Compile Include="Assets\_Owin\OmniVR\00_Feature-BanditV2\AI_BanditAttack.cs" />
      <Compile Include="Assets\_Owin\OmniVR\00_Feature-BanditV2\AI_EnemyAttack_Melee.cs" />
      <Compile Include="Assets\_Owin\OmniVR\00_Feature-BanditV2\AI_PlayerFinder.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\00_Feature-BanditV2\EPool_Bandit.cs" />
      <Compile Include="Assets\_Owin\OmniVR\01_Feature-GoblinV2\AI_GoblinAttack.cs" />
      <Compile Include="Assets\_Owin\OmniVR\01_Feature-GoblinV2\AI_GoblinPlatoon.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\01_Feature-GoblinV2\EPool_GoblinPlatoon.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttack_Hitbox.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttackTrigger.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditSoloAI.cs" />
@@ -153,6 +155,7 @@
      <Compile Include="Assets\_Owin\OmniVR\Script\AttachToHead.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\Combat_ItemHandler.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\CombatItem.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Script\EnemyPool.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\GrenadeHandler.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\GrenadeHandler_V2.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\InventoryManager.cs" />
@@ -174,8 +177,10 @@
      <Compile Include="Assets\_Owin\OmniVR\Script\PlayerDodger\MatrixReloadedPool.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\PlayerDodger\PlayerDodger_HPScript.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\PlayerScriptableInterface.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Script\PoolMember.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\Projectile_Grenade.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\Projectile_Grenade_V2.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Script\Test_Pool.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\UsageWarning.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\VRTK_GrabWhenTouch.cs" />
      <Compile Include="Assets\_Owin\OmniVR\ScriptableObject\PlayerSettingData.cs" />

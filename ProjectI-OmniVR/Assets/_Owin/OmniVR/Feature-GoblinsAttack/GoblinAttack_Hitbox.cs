@@ -6,7 +6,7 @@ public class GoblinAttack_Hitbox : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider col){
 		if(col.gameObject.CompareTag("Player")){
-			GetComponentInParent<GoblinSoloAI>().AttackHasHit();
+			GetComponentInParent<AI_GoblinAttack>().ReportHit();
 			//Debug.Log("Player has been hit");
 		}
 	}

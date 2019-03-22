@@ -6,7 +6,7 @@ public class BanditAttack_Hitbox : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider col){
 		if(col.gameObject.CompareTag("Player")){
-			GetComponentInParent<BanditSoloAI>().AttackHasHit();
+			GetComponentInParent<AI_BanditAttack>().ReportHit();
 			//Debug.Log("Player has been hit");
 		}
 	}

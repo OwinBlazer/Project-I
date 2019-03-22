@@ -14,12 +14,15 @@ public class AI_PlayerFinder : MonoBehaviour {
 	//private int playerInstanceCount;
 	// Use this for initialization
 	void Start () {
+		player=GameObject.FindGameObjectWithTag("Player").transform;
 		navAgent.SetDestination(player.position);
 		navAgent.updatePosition=false;
 		isAiming = true;
 		aiAttack.SetTarget(this);
 	}
-	
+	private void OnEnable(){
+		isAiming = true;
+	}
 	// Update is called once per frame
 	void Update () {
 		navAgent.SetDestination(player.position);

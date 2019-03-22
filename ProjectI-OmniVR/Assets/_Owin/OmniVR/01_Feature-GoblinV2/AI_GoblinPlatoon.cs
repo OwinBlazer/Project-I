@@ -9,8 +9,18 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 	List<int> attackingGoblinIndex = new List<int>();
 	int isEngagingCount;
 	private float currTimer;
+	private List<Vector3> relativeSpawnPos = new List<Vector3>();
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+		for(int i=0;i<transform.childCount;i++){
+			relativeSpawnPos.Add(transform.GetChild(i).transform.localPosition);
+		}
+		InitializeParameter();
+	}
+	private void OnEnable(){
+		InitializeParameter();
+	}
+	public void InitializeParameter(){
 		isEngagingCount=0;
 		currTimer=0;
 		for(int i=0;i<transform.childCount;i++){
@@ -18,9 +28,14 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			if(tempGoblin!=null){
 				goblinAttackList.Add(tempGoblin);
 			}
+			Transform childObj = transform.GetChild(i);
+			childObj.localRotation = Quaternion.identity;
+			childObj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = transform.position;
+			childObj.localPosition = relativeSpawnPos[i];
 		}
+			//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@RESETTHESTATSOFTHEGOBLINS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		UpdateEngagingCount();
@@ -53,7 +68,7 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 				}
 				//choose attackers
 				foreach(int index in attackingGoblinIndex){
-					Debug.Log("Triggered in "+index);
+					//Debug.Log("Triggered in "+index);
 					goblinAttackList[index].TriggerAttack();
 				}
 
@@ -62,6 +77,23 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			}
 		}else{
 			currTimer=0;
+		}
+	}
+	public void SetGoblinParam(float aggroLv, float atkInterval){
+		aggroLevel = aggroLv;
+		attackingInterval = atkInterval;
+	}
+	public void SetGoblinQty(int num){
+		int setQty = num;
+		if(num>transform.childCount){
+			setQty = transform.childCount;
+		}
+		for(int i=0;i<transform.childCount;i++){
+			bool isActivated = true;
+			if(i>num){
+				isActivated = false;
+			}
+			transform.GetChild(i).gameObject.SetActive(isActivated);
 		}
 	}
 	private void UpdateEngagingCount(){

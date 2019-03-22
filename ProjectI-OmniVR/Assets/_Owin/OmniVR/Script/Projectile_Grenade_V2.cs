@@ -4,12 +4,11 @@ using UnityEngine;
 using VRTK;
 public class Projectile_Grenade_V2 : MonoBehaviour {
 GrenadeHandler_V2 grenadeHandler;
-Rigidbody rigidbody;
 private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 	[SerializeField]float lifetime;
 	[SerializeField]float explosionForce;
 	[SerializeField]float explosionRadius;
-	[SerializeField]ParticleSystem particleSystem;
+	[SerializeField]ParticleSystem ps;
 	[SerializeField]GameObject model;
 	[SerializeField]SphereCollider explosionCollider;
 	float currLifetime;
@@ -20,7 +19,7 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 	Rigidbody rb;
 	// Use this for initialization
 	void Start () {
-		particleSystem.Stop();
+		ps.Stop();
 		rb = GetComponent<Rigidbody>();
 		obj = GetComponent<VRTK_InteractableObject>();
 		colliderOriSize = explosionCollider.radius;
@@ -36,13 +35,13 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 			currLifetime = 0;
 			Debug.Log("Boom");
 			ApplyExplodeForce();
-			Invoke("ReturnToPool",particleSystem.main.duration);
+			Invoke("ReturnToPool",ps.main.duration);
 		}
 	}
 	private void OnCollisionEnter(Collision col){
 			//Debug.Log("Collided!");
 			ApplyExplodeForce();
-			Invoke("ReturnToPool",particleSystem.main.duration);
+			Invoke("ReturnToPool",ps.main.duration);
 	}
 	private void ReturnToPool(){
 		
@@ -58,11 +57,11 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 		explosionCollider.radius = colliderOriSize;
 		obj.isGrabbable = true;
 		model.SetActive(true);
-		particleSystem.gameObject.SetActive(false);
-		particleSystem.Stop();
-		particleSystem.gameObject.transform.SetParent(this.transform);
-		particleSystem.transform.localPosition = Vector3.zero;
-		particleSystem.transform.rotation = Quaternion.Euler(Vector3.zero);
+		ps.gameObject.SetActive(false);
+		ps.Stop();
+		ps.gameObject.transform.SetParent(this.transform);
+		ps.transform.localPosition = Vector3.zero;
+		ps.transform.rotation = Quaternion.Euler(Vector3.zero);
 		currLifetime = 0;
 		rb.velocity = Vector3.zero;
 		rb.rotation = quaternionZero;
@@ -71,10 +70,10 @@ private List<Rigidbody> explosionTargets = new List<Rigidbody>();
 	}
 
 	private void ApplyExplodeForce(){
-		particleSystem.gameObject.SetActive(true);
-		particleSystem.Play();
-		particleSystem.gameObject.transform.SetParent(null);
-		particleSystem.transform.rotation = quaternionZero;
+		ps.gameObject.SetActive(true);
+		ps.Play();
+		ps.gameObject.transform.SetParent(null);
+		ps.transform.rotation = quaternionZero;
 		model.SetActive(false);
 		foreach(Rigidbody rb in explosionTargets){
 			if(rb!=null){
