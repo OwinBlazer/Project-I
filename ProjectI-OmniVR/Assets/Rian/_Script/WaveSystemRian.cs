@@ -18,8 +18,8 @@ public class WaveSystemRian : MonoBehaviour {
 
     public bool isStop;
 
-    private float timeDirection;
-    private float timeEnemy;
+    [SerializeField] float timeDirection;
+    [SerializeField] float timeEnemy;
 
     private int spawnerindex;
     private Transform spawner;
@@ -33,7 +33,15 @@ public class WaveSystemRian : MonoBehaviour {
 
     public int chanceMin = 0;
     public int chanceMax = 100;
-    
+
+    Test_Pool testPool;
+    [SerializeField] int poolEnemy;
+
+    private void Start()
+    {
+        testPool = GetComponent<Test_Pool>();
+    }
+
     private void Update()
     {
         timeDirection -= Time.deltaTime;
@@ -48,10 +56,10 @@ public class WaveSystemRian : MonoBehaviour {
             if (timeDirection <= 0)
             {
                 currentSpawnDirection = Random.Range(1, 3);
-                timeDirection = Random.Range(timeSpawnEnemyMin, timeSpawnMaxDirection);
+                timeDirection = Random.Range(timeSpawnMinDirection, timeSpawnMaxDirection);
             }
 
-            if(timeEnemy >= 0)
+            if(timeEnemy <= 0)
             {
                 RandomEnemy();
                 switch (currentSpawnDirection)
@@ -59,26 +67,26 @@ public class WaveSystemRian : MonoBehaviour {
                     case 1:
                         spawnerindex = Random.Range(0, 2);
                         spawner = spawners[spawnerindex];
-                        Instantiate(enemy, spawner.position, spawner.rotation);
-                        timeEnemy = Random.Range(timeSpawnMinDirection, timeSpawnEnemyMax);
+                        testPool.SpawnEnemy(poolEnemy, spawner);
+                        timeEnemy = Random.Range(timeSpawnEnemyMin, timeSpawnEnemyMax);
                         break;
                     case 2:
                         spawnerindex = Random.Range(2, 4);
                         spawner = spawners[spawnerindex];
-                        Instantiate(enemy, spawner.position, spawner.rotation);
-                        timeEnemy = Random.Range(timeSpawnMinDirection, timeSpawnEnemyMax);
+                        testPool.SpawnEnemy(poolEnemy, spawner);
+                        timeEnemy = Random.Range(timeSpawnEnemyMin, timeSpawnEnemyMax);
                         break;
                     case 3:
                         spawnerindex = Random.Range(4, 6);
                         spawner = spawners[spawnerindex];
-                        Instantiate(enemy, spawner.position, spawner.rotation);
-                        timeEnemy = Random.Range(timeSpawnMinDirection, timeSpawnEnemyMax);
+                        testPool.SpawnEnemy(poolEnemy, spawner);
+                        timeEnemy = Random.Range(timeSpawnEnemyMin, timeSpawnEnemyMax);
                         break;
                     default:
                         spawnerindex = Random.Range(0, 2);
                         spawner = spawners[spawnerindex];
-                        Instantiate(enemy, spawner.position, spawner.rotation);
-                        timeEnemy = Random.Range(timeSpawnMinDirection, timeSpawnEnemyMax);
+                        testPool.SpawnEnemy(poolEnemy, spawner);
+                        timeEnemy = Random.Range(timeSpawnEnemyMin, timeSpawnEnemyMax);
                         break;
                 }
             }
@@ -95,14 +103,17 @@ public class WaveSystemRian : MonoBehaviour {
             if (enemyRandom <= enemyChance[1])
             {
                 enemy = enemys[1];
+                poolEnemy = 0;
             }
-            else if (enemyRandom <= enemyChance[2])
+            else if (enemyChance.Length >= 1 && enemyRandom <= enemyChance[2])
             {
                 enemy = enemys[2];
+                poolEnemy = 0;
             }
-            else if (enemyRandom <= enemyChance[3])
+            else if (enemyChance.Length >= 2 && enemyRandom <= enemyChance[3])
             {
                 enemy = enemys[3];
+                poolEnemy = 0;
             }
 
             if(isSpecialEnemy == true)

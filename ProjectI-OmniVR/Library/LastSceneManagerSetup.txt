@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Owin/OmniVR/00_Feature-BanditV2/Feature-BanditV2.unity
+- path: Assets/Rian/_Scene/Procedural 1.unity
   isLoaded: 1
   isActive: 1

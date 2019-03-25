@@ -31,8 +31,9 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			Transform childObj = transform.GetChild(i);
 			childObj.localRotation = Quaternion.identity;
 			childObj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = transform.position;
+			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = relativeSpawnPos[i];
 			childObj.localPosition = relativeSpawnPos[i];
+            Debug.Log(relativeSpawnPos[i]);
 		}
 		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@RESETTHESTATSOFTHEGOBLINS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		
