@@ -19,6 +19,7 @@ public class QuestTracker : MonoBehaviour {
 	private List<QuestTrackerEntry> QuestEntry = new List<QuestTrackerEntry>();
 	[SerializeField]QuestBoxPool qBoxPool;
 	[SerializeField]PlayerSO playerSav;
+	[SerializeField]QuestProgressCache progressCache;
 	private void Awake(){
 		if(questTracker!=null){
 			Destroy(gameObject);
@@ -46,29 +47,73 @@ public class QuestTracker : MonoBehaviour {
 				break;
 			}
 			tempEntry.currentProgress = q.currentQuantityQuest;
-			tempEntry.questMode = 0;
+			tempEntry.questMode = q.questMode;
 			tempEntry.objectiveText = q.objective;
 			QuestEntry.Add(tempEntry);
 		}
+
+		//also use to pull PRIORITY QUEST@@@@@@@@@@@@@@@@@@@@@@@@
+		
 	}
 
 	public void ReportDeath(int EnemyID){
-		//for use when enemy dies
+		progressCache.ReportDeath(EnemyID);
+	}
+
+	public void ReportSurvival(){
+		//VALIDATE ACTIVE PRIORITY QUEST FOR TYPE 0
+		//THIS FUNCTION IS ONLY CALLED IN THE "UNIQUE ROOM"@@@@@@@@@@@@@@@@@@@@@@@@@
+	}
+	public void ReportShieldUse(){
 		foreach(QuestTrackerEntry entry in QuestEntry){
-			if(entry.questMode==0 && entry.questStatus==1&&entry.targetID==EnemyID){
-				entry.currentProgress++;
-				KillQuestStatusCheck(entry);
+			if(entry.questStatus==1){
+				//if ShieldQuest
+				if(entry.questMode==101){
+					entry.currentProgress++;
+					if(entry.currentProgress>=entry.targetProgress){
+						entry.questStatus = 2;
+					}
+				}
 			}
 		}
 	}
 	public void ReportWaveEnd(int WaveNum){
 		//for use when wave ends, to display quest and to check key item drop
 		foreach(QuestTrackerEntry entry in QuestEntry){
-			if(entry.questMode==1 && entry.questStatus==1&&WaveNum>=entry.targetProgress){
-				entry.currentProgress=1;
-				entry.questStatus = 2;
+			if(entry.questStatus==1){
+				//if WaveQuest
+				if(entry.questMode==0){
+					if(WaveNum>entry.targetProgress){
+						entry.currentProgress=1;
+						entry.questStatus = 2;
+					}
+				}
 			}
 		}
+		//check Kill Quest Progress via loading from cache here
+		int[] progressList = progressCache.GetKilledList();
+		foreach(QuestTrackerEntry entry in QuestEntry){
+			if(entry.questStatus==1){
+				//if KillQuest
+				if(entry.questMode==1){
+					int progressQty = progressList[progressCache.GetIndexOfEnemyID(entry.targetID)];
+					if( progressQty>0){
+						entry.currentProgress+=progressQty;
+						KillQuestStatusCheck(entry);
+					}
+
+				//if weapon quest @@@@@@@@@@@@@@@@@@@@@@@@@
+				}else if(entry.questMode==2){
+					//(if weapon ID>0)check if entry.targetID==weapon.ID
+					//check if there's an upgradable requirement
+				}
+			}
+		}
+
+		//also check if there's an ACTIVE PRIORITY QUEST OF TYPE TIMEATTACK @@@@@@@@@@@@@@@@@@@@@@@@
+
+		//CHECK IF THERE IS AN ACTIVE PRIORITY QUEST FOR ESCORT.
+		//IF YES AND COMPLETE, PLAY CUTSCENE BEFORE POPULATING BOX@@@@@@@@@@@@@@@
 		PopulateQuestBox();
 	}
 	private void KillQuestStatusCheck(QuestTrackerEntry entry){
@@ -84,6 +129,8 @@ public class QuestTracker : MonoBehaviour {
 	public void PopulateQuestBox(){
 		//assign a QuestBox for each entry
 		qBoxPool.ResetQuestBox();
+		//if PRIORITY QUEST exists, issue PRIORITY QUEST 1ST@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 		foreach(QuestTrackerEntry entry in QuestEntry){
 			qBoxPool.IssueQuestBox(entry);
 			//Debug.Log("Issued");
@@ -95,6 +142,9 @@ public class QuestTracker : MonoBehaviour {
 		foreach(QuestTrackerEntry entry in QuestEntry){
 			Quest tempQuest = new Quest();
 			//set the quest data here@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			//adapt according to entry.questMode
+			//tempQuestStatus.qty = entry.qty
+			//^^etc.
 			tempQuestStatus.Add(tempQuest);
 		}
 		playerSav.activQuest = tempQuestStatus;

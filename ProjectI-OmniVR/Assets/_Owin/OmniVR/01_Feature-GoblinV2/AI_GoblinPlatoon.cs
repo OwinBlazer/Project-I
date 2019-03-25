@@ -34,7 +34,8 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = transform.position;
 			childObj.localPosition = relativeSpawnPos[i];
 		}
-			//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@RESETTHESTATSOFTHEGOBLINS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@RESETTHESTATSOFTHEGOBLINS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		
 	}
 	// Update is called once per frame
 	void Update () {

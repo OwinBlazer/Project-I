@@ -134,6 +134,8 @@
      <Compile Include="Assets\_Owin\OmniVR\01_Feature-GoblinV2\AI_GoblinAttack.cs" />
      <Compile Include="Assets\_Owin\OmniVR\01_Feature-GoblinV2\AI_GoblinPlatoon.cs" />
      <Compile Include="Assets\_Owin\OmniVR\01_Feature-GoblinV2\EPool_GoblinPlatoon.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSampleScript.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSystem.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttack_Hitbox.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttackTrigger.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditSoloAI.cs" />
@@ -144,6 +146,7 @@
      <Compile Include="Assets\_Owin\OmniVR\Feature-GoblinsAttack\PlayerAimer.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-QuestTracker\QuestBox.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-QuestTracker\QuestBoxPool.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Feature-QuestTracker\QuestProgressCache.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-QuestTracker\QuestTracker.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\AudioOption.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\BGMPlayer.cs" />
