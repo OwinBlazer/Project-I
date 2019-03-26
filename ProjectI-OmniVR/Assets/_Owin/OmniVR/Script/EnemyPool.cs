@@ -27,13 +27,17 @@ public class EnemyPool : MonoBehaviour {
         unusedQueue.Enqueue(tempProj);
     }
     public virtual GameObject IssueFromPool(Transform newPosition){
-        PoolMember tempProj = unusedQueue.Dequeue();
-        tempProj.transform.position = newPosition.position;
-        tempProj.transform.rotation = newPosition.rotation;
-        //Debug.Log(newPosition.gameObject.name + " with rotations" +newPosition.rotation);
-        inUseList.Add(tempProj);
-        tempProj.gameObject.SetActive(true);
-        return tempProj.gameObject;
+        if(unusedQueue.Count>0){
+            PoolMember tempProj = unusedQueue.Dequeue();
+            tempProj.transform.position = newPosition.position;
+            tempProj.transform.rotation = newPosition.rotation;
+            //Debug.Log(newPosition.gameObject.name + " with rotations" +newPosition.rotation);
+            inUseList.Add(tempProj);
+            tempProj.gameObject.SetActive(true);
+            return tempProj.gameObject;
+        }else{
+            return null;
+        }
     }
     public int GetID(){
         return EnemyID;

@@ -5,8 +5,10 @@ using UnityEngine;
 public class EPool_Bandit : EnemyPool {
 	public override GameObject IssueFromPool(Transform newPosition){
 		GameObject tempObj = base.IssueFromPool(newPosition);
-		tempObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = newPosition.position;
-		return tempObj;
+		if(tempObj!=null){
+			tempObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = newPosition.position;
+		}
+			return tempObj;
 	}
 	public void ChangeBanditStats(float atkInterval,float startUpTime){
 		AI_BanditAttack tempBandit;
