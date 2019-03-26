@@ -16,7 +16,6 @@ public class AI_PlayerFinder : MonoBehaviour {
 	void Start () {
 		player=GameObject.FindGameObjectWithTag("Player").transform;
 		navAgent.SetDestination(player.position);
-		navAgent.updatePosition=false;
 		isAiming = true;
 		aiAttack.SetTarget(this);
 	}
@@ -25,6 +24,7 @@ public class AI_PlayerFinder : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		navAgent.updatePosition=false;
 		navAgent.SetDestination(player.position);
 		if(navAgent.remainingDistance>=navAgent.stoppingDistance){
 			if(!aiAttack.GetIsAttacking()){

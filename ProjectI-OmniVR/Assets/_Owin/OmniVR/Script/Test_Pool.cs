@@ -12,7 +12,12 @@ public class Test_Pool : MonoBehaviour {
         PoolMember tempMember = tempObj.GetComponent<PoolMember>();
         spawnedList.Add(tempMember);
     }
-
+    public void TestSpawn(int id)
+    {
+        GameObject tempObj = poolArr[id].IssueFromPool(transform);
+        PoolMember tempMember = tempObj.GetComponent<PoolMember>();
+        spawnedList.Add(tempMember);
+    }
     public void DelEnemy(){
 		spawnedList[0].ReturnToPool();
 		spawnedList.RemoveAt(0);

@@ -13,7 +13,7 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		for(int i=0;i<transform.childCount;i++){
-			relativeSpawnPos.Add(transform.GetChild(i).transform.localPosition);
+			relativeSpawnPos.Add(transform.GetChild(i).localPosition);
 		}
 		InitializeParameter();
 	}
@@ -31,9 +31,8 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			Transform childObj = transform.GetChild(i);
 			childObj.localRotation = Quaternion.identity;
 			childObj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = relativeSpawnPos[i];
 			childObj.localPosition = relativeSpawnPos[i];
-            Debug.Log(relativeSpawnPos[i]);
+			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = childObj.transform.position;
 		}
 		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@RESETTHESTATSOFTHEGOBLINS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		
