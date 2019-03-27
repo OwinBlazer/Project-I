@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114904776130760646}
   m_Layer: 0
   m_Name: HandgunBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,8 @@ MonoBehaviour:
   bulletScriptableObj: {fileID: 11400000, guid: f0959f60340d4bc48927864fd543256a,
     type: 2}
   bulletID: 
+  level: 0
+  damage: 0
   delayBeforeDestroy: 0
   impact: {fileID: 0}
 --- !u!135 &135938926073131208

@@ -12,7 +12,8 @@ public class DestroyObjSphere : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         DestroyObjectNearPlayer();
     }
 
@@ -23,10 +24,19 @@ public class DestroyObjSphere : MonoBehaviour {
 
         foreach (Collider col in hitColliders)
         {
-            if(col.gameObject.tag == "WorldObject")
+            if (col.gameObject.tag == "WorldObject")
             {
-                Destroy(col.gameObject);
+                col.gameObject.SetActive(false);
+                //Destroy(col.gameObject);
             }
         }
-    } 
+    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.tag == "WorldObject")
+    //    {
+    //        other.gameObject.SetActive(false);
+    //    }
+    //}
 }

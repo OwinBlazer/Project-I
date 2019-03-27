@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     public BulletScriptableObj bulletScriptableObj;
     public string bulletID;
+    public int level;
+    public float damage;
     public float delayBeforeDestroy;
     public GameObject impact;
 
@@ -15,24 +17,32 @@ public class Bullet : MonoBehaviour
         GetDataFromScriptableObject();
     }
 
+    void GetDataFromScriptableObject()
+    {
+        bulletID = bulletScriptableObj.bulletID;
+        damage = bulletScriptableObj.damage;
+        delayBeforeDestroy = bulletScriptableObj.delayBeforeDestroy;
+        impact = bulletScriptableObj.impact;
+    }
+
     private void Update()
     {
         delayBeforeDestroy -= Time.deltaTime;
 
         if(delayBeforeDestroy <= 0)
         {
-            GetDataFromScriptableObject();
-            PoolShotgunBullet.InstanceShotgunBullet.AddToPool(gameObject);
+            GetDataFromScriptableObject(); //untuk reset delay before destroy
+
+            AddBulletToPool();
         }
-    }
-    void GetDataFromScriptableObject()
-    {
-        bulletID = bulletScriptableObj.bulletID;
-        delayBeforeDestroy = bulletScriptableObj.delayBeforeDestroy;
-        impact = bulletScriptableObj.impact;
     }
 
     private void OnCollisionEnter(Collision collision)
+    {
+        AddBulletToPool();
+    }
+
+    void AddBulletToPool()
     {
         if (bulletID == "BU1")
         {

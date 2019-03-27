@@ -8,6 +8,7 @@ public class WeaponScriptableObj : ScriptableObject
 {
     public string weaponID;
     public string weaponName;
+    public int level;
     public int maxAmmo;
     public float fireRate;
     public float damage;

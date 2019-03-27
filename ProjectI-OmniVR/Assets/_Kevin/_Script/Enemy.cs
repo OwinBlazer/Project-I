@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
+    public string enemyID;
     private NavMeshAgent nav;
     private Animator anim;
     public EnemyScriptableObj enemyScriptbleObj;
@@ -12,10 +14,11 @@ public class Enemy : MonoBehaviour {
 
     public Transform player;
     public float attackRange;
-    public int HP;
+    public float HP;
     public float speed;
     public float damage;
-    
+    public Text textHP;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -26,6 +29,7 @@ public class Enemy : MonoBehaviour {
         nav = GetComponent<NavMeshAgent>();
         nav.speed = speed;
         nav.acceleration = speed;      
+
     }
 	
 	// Update is called once per frame
@@ -58,14 +62,20 @@ public class Enemy : MonoBehaviour {
             }
         }
 
-        if(HP == 0)
+        if (HP <= 0)
         {
             EnemyDeath();
+            textHP.text = "";
+        }
+        else
+        {
+            textHP.text = "HP : " + HP.ToString();
         }
     }
 
     void GetDataFromScriptableObject()
     {
+        enemyID = enemyScriptbleObj.enemyID;
         HP = enemyScriptbleObj.HP;
         attackRange = enemyScriptbleObj.attackRange;
         speed = enemyScriptbleObj.speed;
@@ -82,9 +92,37 @@ public class Enemy : MonoBehaviour {
         anim.SetBool("isAttacking", false);
         anim.SetBool("isDead", true);
 
-        nav.enabled = false;
+        nav.velocity = Vector3.zero;
+        nav.isStopped = true;
         Destroy(GetComponent<BoxCollider>());
 
+        Destroy(gameObject, 5);
+        //Invoke("AddEnemyToPool", 2);
         //call quest tracker, send this enemy ID
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Bullet _bullet = collision.gameObject.GetComponent<Bullet>();
+            HP -= _bullet.damage;
+
+            // bisa cek bulletID dan level yang mengenai enemy disini
+        }
+    }
+
+    void AddEnemyToPool()
+    {
+        GetDataFromScriptableObject();
+
+        if (enemyID == "EN1")
+        {
+            PoolEnemyBandit.InstanceEnemyBandit.AddToPool(gameObject);
+        }
+        else if (enemyID == "EN2")
+        {
+            PoolEnemyGoblin.InstanceEnemyGoblin.AddToPool(gameObject);
+        }
     }
 }

@@ -7,6 +7,8 @@ public class BulletScriptableObj : ScriptableObject
 {
     public string bulletID;
     public string bulletName;
+    public int level;
+    public float damage;
     public float delayBeforeDestroy;
     public GameObject impact;
 }

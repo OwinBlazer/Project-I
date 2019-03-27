@@ -13,5 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletID: BU1
   bulletName: HandgunBullet
+  level: 0
+  damage: 2
   delayBeforeDestroy: 3
   impact: {fileID: 0}

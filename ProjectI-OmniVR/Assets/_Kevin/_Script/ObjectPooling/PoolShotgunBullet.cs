@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoolShotgunBullet : MonoBehaviour {
 
     public GameObject shotgunBullet;
-    private Queue<GameObject> availablePrefab = new Queue<GameObject>();
+    public Queue<GameObject> availablePrefab = new Queue<GameObject>();
     public static PoolShotgunBullet InstanceShotgunBullet { get; private set; }
 
     // Use this for initialization
@@ -23,7 +23,7 @@ public class PoolShotgunBullet : MonoBehaviour {
 
     void GrowPool()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 15; i++)
         {
             var instanceToAdd = Instantiate(shotgunBullet);
             instanceToAdd.transform.SetParent(transform);

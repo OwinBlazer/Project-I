@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502249653253304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.9631, y: 1.2, z: -24.355968}
+  m_LocalPosition: {x: 56.82825, y: 337.3731, z: 8.104769}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +72,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -97,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8096466, y: 22.418013, z: 3.4783382}
-  m_Center: {x: -0.041290283, y: 11.209006, z: 0.12163448}
+  m_Size: {x: 2.8096466, y: 19.367964, z: 7.3631005}
+  m_Center: {x: -0.041290283, y: 12.734031, z: 1.0045345}
 --- !u!193 &193455767221603760
 Tree:
   m_ObjectHideFlags: 1
@@ -116,9 +116,9 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.36, y: 11.209001, z: 2.16}
+  m_Extents: {x: 6.3100004, y: 11.209001, z: 10.34}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0, y: 11.209001, z: 0.18}
+  m_Center: {x: 0.83500004, y: 11.209001, z: 7.6190004}
   m_TimeToStationary: 0.5

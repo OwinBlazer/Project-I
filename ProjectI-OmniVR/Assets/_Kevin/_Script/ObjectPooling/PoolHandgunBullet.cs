@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoolHandgunBullet : MonoBehaviour {
 
     public GameObject handgunBullet;
-    private Queue<GameObject> availablePrefab = new Queue<GameObject>();
+    public Queue<GameObject> availablePrefab = new Queue<GameObject>();
     public static PoolHandgunBullet InstanceHandgunBullet { get; private set; }
 
     // Use this for initialization
@@ -22,7 +22,7 @@ public class PoolHandgunBullet : MonoBehaviour {
 
     void GrowPool()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             var instanceToAdd = Instantiate(handgunBullet);
             instanceToAdd.transform.SetParent(transform);
@@ -38,8 +38,11 @@ public class PoolHandgunBullet : MonoBehaviour {
 
     public GameObject GetFromPool()
     {
-        //if (availablePrefab1.Count == 0)
+        //if (availablePrefab.Count == 0)
+        //{
         //    GrowPool();
+        //}
+
         var instance = availablePrefab.Dequeue();
         instance.SetActive(true);
         return instance;
