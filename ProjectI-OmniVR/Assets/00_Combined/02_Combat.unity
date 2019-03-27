@@ -1599,7 +1599,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4945751011147080, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 23727480058210894, guid: 0fdfb3d412e74f34d9aaa0702fb586e0,
         type: 2}
@@ -7710,6 +7710,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157397737}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1158401672 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4945751011147080, guid: 0fdfb3d412e74f34d9aaa0702fb586e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 255708912}
 --- !u!1 &1172282045
 GameObject:
   m_ObjectHideFlags: 0
@@ -12114,7 +12119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1650029368
 GameObject:
@@ -13051,6 +13056,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb1db628574dfe48bfd2e1affc4f102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uvScale: 1
+  terrainTilePrefab: {fileID: 1816903142804102, guid: 4765aacb080fde04a83aae1c12047043,
+    type: 2}
+  terrainSize: {x: 25, y: 1, z: 25}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  noiseScale: 0
+  cellSize: 1
+  radiusToRender: 5
+  gameTransforms: []
+  playerTransform: {fileID: 1234244279}
+  water: {fileID: 1158401672}
+  seed: 0
+  placeableObjects:
+  - {fileID: 1014636948048450, guid: 44ca849bd9a94e0408d8bcacbb791ce0, type: 2}
+  - {fileID: 1502249653253304, guid: c92839434a1b3bc4c8fffdc8e2d47a93, type: 2}
+  - {fileID: 1828046991125070, guid: b19c946e28e2e9b459a6f007ac329c2b, type: 2}
+  placeableObjectSizes:
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: 1}
+  minObjectsPerTile: 2
+  maxObjectsPerTile: 3
+  destroyDistance: 1000
+  usePerlinNoise: 1
+  noise: {fileID: 0}
+  a: 0
 --- !u!4 &1734670660
 Transform:
   m_ObjectHideFlags: 0
@@ -13062,7 +13121,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747870169
 GameObject:
@@ -16579,5 +16638,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -79,6 +79,67 @@
     <Compile Include="Assets\_Kevin\_ScriptableObj\BulletScriptableObj.cs" />
     <Compile Include="Assets\_Kevin\_ScriptableObj\EnemyScriptableObj.cs" />
     <Compile Include="Assets\_Kevin\_ScriptableObj\WeaponScriptableObj.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Breakout\Breakout.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Breakout\BreakoutConfigurator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Breakout\Brick.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\BuildingGeneratorComponent.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\BuildingGeneratorConfigurator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\BuildingGeneratorReuse.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\PolygonAsset.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\ProceduralFacadeConstructionStrategy.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\ProceduralFacadeElements.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\ProceduralFacadePlanningStrategy.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\ProceduralRoofConstructionStrategy.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\ProceduralRoofPlanningStrategy.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\CellularAutomata\CellularAutomatonConfigurator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Chairs\Armrests.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Chairs\Backs.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Chairs\ChairGenerator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Chairs\ChairGeneratorConfigurator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Chairs\Stretchers.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Characters\Character.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Characters\CharacterGenerator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Characters\CharacterGeneratorConfigurator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Characters\NameGenerator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Clipper\PathClipperExample.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Clipper\PathOffsetterExample.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Common\ButtonControl.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Common\CameraRotator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Common\ConfiguratorBase.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Common\SkyBoxGenerator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Common\SliderControl.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Common\TextControl.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Common\ToggleControl.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Drawing\Drawer.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\LowPolyTerrain\LowPolyTerrainGenerator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\LowPolyTerrain\LowPolyTerrainGeneratorConfigurator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Mazes\Maze.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Mazes\MazeGenerator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Mazes\MazeGeneratorConfigurator.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Cylinder.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Dodecahedron.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\FlatSphere.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\FlatSpheroid.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\FlatTeardrop.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Hexahedron.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Icosahedron.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Octahedron.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Plane.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Prism.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Pyramid.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Sphere.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Spheroid.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Teardrop.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Primitives\Tetrahedron.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\SDF\ImageSelector.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\StraightSkeleton\StraightSkeletonExample.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Tessellator\TessellatorExample.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Advanced\GenerateMesh.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Advanced\PlaceObjects.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Advanced\PlayerZero.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Advanced\TerrainController.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Simple\GenerateMeshSimple.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Nova\Simple\TerrainControllerSimple.cs" />
     <Compile Include="Assets\_Owin\OmniVR\00_Feature-BanditV2\AI_BanditAttack.cs" />
     <Compile Include="Assets\_Owin\OmniVR\00_Feature-BanditV2\AI_EnemyAttack_Melee.cs" />
     <Compile Include="Assets\_Owin\OmniVR\00_Feature-BanditV2\AI_PlayerFinder.cs" />
@@ -1039,13 +1100,18 @@
     <Compile Include="Assets\VRTK-master\Assets\VRTK\Source\SDK\Ximmerse\SDK_XimmerseHeadset.cs" />
     <Compile Include="Assets\VRTK-master\Assets\VRTK\Source\SDK\Ximmerse\SDK_XimmerseSystem.cs" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarMaterialStateShader.cginc" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Examples\SDF\Animation.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Transitions.cginc" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\VertexColor\Standard Vertex Color.shader" />
     <None Include="Assets\Oculus\Avatar\Samples\CrossPlatform\Readme.txt" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_PC_SingleComponent.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Gradient Skybox.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_DiffBump.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Stereo180Video\Resources\Multiview Stereo.shader" />
     <None Include="Assets\SO Architecture\Documentation\Variables.txt" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Examples\Characters\names.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Shaders\TriPlanarWorld.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_Transparent.shader" />
@@ -1054,28 +1120,43 @@
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\SO Architecture\Documentation\Event-Listeners.txt" />
     <None Include="Assets\SO Architecture\Documentation\Collection.txt" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Examples\SDF\Easing.shader" />
     <None Include="Assets\VRTK-master\Assets\VRTK\Source\Scripts\Internal\Shaders\UIOverlay.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
     <None Include="Assets\VRTK-master\Assets\VRTK\Source\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Debug\Debug UV1.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Debug\Debug Bitangents.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
     <None Include="Assets\VRTK-master\Assets\VRTK\Source\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\SO Architecture\Documentation\Clamped-Variables.txt" />
     <None Include="Assets\SO Architecture\Documentation\Events.txt" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Examples\SDF\DistanceOperations.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\SDF.cginc" />
     <None Include="Assets\SO Architecture\Documentation\References.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Oculus\Avatar\Samples\SocialStarter\README.txt" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\VertexColor\Unlit Vertex Color.shader" />
     <None Include="Assets\Oculus\SampleFramework\license.txt" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderPBSV2.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Examples\SDF\Transitions.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_CombinedMesh.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\LICENSE.txt" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Examples\SDF\Shapes.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Easing.cginc" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_01.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\VertexColor\Diffuse Vertex Color.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Debug\Debug Normals.shader" />
     <None Include="Assets\VRTK-master\Assets\VRTK\Source\Scripts\Internal\Shaders\VRTK_TunnelEffect.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\DebugUI\Fonts\Montserrat\OFL.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBSV2.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Debug\Debug UV2.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Examples\SDF\StarPolygon.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\VertexColor\Specular Vertex Color.shader" />
     <None Include="Assets\VRTK-master\Assets\VRTK\Source\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
     <None Include="Assets\SteamVR\readme.txt" />
     <None Include="Assets\_Kevin\FantasyEnvironments\Environments\README.txt" />
@@ -1088,6 +1169,8 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\ToyCubeWithOutline.shader" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Common.cginc" />
+    <None Include="Assets\_Kevin\ProceduralToolkit\Shaders\Debug\Debug Tangents.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\CrosshairZCheat.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
     <Reference Include="UnityEditor.StandardEvents">
@@ -1346,6 +1429,22 @@
     <ProjectReference Include="Oculus.VR.csproj">
       <Project>{A58BF658-96AC-F3B0-0778-179E53BF45E5}</Project>
       <Name>Oculus.VR</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.LibTessDotNet.csproj">
+      <Project>{6E6E44C7-765A-3A7B-35D6-A5E4CE752458}</Project>
+      <Name>ProceduralToolkit.LibTessDotNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.ClipperLib.csproj">
+      <Project>{492A11C3-F00E-3507-4B08-F6EE24B56758}</Project>
+      <Name>ProceduralToolkit.ClipperLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.csproj">
+      <Project>{3F5DDFBF-F1FC-B761-E3E7-A777320BC7C2}</Project>
+      <Name>ProceduralToolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.Editor.csproj">
+      <Project>{3722796F-514B-186A-CFD5-E7EAA4F99D56}</Project>
+      <Name>ProceduralToolkit.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

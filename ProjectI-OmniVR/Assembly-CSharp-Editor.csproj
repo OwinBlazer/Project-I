@@ -61,6 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Buildings\Scripts\Editor\BuildingGeneratorConfiguratorEditor.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\Chairs\Editor\ChairGeneratorConfiguratorEditor.cs" />
+    <Compile Include="Assets\_Kevin\ProceduralToolkit\Examples\LowPolyTerrain\Editor\LowPolyTerrainGeneratorConfiguratorEditor.cs" />
     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
@@ -444,6 +447,22 @@
     <ProjectReference Include="Oculus.VR.csproj">
       <Project>{A58BF658-96AC-F3B0-0778-179E53BF45E5}</Project>
       <Name>Oculus.VR</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.LibTessDotNet.csproj">
+      <Project>{6E6E44C7-765A-3A7B-35D6-A5E4CE752458}</Project>
+      <Name>ProceduralToolkit.LibTessDotNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.ClipperLib.csproj">
+      <Project>{492A11C3-F00E-3507-4B08-F6EE24B56758}</Project>
+      <Name>ProceduralToolkit.ClipperLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.csproj">
+      <Project>{3F5DDFBF-F1FC-B761-E3E7-A777320BC7C2}</Project>
+      <Name>ProceduralToolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProceduralToolkit.Editor.csproj">
+      <Project>{3722796F-514B-186A-CFD5-E7EAA4F99D56}</Project>
+      <Name>ProceduralToolkit.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
