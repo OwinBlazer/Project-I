@@ -28,13 +28,14 @@ public class AI_PlayerFinder : MonoBehaviour {
 	void Update () {
 		navAgent.updatePosition=false;
 		navAgent.SetDestination(player.position);
-		if(navAgent.remainingDistance>=navAgent.stoppingDistance){
+		if((transform.position-player.position).sqrMagnitude>=navAgent.stoppingDistance*navAgent.stoppingDistance){
 			if(!aiAttack.GetIsAttacking()){
 				navAgent.updateRotation = true;
 				aiAttack.StopAttack();
 				navAgent.isStopped = false;
 			}
 		}else{
+			//Debug.Log(navAgent.remainingDistance+" with "+navAgent.destination,gameObject);
 			if(isAiming&&!aiAttack.GetIsAttacking()){
 				navAgent.isStopped = true;
 			//Debug.Log(navAgent.remainingDistance);
@@ -46,6 +47,7 @@ public class AI_PlayerFinder : MonoBehaviour {
 				transform.rotation = Quaternion.RotateTowards(transform.rotation,targetDir,maxRad*Time.deltaTime);
 				if(!aiAttack.GetIsAttacking()){
 					aiAttack.StartAttack();
+					Debug.Break();
 				}
 			}
 		}

@@ -18,6 +18,7 @@ public class EnemyPool : MonoBehaviour {
                 unusedQueue.Enqueue(tempProj);
                 tempProj.gameObject.SetActive(false);
             }
+            Debug.Log(unusedQueue.Count);
         }
     }
 

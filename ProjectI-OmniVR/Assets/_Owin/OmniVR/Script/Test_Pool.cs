@@ -12,16 +12,21 @@ public class Test_Pool : MonoBehaviour {
         if(tempObj!=null){
             PoolMember tempMember = tempObj.GetComponent<PoolMember>();
             spawnedList.Add(tempMember);
+            Debug.Break();
         }
     }
     public void TestSpawn(int id)
     {
         GameObject tempObj = poolArr[id].IssueFromPool(transform);
-        PoolMember tempMember = tempObj.GetComponent<PoolMember>();
-        spawnedList.Add(tempMember);
+        Debug.Log("Called, rturned "+tempObj.name);
+        if(tempObj!=null){
+            PoolMember tempMember = tempObj.GetComponent<PoolMember>();
+            spawnedList.Add(tempMember);
+            //Debug.Break();
+        }
     }
     public void DelEnemy(){
-		spawnedList[0].ReturnToPool();
+		spawnedList[0].gameObject.SetActive(false);
 		spawnedList.RemoveAt(0);
 	}
 }

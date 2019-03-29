@@ -11,9 +11,9 @@ public class OW_DungeonSelector : MonoBehaviour {
         Quest tempQuest = playerSav.priorityQuest;
         if (tempQuest != null)
         {
-            if (tempQuest.specialScene.Length>0)
+            if (tempQuest.sceneToLoad!=null)
             {
-                SceneManager.LoadScene(tempQuest.XXX.name);
+                SceneManager.LoadScene(tempQuest.sceneToLoad.name);
             }
             else
             {

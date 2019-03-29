@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 917, y: 492}
-  m_MaxSize: {x: 22012, y: 14042}
+  m_MinSize: {x: 911, y: 471}
+  m_MaxSize: {x: 22008, y: 14021}
   vertical: 0
-  controlID: 213
+  controlID: 28
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,10 +131,10 @@ MonoBehaviour:
     y: 0
     width: 878
     height: 947
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 402, y: 342}
+  m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
-  controlID: 112
+  controlID: 29
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,10 +155,10 @@ MonoBehaviour:
     y: 0
     width: 878
     height: 528
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 54
+  controlID: 30
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,8 +203,8 @@ MonoBehaviour:
     y: 0
     width: 411
     height: 528
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -230,10 +230,10 @@ MonoBehaviour:
     y: 528
     width: 878
     height: 419
-  m_MinSize: {x: 206, y: 121}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 204, y: 121}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 113
+  controlID: 78
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,8 +252,8 @@ MonoBehaviour:
     y: 0
     width: 669
     height: 419
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 21}
@@ -305,10 +305,10 @@ MonoBehaviour:
     y: 0
     width: 471
     height: 947
-  m_MinSize: {x: 234, y: 492}
-  m_MaxSize: {x: 10004, y: 14042}
+  m_MinSize: {x: 234, y: 471}
+  m_MaxSize: {x: 10004, y: 14021}
   vertical: 1
-  controlID: 165
+  controlID: 153
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -327,8 +327,8 @@ MonoBehaviour:
     y: 0
     width: 471
     height: 437
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -377,8 +377,8 @@ MonoBehaviour:
     y: 0
     width: 571
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 26}
   m_Panes:
   - {fileID: 26}
@@ -522,9 +522,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.545169, y: 101.34693, z: 78.175705}
+    m_Target: {x: -42.439445, y: 6.2171936, z: 60.31571}
     speed: 2
-    m_Value: {x: -5.545169, y: 101.34693, z: 78.175705}
+    m_Value: {x: -42.439445, y: 6.2171936, z: 60.31571}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0041711917, y: -0.77503425, z: 0.6318848, w: 0.0051167696}
+    m_Target: {x: -0.7263515, y: -0.0012411211, z: 0.0013113463, w: -0.6873212}
     speed: 2
-    m_Value: {x: -0.0041711917, y: 0.77503425, z: -0.6318848, w: -0.00511677}
+    m_Value: {x: -0.72635144, y: -0.001241121, z: 0.0013113462, w: -0.6873211}
   m_Size:
-    m_Target: 17.608458
+    m_Target: 50.662518
     speed: 2
-    m_Value: 17.608458
+    m_Value: 50.662518
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -22216
+  m_LastSelectedObjectID: 22364
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -790,9 +790,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 880c0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 54fbffff00000000
+    m_SelectedIDs: 3ef5ffff
+    m_LastClickedID: -2754
+    m_ExpandedIDs: 3ef5ffffc8f5ffffc2fbffff00000000ee5600008e570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -853,20 +853,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Owin/OmniVR/Feature-QuestTracker
+    - Assets/_Owin/OmniVR/03_Feature_PriorityQuest-Warper
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_Owin/OmniVR/Feature-QuestTracker
+  - Assets/_Owin/OmniVR/03_Feature_PriorityQuest-Warper
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\nico\Downloads\Magang_Edwin\GithubRoot\Project-I\ProjectI-OmniVR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 420}
-    m_SelectedIDs: 04300000
-    m_LastClickedID: 12292
-    m_ExpandedIDs: 00000000e414000014160000941700007c2100007e240000642900005a2a00000a2c0000cc2f0000003300008c33000094330000dc56000000ca9a3b
+    scrollPos: {x: 0, y: 136}
+    m_SelectedIDs: a0160000
+    m_LastClickedID: 5792
+    m_ExpandedIDs: 00000000d414000004160000841700006a2100006e240000562900004c2a0000fc2b0000c22f0000fc3200008833000090330000da56000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -894,7 +894,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e414000014160000941700007c2100007e240000642900005a2a00000a2c0000cc2f0000003300008c33000094330000dc560000
+    m_ExpandedIDs: 00000000d414000004160000841700006a2100006e240000562900004c2a0000fc2b0000c22f0000fc3200008833000090330000da560000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -925,18 +925,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: fc320000c24bffffc82f0000bc31000048320000ce3100005a320000be4b0000b4e10000b67b000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: QuestTracker
-      m_OriginalName: QuestTracker
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 3208
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 15}
     m_CreateAssetUtility:

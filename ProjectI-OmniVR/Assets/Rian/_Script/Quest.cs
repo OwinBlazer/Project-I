@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu]
 public class Quest : ScriptableObject
@@ -49,4 +49,6 @@ public class Quest : ScriptableObject
     public int itemChance;//
 
     public int WeaponId;//0 : all Weapon, 1: handGund, 2:ShootGun, 3 : SMG, 4 : Javelin, 5 : Shield, 101: All Upgraded Weapon
+
+    public Scene sceneToLoad; //null goes to procedural scene, else goes to that specific scene
 }

@@ -29,10 +29,14 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 				goblinAttackList.Add(tempGoblin);
 			}
 			Transform childObj = transform.GetChild(i);
+			
+
 			childObj.localRotation = Quaternion.identity;
 			childObj.GetComponent<Rigidbody>().velocity = Vector3.zero;
 			childObj.localPosition = relativeSpawnPos[i];
 			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = childObj.transform.position;
+			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().ResetPath();
+			 childObj.localPosition = new Vector3 (-2+i*1,0,0);
 		}
 		//goblin stats are reset via its own OW_EnemyStat OnEnable() function
 		
@@ -78,7 +82,6 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			}
 		}else{
 			currTimer=0;
-			gameObject.SetActive(false);
 		}
 	}
 	public void SetGoblinParam(float aggroLv, float atkInterval){
@@ -100,12 +103,17 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 	}
 	private void UpdateEngagingCount(){
 		isEngagingCount=0;
+		int activeCount=0;
 		foreach(AI_GoblinAttack gob in goblinAttackList){
 			if(gob.gameObject.activeSelf){
 				if(gob.GetIsEngaging()){
 					isEngagingCount++;
 				}
+				activeCount++;
 			}
+		}
+		if(activeCount==0){
+			gameObject.SetActive(false);
 		}
 	}
 }

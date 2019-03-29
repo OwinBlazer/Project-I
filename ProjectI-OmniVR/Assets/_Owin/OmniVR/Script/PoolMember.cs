@@ -12,6 +12,8 @@ public class PoolMember : MonoBehaviour {
 		handler.ReturnToPool(this);
 	}
 	private void OnDisable(){
-		ReturnToPool();
+		if(Time.timeSinceLevelLoad>0){
+			ReturnToPool();
+		}
 	}
 }
