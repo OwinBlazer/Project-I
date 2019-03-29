@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BulletScriptable", menuName = "BulletScriptableObj")]
 public class BulletScriptableObj : ScriptableObject
 {
-    public string bulletID;
+    public int bulletID;
     public string bulletName;
     public int level;
     public float damage;

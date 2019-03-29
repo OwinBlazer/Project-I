@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 {
     VRTK_ControllerEvents ControllerEvents;
     public WeaponScriptableObj weaponScriptableObj;
-    public string weaponID;
+    public int weaponID;
     public int level;
     public int maxAmmo;
     public int currentAmmo;
@@ -89,11 +89,11 @@ public class Weapon : MonoBehaviour
 
     void SpawnFromPool()
     {
-        if(weaponID == "WE1")
+        if(weaponID == 1)
         {
             instanceBullet = PoolHandgunBullet.InstanceHandgunBullet.GetFromPool();
         }
-        else if(weaponID == "WE2")
+        else if(weaponID == 2)
         {
             instanceBullet = PoolShotgunBullet.InstanceShotgunBullet.GetFromPool();
         }

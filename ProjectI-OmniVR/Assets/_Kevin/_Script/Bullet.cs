@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public BulletScriptableObj bulletScriptableObj;
-    public string bulletID;
+    public int bulletID;
     public int level;
     public float damage;
     public float delayBeforeDestroy;
@@ -44,11 +44,11 @@ public class Bullet : MonoBehaviour
 
     void AddBulletToPool()
     {
-        if (bulletID == "BU1")
+        if (bulletID == 1)
         {
             PoolHandgunBullet.InstanceHandgunBullet.AddToPool(gameObject);
         }
-        else if (bulletID == "BU2")
+        else if (bulletID == 1)
         {
             PoolShotgunBullet.InstanceShotgunBullet.AddToPool(gameObject);
         }

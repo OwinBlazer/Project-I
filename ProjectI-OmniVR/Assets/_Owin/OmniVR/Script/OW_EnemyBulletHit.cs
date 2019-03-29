@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class OW_EnemyBulletHit : MonoBehaviour {
 	[SerializeField]OW_EnemyStats enemyStats;
-
+    private void Start()
+    {
+        enemyStats = GetComponent<OW_EnemyStats>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Bullet")

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0eeea8784d5f994198b16a55e7e1ba8, type: 3}
   m_Name: Handgun
   m_EditorClassIdentifier: 
-  weaponID: WE1
+  weaponID: 1
   weaponName: Handgun
   level: 1
   maxAmmo: 10

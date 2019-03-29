@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponScriptable", menuName = "WeaponScriptableObj")]
 public class WeaponScriptableObj : ScriptableObject
 {
-    public string weaponID;
+    public int weaponID;
     public string weaponName;
     public int level;
     public int maxAmmo;

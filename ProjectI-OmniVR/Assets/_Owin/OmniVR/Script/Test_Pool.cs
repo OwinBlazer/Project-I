@@ -12,7 +12,7 @@ public class Test_Pool : MonoBehaviour {
         if(tempObj!=null){
             PoolMember tempMember = tempObj.GetComponent<PoolMember>();
             spawnedList.Add(tempMember);
-            Debug.Break();
+            //Debug.Break();
         }
     }
     public void TestSpawn(int id)

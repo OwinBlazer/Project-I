@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5b029752039c74fab8db813aacb77a, type: 3}
   m_Name: ShotgunBullet
   m_EditorClassIdentifier: 
-  bulletID: BU2
+  bulletID: 2
   bulletName: ShotgunBullet
   level: 0
   damage: 3
