@@ -77,9 +77,8 @@ public class QuestTracker : MonoBehaviour {
 			if(priorityQuest.questMode==1){
 				priorityQuest.currentProgress++;
 				if(priorityQuest.currentProgress>=priorityQuest.targetProgress){
-					//FINISH MISSION & WAVE IMMEDATELY!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-					//FIND GAMEOBJECTOFTYPE<PRIORITYQUEST_TIMEATTACK>().FINISH WAVE
-					//LIMIT ENEMY SPAWN QUANTITY TO QUEST REQUEST
+					FindObjectOfType<QuestTimer>().StopTimer();
+					ReportWaveEnd(1);
 				}
 			}
 		}
@@ -93,6 +92,7 @@ public class QuestTracker : MonoBehaviour {
 				priorityQuest.questStatus = 2;
 			}
 		}
+		ReportWaveEnd(1);
 		//THIS FUNCTION IS ONLY CALLED IN THE "UNIQUE ROOM" ON THE TIMER FINISH SCRIPT@@@@@@@@@@@@@@@@@@@@@@@@@
 	}
 	public void ReportShieldUse(){
@@ -158,10 +158,12 @@ public class QuestTracker : MonoBehaviour {
 				entry.questStatus = 2;
 		}
 	}
+	/*
 	public string GetNameOf(int EnemyID){
 		//@@@REFER TO AN ENEMY DATABASE OUTSIDE*******
 		return "";
 	}
+	 */
 	public void PopulateQuestBox(){
 		//assign a QuestBox for each entry
 		qBoxPool.ResetQuestBox();
