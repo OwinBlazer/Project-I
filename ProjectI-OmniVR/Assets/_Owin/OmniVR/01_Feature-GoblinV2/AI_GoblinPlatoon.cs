@@ -34,7 +34,7 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			childObj.localPosition = relativeSpawnPos[i];
 			childObj.GetComponent<AI_PlayerFinder>().GetNavMeshAgent().nextPosition = childObj.transform.position;
 		}
-		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@RESETTHESTATSOFTHEGOBLINS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		//goblin stats are reset via its own OW_EnemyStat OnEnable() function
 		
 	}
 	// Update is called once per frame
@@ -78,6 +78,7 @@ public class AI_GoblinPlatoon : MonoBehaviour {
 			}
 		}else{
 			currTimer=0;
+			gameObject.SetActive(false);
 		}
 	}
 	public void SetGoblinParam(float aggroLv, float atkInterval){

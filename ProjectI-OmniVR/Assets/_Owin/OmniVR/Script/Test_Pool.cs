@@ -9,8 +9,10 @@ public class Test_Pool : MonoBehaviour {
     public void SpawnEnemy(int id, Transform position)
     {
         GameObject tempObj = poolArr[id].IssueFromPool(position);
-        PoolMember tempMember = tempObj.GetComponent<PoolMember>();
-        spawnedList.Add(tempMember);
+        if(tempObj!=null){
+            PoolMember tempMember = tempObj.GetComponent<PoolMember>();
+            spawnedList.Add(tempMember);
+        }
     }
     public void TestSpawn(int id)
     {

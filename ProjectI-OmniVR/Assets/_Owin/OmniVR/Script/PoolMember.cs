@@ -11,4 +11,7 @@ public class PoolMember : MonoBehaviour {
 	public void ReturnToPool(){
 		handler.ReturnToPool(this);
 	}
+	private void OnDisable(){
+		ReturnToPool();
+	}
 }

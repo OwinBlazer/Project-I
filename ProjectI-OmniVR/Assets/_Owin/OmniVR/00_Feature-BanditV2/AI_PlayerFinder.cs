@@ -11,6 +11,7 @@ public class AI_PlayerFinder : MonoBehaviour {
 	[SerializeField]float maxMag;
 	[SerializeField]AI_EnemyAttack_Melee aiAttack;
 	bool isAiming;
+	private bool isRunning;
 	//private int playerInstanceCount;
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class AI_PlayerFinder : MonoBehaviour {
 	}
 	private void OnEnable(){
 		isAiming = true;
+		isRunning  = true;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -48,7 +50,9 @@ public class AI_PlayerFinder : MonoBehaviour {
 			}
 		}
 		//Debug.Log(navAgent.nextPosition+" compared with "+transform.position);
-		rb.AddForce((new Vector3(navAgent.nextPosition.x,transform.position.y,navAgent.nextPosition.z)-transform.position)*agentInfluence);
+		if(isRunning){
+			rb.AddForce((new Vector3(navAgent.nextPosition.x,transform.position.y,navAgent.nextPosition.z)-transform.position)*agentInfluence);
+		}
 
 		
 
@@ -60,5 +64,9 @@ public class AI_PlayerFinder : MonoBehaviour {
 	}
 	public NavMeshAgent GetNavMeshAgent(){
 		return navAgent;
+	}
+
+	public void SetIsRunning(bool newVal){
+		isRunning = newVal;
 	}
 }

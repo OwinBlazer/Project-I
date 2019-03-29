@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class QuestTimer : MonoBehaviour {
-	[SerializeField]private float timerTarget;
+	private float timerTarget;
 	private int questMode;
 	private float startingTime;
 	private Coroutine timerCoroutine;
@@ -14,13 +14,17 @@ public class QuestTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 
-	public void StartTimer(int questMode){
+	public void StartTimer(int questMode, float timer){
+		timerTarget = timer;
 		startingTime = Time.timeSinceLevelLoad;
 		this.questMode = questMode;
 		timerCoroutine = StartCoroutine(TimedEndQuest());
 	}
 	public void StopTimer(){
-		StopCoroutine(timerCoroutine);
+		if(timerCoroutine!=null){
+			StopCoroutine(timerCoroutine);
+			timerCoroutine=null;
+		}
 	}
 
 	public void UnloadCoroutineUponExit<Scene> (Scene scene){
