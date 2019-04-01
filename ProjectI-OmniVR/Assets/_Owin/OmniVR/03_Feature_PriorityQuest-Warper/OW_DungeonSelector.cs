@@ -13,7 +13,7 @@ public class OW_DungeonSelector : MonoBehaviour {
         {
             if (tempQuest.sceneToLoad!=null)
             {
-                SceneManager.LoadScene(tempQuest.sceneToLoad.name);
+                SceneManager.LoadScene(tempQuest.sceneToLoad);
             }
             else
             {

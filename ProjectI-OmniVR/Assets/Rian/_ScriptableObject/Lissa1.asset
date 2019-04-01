@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d434d4acc9848604a9b120794eeb8117, type: 3}
   m_Name: Lissa1
   m_EditorClassIdentifier: 
+  priority: 0
   questID: 0
   npcName: Lissa
   questDialogue:
@@ -57,8 +58,12 @@ MonoBehaviour:
   objective: Defeat 60 Goblins
   goldReward: 200
   questStatus: 0
-  targetEnemyID: 1
   questMode: 0
-  currentQuantityQuest: 0
-  tartgetQuantityQuest: 60
-  locationID: 0
+  questObjective:
+  - targetEnemyID: 1
+    currentQuantityQuest: 0
+    tartgetQuantityQuest: 60
+    locationID: 0
+    itemChance: 0
+    WeaponId: 0
+  timeQuest: 0

@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d434d4acc9848604a9b120794eeb8117, type: 3}
   m_Name: Sophia1
   m_EditorClassIdentifier: 
+  priority: 0
   questID: 0
   npcName: Sophia
   questDialogue:
@@ -35,8 +36,12 @@ MonoBehaviour:
   objective: Defeat 30 Bandits
   goldReward: 150
   questStatus: 0
-  targetEnemyID: 0
   questMode: 0
-  currentQuantityQuest: 0
-  tartgetQuantityQuest: 30
-  locationID: 0
+  questObjective:
+  - targetEnemyID: 0
+    currentQuantityQuest: 0
+    tartgetQuantityQuest: 30
+    locationID: 0
+    itemChance: 0
+    WeaponId: 0
+  timeQuest: 0

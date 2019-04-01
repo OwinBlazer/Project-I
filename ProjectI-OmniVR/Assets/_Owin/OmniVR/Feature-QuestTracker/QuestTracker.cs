@@ -4,11 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 [System.Serializable]
 public class QuestTrackerEntry{
-	public int targetID;
 	public string entryName;
 	public string objectiveText;
-	public int currentProgress;
-	public int targetProgress;
+    public List<QuestObjective> objectives = new List<QuestObjective>();
 	public int questMode;
 	//questmode 0 = kill, 1 = fetch
 	public int questStatus;
@@ -38,14 +36,26 @@ public class QuestTracker : MonoBehaviour {
 		foreach(Quest q in playerSav.activQuest){
 			QuestTrackerEntry tempEntry = new QuestTrackerEntry();
 			tempEntry.entryName = q.npcName;
-			tempEntry.targetID = q.targetEnemyID;
-			tempEntry.currentProgress = q.currentQuantityQuest;
-			switch(q.questMode){
-				case 0:	tempEntry.targetProgress = q.tartgetQuantityQuest;
-				break;
-				case 1:tempEntry.targetProgress = 1;
-				break;
-			}
+            tempEntry.objectives.Clear();
+            foreach(QuestObjective qo in q.questObjective)
+            {
+                QuestObjective newObjective = new QuestObjective();
+                newObjective.targetEnemyID = qo.targetEnemyID;
+                newObjective.currentQuantityQuest = qo.currentQuantityQuest;
+                switch (q.questMode)
+                {
+                    case 0:
+                        newObjective.tartgetQuantityQuest = qo.tartgetQuantityQuest;
+                        break;
+                    case 1:
+                        newObjective.tartgetQuantityQuest = 1;
+                        break;
+                }
+                newObjective.locationID = qo.locationID;
+                newObjective.itemChance = qo.itemChance;
+                newObjective.WeaponId = qo.WeaponId;
+                tempEntry.objectives.Add(newObjective);
+            }
 			tempEntry.questMode = q.questMode;
 			tempEntry.objectiveText = q.objective;
 			questEntry.Add(tempEntry);
@@ -58,29 +68,53 @@ public class QuestTracker : MonoBehaviour {
 				Quest tempQuest = playerSav.priorityQuest;
 				priorityQuest.entryName = tempQuest.npcName;
 				priorityQuest.questMode = tempQuest.questMode;
-				priorityQuest.currentProgress = tempQuest.currentQuantityQuest;
-				switch(priorityQuest.questMode){
-					case 0:priorityQuest.targetProgress = tempQuest.timeQuest;
-					break;
-					case 1:priorityQuest.targetProgress = tempQuest.tartgetQuantityQuest;
-					break;
-					case 2:priorityQuest.targetProgress = tempQuest.tartgetQuantityQuest;
-					break;
-				}
-			}
+                foreach (QuestObjective qo in playerSav.priorityQuest.questObjective)
+                {
+                    QuestObjective newObjective = new QuestObjective();
+                    newObjective.targetEnemyID = qo.targetEnemyID;
+                    newObjective.currentQuantityQuest = qo.currentQuantityQuest;
+                    switch (playerSav.priorityQuest.questMode)
+                    {
+                        case 0:
+                            newObjective.tartgetQuantityQuest = qo.tartgetQuantityQuest;
+                            break;
+                        case 1:
+                            newObjective.tartgetQuantityQuest = 1;
+                            break;
+                    }
+                    newObjective.locationID = qo.locationID;
+                    newObjective.itemChance = qo.itemChance;
+                    newObjective.WeaponId = qo.WeaponId;
+                    priorityQuest.objectives.Add(newObjective);
+                }
+            }
 		}
 	}
 
 	public void ReportDeath(int EnemyID){
 		progressCache.ReportDeath(EnemyID);
 		if(priorityQuest!=null){
-			if(priorityQuest.questMode==1){
-				priorityQuest.currentProgress++;
-				if(priorityQuest.currentProgress>=priorityQuest.targetProgress){
-					FindObjectOfType<QuestTimer>().StopTimer();
-					ReportWaveEnd(1);
-				}
-			}
+			if(priorityQuest.questMode==1)
+            {
+                int clearCount = 0;
+                foreach (QuestObjective qo in priorityQuest.objectives)
+                {
+                    if (EnemyID == qo.targetEnemyID&&qo.currentQuantityQuest<qo.tartgetQuantityQuest)
+                    {
+                        qo.currentQuantityQuest++;
+                    }
+                    if (qo.tartgetQuantityQuest <= qo.currentQuantityQuest)
+                    {
+                        clearCount++;
+                    }
+                }
+                if (clearCount >= priorityQuest.objectives.Count)
+                {
+                    //if all objectives cleared
+                    FindObjectOfType<QuestTimer>().StopTimer();
+                    ReportWaveEnd(1);
+                }
+            }
 		}
 	}
 
@@ -88,7 +122,7 @@ public class QuestTracker : MonoBehaviour {
 		//VALIDATE ACTIVE PRIORITY QUEST FOR TYPE 0
 		if(priorityQuest!=null){
 			if(priorityQuest.questMode==0){
-				priorityQuest.currentProgress = priorityQuest.targetProgress;
+				priorityQuest.objectives[0].currentQuantityQuest = priorityQuest.objectives[0].tartgetQuantityQuest;
 				priorityQuest.questStatus = 2;
 			}
 		}
@@ -96,12 +130,24 @@ public class QuestTracker : MonoBehaviour {
 		//THIS FUNCTION IS ONLY CALLED IN THE "UNIQUE ROOM" ON THE TIMER FINISH SCRIPT@@@@@@@@@@@@@@@@@@@@@@@@@
 	}
 	public void ReportShieldUse(){
-		foreach(QuestTrackerEntry entry in questEntry){
-			if(entry.questStatus==1){
-				//if ShieldQuest
-				if(entry.questMode==101){
-					entry.currentProgress++;
-					if(entry.currentProgress>=entry.targetProgress){
+		foreach(QuestTrackerEntry entry in questEntry)
+        {
+            //if ShieldQuest
+            if (entry.questMode==101){
+				if(entry.questStatus==1){
+                    int clearCount = 0;
+                    foreach(QuestObjective qo in entry.objectives)
+                    {
+                        if (qo.currentQuantityQuest < qo.tartgetQuantityQuest)
+                        {
+                            qo.currentQuantityQuest++;
+                        }
+                        else
+                        {
+                            clearCount++;
+                        }
+                    }
+					if(clearCount>=entry.objectives.Count){
 						entry.questStatus = 2;
 					}
 				}
@@ -114,8 +160,8 @@ public class QuestTracker : MonoBehaviour {
 			if(entry.questStatus==1){
 				//if WaveQuest
 				if(entry.questMode==0){
-					if(WaveNum>entry.targetProgress){
-						entry.currentProgress=1;
+					if(WaveNum>entry.objectives[0].tartgetQuantityQuest){
+						entry.objectives[0].currentQuantityQuest=1;
 						entry.questStatus = 2;
 					}
 				}
@@ -127,11 +173,18 @@ public class QuestTracker : MonoBehaviour {
 			if(entry.questStatus==1){
 				//if KillQuest
 				if(entry.questMode==1){
-					int progressQty = progressList[progressCache.GetIndexOfEnemyID(entry.targetID)];
-					if( progressQty>0){
-						entry.currentProgress+=progressQty;
-						KillQuestStatusCheck(entry);
-					}
+                    foreach(QuestObjective qo in entry.objectives)
+                    {
+                        int progressQty = progressList[progressCache.GetIndexOfEnemyID(qo.targetEnemyID)];
+                        if (progressQty > 0)
+                        {
+                            qo.currentQuantityQuest+= progressQty;
+                            KillQuestStatusCheck(entry);
+                        }
+                    }
+
+					
+					
 
 				//if weapon quest @@@@@@@@@@@@@@@@@@@@@@@@@
 				}else if(entry.questMode==2){
@@ -144,26 +197,34 @@ public class QuestTracker : MonoBehaviour {
 		//also check if there's an ACTIVE PRIORITY QUEST OF TYPE TIMEATTACK @@@@@@@@@@@@@@@@@@@@@@@@
 		if(priorityQuest!=null){
 			if(priorityQuest.questMode==1){
-				if(priorityQuest.currentProgress>=priorityQuest.targetProgress){
+				if(priorityQuest.objectives[0].currentQuantityQuest>= priorityQuest.objectives[0].tartgetQuantityQuest){
 					priorityQuest.questStatus=2;
 				}
 			}
 		}
 
-		PopulateQuestBox();
+		//PopulateQuestBox();
 	}
 	private void KillQuestStatusCheck(QuestTrackerEntry entry){
-		//check if it is killquest or fetchquest
-		if(entry.currentProgress>=entry.targetProgress){
-				entry.questStatus = 2;
-		}
+        //check if it is killquest or fetchquest
+        int clearCount = 0;
+        foreach(QuestObjective qo in entry.objectives)
+        {
+            if (qo.tartgetQuantityQuest <= qo.currentQuantityQuest)
+            {
+                clearCount++;
+            }
+        }
+        if (clearCount >= entry.objectives.Count)
+        {
+            entry.questStatus = 2;
+        }
 	}
-	/*
+    /*
 	public string GetNameOf(int EnemyID){
 		//@@@REFER TO AN ENEMY DATABASE OUTSIDE*******
 		return "";
 	}
-	 */
 	public void PopulateQuestBox(){
 		//assign a QuestBox for each entry
 		qBoxPool.ResetQuestBox();
@@ -180,10 +241,18 @@ public class QuestTracker : MonoBehaviour {
 		//IF YES AND COMPLETE, PLAY CUTSCENE after POPULATING BOX@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		//add event to the next button
 	}
+	 */
+    public List<QuestTrackerEntry> GetEntryList()
+    {
+        return questEntry;
+    }
 	public void SaveQuestProgress(){
 		//RETURN DATA TO playerSav
 		for(int i=0;i<playerSav.activQuest.Count;i++){
-			playerSav.activQuest[i].currentQuantityQuest = questEntry[i].currentProgress;
+            for(int j = 0; j < questEntry[i].objectives.Count; j++)
+            {
+                playerSav.activQuest[i].questObjective[j].currentQuantityQuest = questEntry[i].objectives[j].currentQuantityQuest;
+            }
 			playerSav.activQuest[i].questStatus = questEntry[i].questStatus;
 		}
 	}

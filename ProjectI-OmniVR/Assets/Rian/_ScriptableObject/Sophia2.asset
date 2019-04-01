@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d434d4acc9848604a9b120794eeb8117, type: 3}
   m_Name: Sophia2
   m_EditorClassIdentifier: 
+  priority: 0
   questID: 0
   npcName: Sophia
   questDialogue:
@@ -40,8 +41,12 @@ MonoBehaviour:
   objective: "Find the bandits who stole the Basement\u2019s Key"
   goldReward: 50
   questStatus: 0
-  targetID: 1
   questMode: 1
-  currentQuantityQuest: 0
-  tartgetQuantityQuest: 1
-  locationID: 0
+  questObjective:
+  - targetEnemyID: 0
+    currentQuantityQuest: 0
+    tartgetQuantityQuest: 3
+    locationID: 0
+    itemChance: 0
+    WeaponId: 0
+  timeQuest: 0

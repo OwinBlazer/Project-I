@@ -31,8 +31,8 @@ public class QuestBoxPool : MonoBehaviour {
 	public QuestBox IssueQuestBox(QuestTrackerEntry entry){
 		if(useCount<poolSize){
 			QuestBox tempQuestBox = questBoxList[useCount];
-			tempQuestBox.InitQuestBox(entry.entryName,entry.currentProgress,entry.targetProgress,entry.objectiveText);
-			tempQuestBox.gameObject.SetActive(true);
+			//INITIALIZE TEMPQUESTBOX BASED ON ENTRY
+
 			useCount++;
 			return tempQuestBox;
 		}
