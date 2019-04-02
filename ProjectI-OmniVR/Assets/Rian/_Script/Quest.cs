@@ -41,4 +41,6 @@ public class Quest : ScriptableObject
     public int timeQuest; //
 
     public string sceneToLoad; //null goes to procedural scene, else goes to that specific scene
+    public Sprite questIcon;//quest display icon
+    public Sprite npcPortrait;//quest npc portrait
 }

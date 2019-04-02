@@ -35,8 +35,8 @@ MonoBehaviour:
     all your help back then...I am sorry...\u201D"
   objective: Defeat 30 Bandits
   goldReward: 150
-  questStatus: 0
-  questMode: 0
+  questStatus: 1
+  questMode: 1
   questObjective:
   - targetEnemyID: 0
     currentQuantityQuest: 0
@@ -45,3 +45,6 @@ MonoBehaviour:
     itemChance: 0
     WeaponId: 0
   timeQuest: 0
+  sceneToLoad: 
+  questIcon: {fileID: 0}
+  npcPortrait: {fileID: 0}

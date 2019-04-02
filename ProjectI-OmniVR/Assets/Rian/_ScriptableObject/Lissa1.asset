@@ -57,8 +57,8 @@ MonoBehaviour:
   declineDialogue: "\u201CI guess the bar lady exaggerate about you way too much...\u201D"
   objective: Defeat 60 Goblins
   goldReward: 200
-  questStatus: 0
-  questMode: 0
+  questStatus: 1
+  questMode: 1
   questObjective:
   - targetEnemyID: 1
     currentQuantityQuest: 0
@@ -67,3 +67,6 @@ MonoBehaviour:
     itemChance: 0
     WeaponId: 0
   timeQuest: 0
+  sceneToLoad: 
+  questIcon: {fileID: 0}
+  npcPortrait: {fileID: 0}

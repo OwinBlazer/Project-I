@@ -15,5 +15,5 @@ MonoBehaviour:
   enemyName: Goblin
   HP: 5
   speed: 5
-  attackRange: 3
+  attackRange: 5
   damage: 1

@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   gold: 0
-  activQuest: []
+  priorityQuest: {fileID: 11400000, guid: 7cf016abd309ce4488368853a3ea9902, type: 2}
+  activQuest:
+  - {fileID: 11400000, guid: 16c23ecd70fd03642aa6092c9f43510c, type: 2}
+  - {fileID: 11400000, guid: 236bed722098d0f4ca399c08f296a7fe, type: 2}
+  - {fileID: 11400000, guid: f7d59321a8227dd458b6d1df5eed9d5b, type: 2}

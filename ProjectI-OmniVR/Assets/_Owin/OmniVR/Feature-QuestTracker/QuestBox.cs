@@ -16,6 +16,7 @@ class ObjectiveBox {
     {
         objTitle.text = title;
         objCount.text = currCount + slash + maxCount;
+        gameobject.SetActive(true);
     }
 }
 
@@ -40,5 +41,6 @@ public class QuestBox : MonoBehaviour {
 		QuestObjective.text = objective;
         NPCPortrait.sprite = npcSprite;
         QuestIcon.sprite = questIcon;
+        gameObject.SetActive(true);
 	}
 }

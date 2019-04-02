@@ -40,8 +40,8 @@ MonoBehaviour:
   declineDialogue: "\u201COh no...what should I do then?...\u201D"
   objective: "Find the bandits who stole the Basement\u2019s Key"
   goldReward: 50
-  questStatus: 0
-  questMode: 1
+  questStatus: 1
+  questMode: 0
   questObjective:
   - targetEnemyID: 0
     currentQuantityQuest: 0
@@ -50,3 +50,6 @@ MonoBehaviour:
     itemChance: 0
     WeaponId: 0
   timeQuest: 0
+  sceneToLoad: 
+  questIcon: {fileID: 0}
+  npcPortrait: {fileID: 0}

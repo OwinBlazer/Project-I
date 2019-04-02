@@ -10,13 +10,14 @@ public class QuestTrackerEntry{
 	public int questMode;
 	//questmode 0 = kill, 1 = fetch
 	public int questStatus;
+	public Sprite questIcon;
+	public Sprite npcPortrait;
 	//questStatus 0=notTaken 1=unfinished 2=unreported 2=done
 }
 public class QuestTracker : MonoBehaviour {
 	public static QuestTracker questTracker;
 	private List<QuestTrackerEntry> questEntry = new List<QuestTrackerEntry>();
 	private QuestTrackerEntry priorityQuest;
-	[SerializeField]QuestBoxPool qBoxPool;
 	[SerializeField]PlayerSO playerSav;
 	[SerializeField]QuestProgressCache progressCache;
 	private void Awake(){
@@ -45,10 +46,10 @@ public class QuestTracker : MonoBehaviour {
                 switch (q.questMode)
                 {
                     case 0:
-                        newObjective.tartgetQuantityQuest = qo.tartgetQuantityQuest;
+                        newObjective.tartgetQuantityQuest = 1;
                         break;
                     case 1:
-                        newObjective.tartgetQuantityQuest = 1;
+                        newObjective.tartgetQuantityQuest = qo.tartgetQuantityQuest;
                         break;
                 }
                 newObjective.locationID = qo.locationID;
@@ -58,10 +59,14 @@ public class QuestTracker : MonoBehaviour {
             }
 			tempEntry.questMode = q.questMode;
 			tempEntry.objectiveText = q.objective;
+			tempEntry.questIcon = q.questIcon;
+			tempEntry.npcPortrait = q.npcPortrait;
+			tempEntry.questStatus = q.questStatus;
 			questEntry.Add(tempEntry);
 		}
 
-		//also use to pull PRIORITY QUEST@@@@@@@@@@@@@@@@@@@@@@@@
+		//also use to pull PRIORITY QUEST
+
 		if(playerSav.priorityQuest!=null){
 			if(playerSav.priorityQuest.questStatus==1){
 				priorityQuest = new QuestTrackerEntry();
@@ -76,10 +81,10 @@ public class QuestTracker : MonoBehaviour {
                     switch (playerSav.priorityQuest.questMode)
                     {
                         case 0:
-                            newObjective.tartgetQuantityQuest = qo.tartgetQuantityQuest;
+                            newObjective.tartgetQuantityQuest = 1;
                             break;
                         case 1:
-                            newObjective.tartgetQuantityQuest = 1;
+                            newObjective.tartgetQuantityQuest = qo.tartgetQuantityQuest;
                             break;
                     }
                     newObjective.locationID = qo.locationID;
@@ -87,6 +92,7 @@ public class QuestTracker : MonoBehaviour {
                     newObjective.WeaponId = qo.WeaponId;
                     priorityQuest.objectives.Add(newObjective);
                 }
+				priorityQuest.questStatus = tempQuest.questStatus;
             }
 		}
 	}
@@ -225,27 +231,22 @@ public class QuestTracker : MonoBehaviour {
 		//@@@REFER TO AN ENEMY DATABASE OUTSIDE*******
 		return "";
 	}
-	public void PopulateQuestBox(){
-		//assign a QuestBox for each entry
-		qBoxPool.ResetQuestBox();
-		//if PRIORITY QUEST exists, issue PRIORITY QUEST 1ST\
-		if(priorityQuest!=null){
-			qBoxPool.IssueQuestBox(priorityQuest);
-		}
-		foreach(QuestTrackerEntry entry in questEntry){
-			qBoxPool.IssueQuestBox(entry);
-			//Debug.Log("Issued");
-		}
-		
-		//CHECK IF THERE IS AN ACTIVE PRIORITY QUEST FOR ESCORT.
-		//IF YES AND COMPLETE, PLAY CUTSCENE after POPULATING BOX@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-		//add event to the next button
-	}
 	 */
     public List<QuestTrackerEntry> GetEntryList()
     {
         return questEntry;
     }
+	public QuestTrackerEntry GetPriorityQuest(){
+		return priorityQuest;
+	}
+	public List<QuestTrackerEntry> GetUpdatedEntryList(){
+		//still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
+		return questEntry;
+	}
+	public List<QuestTrackerEntry> GetNoProgressEntryList(){
+		//still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
+		return questEntry;
+	}
 	public void SaveQuestProgress(){
 		//RETURN DATA TO playerSav
 		for(int i=0;i<playerSav.activQuest.Count;i++){

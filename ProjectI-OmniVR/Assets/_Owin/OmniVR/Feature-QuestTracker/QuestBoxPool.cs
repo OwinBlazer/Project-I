@@ -32,7 +32,7 @@ public class QuestBoxPool : MonoBehaviour {
 		if(useCount<poolSize){
 			QuestBox tempQuestBox = questBoxList[useCount];
 			//INITIALIZE TEMPQUESTBOX BASED ON ENTRY
-
+			tempQuestBox.InitQuestBox(entry.entryName,entry.objectiveText,entry.questIcon,entry.npcPortrait,entry.objectives.ToArray());
 			useCount++;
 			return tempQuestBox;
 		}

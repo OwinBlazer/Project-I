@@ -28,7 +28,8 @@ public class AI_PlayerFinder : MonoBehaviour {
 	void Update () {
 		navAgent.updatePosition=false;
 		navAgent.SetDestination(player.position);
-		if((transform.position-player.position).sqrMagnitude>=navAgent.stoppingDistance*navAgent.stoppingDistance){
+			//problem 1: navmesh always stops too far from the attack start range@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		if((player.position-transform.position).sqrMagnitude>navAgent.stoppingDistance*navAgent.stoppingDistance){
 			if(!aiAttack.GetIsAttacking()){
 				navAgent.updateRotation = true;
 				aiAttack.StopAttack();
@@ -47,7 +48,7 @@ public class AI_PlayerFinder : MonoBehaviour {
 				transform.rotation = Quaternion.RotateTowards(transform.rotation,targetDir,maxRad*Time.deltaTime);
 				if(!aiAttack.GetIsAttacking()){
 					aiAttack.StartAttack();
-					Debug.Break();
+					//Debug.Break();
 				}
 			}
 		}
@@ -55,8 +56,6 @@ public class AI_PlayerFinder : MonoBehaviour {
 		if(isRunning){
 			rb.AddForce((new Vector3(navAgent.nextPosition.x,transform.position.y,navAgent.nextPosition.z)-transform.position)*agentInfluence);
 		}
-
-		
 
 		navAgent.nextPosition = transform.position;
 	}
