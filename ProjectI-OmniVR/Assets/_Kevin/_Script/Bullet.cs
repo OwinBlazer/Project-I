@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         {
             PoolHandgunBullet.InstanceHandgunBullet.AddToPool(gameObject);
         }
-        else if (bulletID == 1)
+        else if (bulletID == 2)
         {
             PoolShotgunBullet.InstanceShotgunBullet.AddToPool(gameObject);
         }

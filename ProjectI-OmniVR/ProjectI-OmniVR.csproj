@@ -423,6 +423,7 @@
     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSampleScript.cs" />
     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSystem.cs" />
     <Compile Include="Assets\_Owin\OmniVR\03_Feature_PriorityQuest-Warper\OW_DungeonSelector.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\QuestBoxObjective.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttack_Hitbox.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttackTrigger.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditSoloAI.cs" />
@@ -478,6 +479,7 @@
     <Compile Include="Assets\_Owin\OmniVR\Script\UsageWarning.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Script\VRTK_GrabWhenTouch.cs" />
     <Compile Include="Assets\_Owin\OmniVR\ScriptableObject\PlayerSettingData.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\ScriptableObject\QuestObjective.cs" />
     <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\Resource\SampleDataReader.cs" />
     <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\SampleData.cs" />
     <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\VRTK_UIDropDragSingle.cs" />
