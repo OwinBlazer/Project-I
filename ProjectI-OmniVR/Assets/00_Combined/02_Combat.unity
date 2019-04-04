@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -3421,7 +3421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81baf26a4e3e7f40ada59f7eb325362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qBoxPool: {fileID: 0}
   playerSav: {fileID: 11400000, guid: 02a1cbacc4c6a914d925c868ca318f38, type: 2}
   progressCache: {fileID: 2144942897}
 --- !u!4 &2144942899

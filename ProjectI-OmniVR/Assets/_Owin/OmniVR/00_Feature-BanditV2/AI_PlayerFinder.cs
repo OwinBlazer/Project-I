@@ -19,19 +19,23 @@ public class AI_PlayerFinder : MonoBehaviour {
 		navAgent.SetDestination(player.position);
 		isAiming = true;
 		aiAttack.SetTarget(this);
-	}
+        navAgent.updatePosition = false;
+    }
 	private void OnEnable(){
 		isAiming = true;
 		isRunning  = true;
 	}
 	// Update is called once per frame
 	void Update () {
-		navAgent.updatePosition=false;
-		navAgent.SetDestination(player.position);
 			//problem 1: navmesh always stops too far from the attack start range@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-		if((player.position-transform.position).sqrMagnitude>navAgent.stoppingDistance*navAgent.stoppingDistance){
-			if(!aiAttack.GetIsAttacking()){
-				navAgent.updateRotation = true;
+		if((player.position-transform.position).sqrMagnitude>navAgent.stoppingDistance*navAgent.stoppingDistance*2.5){
+			if(!aiAttack.GetIsAttacking())
+            {
+                if (!navAgent.hasPath)
+                {
+                    navAgent.SetDestination(player.position);
+                }
+                navAgent.updateRotation = true;
 				aiAttack.StopAttack();
 				navAgent.isStopped = false;
 			}
@@ -67,7 +71,7 @@ public class AI_PlayerFinder : MonoBehaviour {
 		return navAgent;
 	}
 
-	public void SetIsRunning(bool newVal){
+	public void SetIsRunning(bool newVal){ 
 		isRunning = newVal;
 	}
 }
