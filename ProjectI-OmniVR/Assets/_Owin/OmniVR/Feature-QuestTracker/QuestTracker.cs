@@ -20,7 +20,9 @@ public class QuestTracker : MonoBehaviour {
 	private QuestTrackerEntry priorityQuest;
 	[SerializeField]PlayerSO playerSav;
 	[SerializeField]QuestProgressCache progressCache;
-	private void Awake(){
+    private List<QuestTrackerEntry> unupdatedQuestList = new List<QuestTrackerEntry>();
+    private List<QuestTrackerEntry> updatedQuestList = new List<QuestTrackerEntry>();
+    private void Awake(){
 		if(questTracker!=null){
 			Destroy(gameObject);
 		}else{
@@ -239,13 +241,41 @@ public class QuestTracker : MonoBehaviour {
 	public QuestTrackerEntry GetPriorityQuest(){
 		return priorityQuest;
 	}
+    public void CalculateChangedEntry()
+    {
+        updatedQuestList.Clear();
+        unupdatedQuestList.Clear();
+        for (int i = 0; i < playerSav.activQuest.Count; i++)
+        {
+            bool changedFlag = false;
+            for (int j = 0; j < playerSav.activQuest[i].questObjective.Length; j++)
+            {
+                if (playerSav.activQuest[i].questObjective[j].currentQuantityQuest < questEntry[i].objectives[j].currentQuantityQuest)
+                {
+                    changedFlag = true;
+                }
+            }
+            if (changedFlag)
+            {
+                updatedQuestList.Add(questEntry[i]);
+            }
+            else
+            {
+                unupdatedQuestList.Add(questEntry[i]);
+            }
+        }
+    }
 	public List<QuestTrackerEntry> GetUpdatedEntryList(){
-		//still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
-		return questEntry;
+        //still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
+        //read from playersav, compare to current list
+        //if the current target qty changes, then add to the quest tracker entry list;
+        
+		return updatedQuestList;
 	}
 	public List<QuestTrackerEntry> GetNoProgressEntryList(){
-		//still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
-		return questEntry;
+        //still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
+        //if the current target qty didnt change, then add to the quest tracker entry list;
+        return unupdatedQuestList;
 	}
 	public void SaveQuestProgress(){
 		//RETURN DATA TO playerSav
@@ -256,5 +286,10 @@ public class QuestTracker : MonoBehaviour {
             }
 			playerSav.activQuest[i].questStatus = questEntry[i].questStatus;
 		}
+        if (priorityQuest != null)
+        {
+            playerSav.priorityQuest.questObjective = priorityQuest.objectives.ToArray();
+            playerSav.priorityQuest.questStatus = priorityQuest.questStatus;
+        }
 	}
 }

@@ -150,6 +150,7 @@
     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSampleScript.cs" />
     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSystem.cs" />
     <Compile Include="Assets\_Owin\OmniVR\03_Feature_PriorityQuest-Warper\OW_DungeonSelector.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\QuestBoxDisplayManager.cs" />
     <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\QuestBoxObjective.cs" />
     <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\QuestBoxPopulator.cs" />
     <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\Test_QuestReportSimulator.cs" />
