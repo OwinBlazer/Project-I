@@ -40,18 +40,24 @@ public class OW_EnemyStats : MonoBehaviour {
     }
 
     
-	public void EnemyDeath()
+	public void EnemyDeath(int WeaponID)
     {
-		string parsedStr="";
+		QuestTracker.questTracker.ReportDeath(GetEnemyID(),WeaponID);
+		playerFinder.SetIsRunning(false);
+		gameObject.SetActive(false);
+		//death is handled via turning off. Goblin platoon needs to check if all of its children have died before returning to pool@@@@@@@@@@@@@@@@@@@@
+    }
+
+    public int GetEnemyID(){
+        string parsedStr="";
 		for(int i=2;i<enemyID.Length;i++){
 			parsedStr+=enemyID[i];
 		}
 		int result;
 		if(int.TryParse(parsedStr, out result)){
-			QuestTracker.questTracker.ReportDeath(result);
-		}
-		playerFinder.SetIsRunning(false);
-		gameObject.SetActive(false);
-		//death is handled via turning off. Goblin platoon needs to check if all of its children have died before returning to pool@@@@@@@@@@@@@@@@@@@@
+			return result;
+		}else{
+            return -1;
+        }
     }
 }

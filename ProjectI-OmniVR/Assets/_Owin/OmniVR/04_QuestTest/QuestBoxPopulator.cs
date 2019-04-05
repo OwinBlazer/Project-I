@@ -17,13 +17,23 @@ public class QuestBoxPopulator : MonoBehaviour {
 
 		//assign a QuestBox for each entry
 		qBoxPool1.ResetQuestBox();
+
+		//process priority 1st
+		if(questTracker.GetPriorityQuest()!=null){
+			if(questTracker.GetPriorityIsUpdated()){
+				qBoxPool1.IssueQuestBox(questTracker.GetPriorityQuest(),true,true);
+			}else{
+				qBoxPool2.IssueQuestBox(questTracker.GetPriorityQuest(),false,true);
+
+			}
+		}
 		foreach(QuestTrackerEntry entry in questTracker.GetUpdatedEntryList()){
-			qBoxPool1.IssueQuestBox(entry);
+			qBoxPool1.IssueQuestBox(entry,true,false);
 			//Debug.Log("Issued");
 		}
 		qBoxPool2.ResetQuestBox();
 		foreach(QuestTrackerEntry entry in questTracker.GetNoProgressEntryList()){
-			qBoxPool2.IssueQuestBox(entry);
+			qBoxPool2.IssueQuestBox(entry,false,false);
 			//Debug.Log("Issued");
 		}
 		

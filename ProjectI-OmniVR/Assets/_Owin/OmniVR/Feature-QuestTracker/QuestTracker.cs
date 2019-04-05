@@ -12,14 +12,17 @@ public class QuestTrackerEntry{
 	public int questStatus;
 	public Sprite questIcon;
 	public Sprite npcPortrait;
+    public int goldReward;
 	//questStatus 0=notTaken 1=unfinished 2=unreported 2=done
 }
 public class QuestTracker : MonoBehaviour {
 	public static QuestTracker questTracker;
 	private List<QuestTrackerEntry> questEntry = new List<QuestTrackerEntry>();
+	private List<QuestTrackerEntry> waveStartQuestEntry = new List<QuestTrackerEntry>();
 	private QuestTrackerEntry priorityQuest;
 	[SerializeField]PlayerSO playerSav;
 	[SerializeField]QuestProgressCache progressCache;
+    [SerializeField]QuestTempProgress tempProgress;
     private List<QuestTrackerEntry> unupdatedQuestList = new List<QuestTrackerEntry>();
     private List<QuestTrackerEntry> updatedQuestList = new List<QuestTrackerEntry>();
     private void Awake(){
@@ -31,20 +34,38 @@ public class QuestTracker : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		LoadQuest();
+        //@@@@@@@@@@@@@@@@@THIS IS ONLY FOR DEBUG PURPOSES. LOAD AND UNLOAD BEFORE QUEST BOX POPULATING@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		LoadQuest(1);
 	}
 	
-	private void LoadQuest(){
-		//PlayerSO.activQuest
+	private void LoadQuest(int wave){
+		//if wave is 1, load from playersav, else draw from tempQuestProgress
+        int i=0;
+        if(wave==1){
+            tempProgress.questObjectiveList = new List<ObjectiveCurrentProgress>();
+        }
 		foreach(Quest q in playerSav.activQuest){
 			QuestTrackerEntry tempEntry = new QuestTrackerEntry();
 			tempEntry.entryName = q.npcName;
             tempEntry.objectives.Clear();
+            int j=0;
+            if(wave==1){
+                tempProgress.questObjectiveList.Add(new ObjectiveCurrentProgress());
+                tempProgress.questObjectiveList[i].currentProgress = new int[q.questObjective.Length];
+            }
+
+            int clearCount = 0;
             foreach(QuestObjective qo in q.questObjective)
             {
                 QuestObjective newObjective = new QuestObjective();
                 newObjective.targetEnemyID = qo.targetEnemyID;
-                newObjective.currentQuantityQuest = qo.currentQuantityQuest;
+                
+                if(wave==1){
+                    newObjective.currentQuantityQuest = qo.currentQuantityQuest;
+                    tempProgress.questObjectiveList[i].currentProgress[j]=qo.currentQuantityQuest;
+                }else{
+                    newObjective.currentQuantityQuest = tempProgress.questObjectiveList[i].currentProgress[j];
+                }
                 switch (q.questMode)
                 {
                     case 0:
@@ -58,13 +79,24 @@ public class QuestTracker : MonoBehaviour {
                 newObjective.itemChance = qo.itemChance;
                 newObjective.WeaponId = qo.WeaponId;
                 tempEntry.objectives.Add(newObjective);
+                j++;
+                if(newObjective.currentQuantityQuest>=newObjective.tartgetQuantityQuest){
+                    clearCount++;
+                }
             }
 			tempEntry.questMode = q.questMode;
 			tempEntry.objectiveText = q.objective;
 			tempEntry.questIcon = q.questIcon;
 			tempEntry.npcPortrait = q.npcPortrait;
-			tempEntry.questStatus = q.questStatus;
+
+            if(clearCount>=q.questObjective.Length){
+                tempEntry.questStatus = 2;
+            }else{
+			    tempEntry.questStatus = q.questStatus;
+            }
+            tempEntry.goldReward = q.goldReward;
 			questEntry.Add(tempEntry);
+            i++;
 		}
 
 		//also use to pull PRIORITY QUEST
@@ -75,11 +107,22 @@ public class QuestTracker : MonoBehaviour {
 				Quest tempQuest = playerSav.priorityQuest;
 				priorityQuest.entryName = tempQuest.npcName;
 				priorityQuest.questMode = tempQuest.questMode;
+                if(wave==1){
+                    tempProgress.priorityObjectiveList.currentProgress = new int[playerSav.priorityQuest.questObjective.Length];
+                }
+                int j=0;
                 foreach (QuestObjective qo in playerSav.priorityQuest.questObjective)
                 {
                     QuestObjective newObjective = new QuestObjective();
                     newObjective.targetEnemyID = qo.targetEnemyID;
-                    newObjective.currentQuantityQuest = qo.currentQuantityQuest;
+                    
+                    if(wave==1){
+                        newObjective.currentQuantityQuest = qo.currentQuantityQuest;
+                        tempProgress.priorityObjectiveList.currentProgress[j]=qo.currentQuantityQuest;
+                    }else{
+                        newObjective.currentQuantityQuest = tempProgress.priorityObjectiveList.currentProgress[j];
+                    }
+
                     switch (playerSav.priorityQuest.questMode)
                     {
                         case 0:
@@ -93,14 +136,15 @@ public class QuestTracker : MonoBehaviour {
                     newObjective.itemChance = qo.itemChance;
                     newObjective.WeaponId = qo.WeaponId;
                     priorityQuest.objectives.Add(newObjective);
+                    j++;
                 }
 				priorityQuest.questStatus = tempQuest.questStatus;
             }
 		}
 	}
 
-	public void ReportDeath(int EnemyID){
-		progressCache.ReportDeath(EnemyID);
+	public void ReportDeath(int EnemyID,int WeaponId){
+		progressCache.ReportDeath(EnemyID,WeaponId);
 		if(priorityQuest!=null){
 			if(priorityQuest.questMode==1)
             {
@@ -138,29 +182,8 @@ public class QuestTracker : MonoBehaviour {
 		//THIS FUNCTION IS ONLY CALLED IN THE "UNIQUE ROOM" ON THE TIMER FINISH SCRIPT@@@@@@@@@@@@@@@@@@@@@@@@@
 	}
 	public void ReportShieldUse(){
-		foreach(QuestTrackerEntry entry in questEntry)
-        {
-            //if ShieldQuest
-            if (entry.questMode==101){
-				if(entry.questStatus==1){
-                    int clearCount = 0;
-                    foreach(QuestObjective qo in entry.objectives)
-                    {
-                        if (qo.currentQuantityQuest < qo.tartgetQuantityQuest)
-                        {
-                            qo.currentQuantityQuest++;
-                        }
-                        else
-                        {
-                            clearCount++;
-                        }
-                    }
-					if(clearCount>=entry.objectives.Count){
-						entry.questStatus = 2;
-					}
-				}
-			}
-		}
+        //use caching to store shield usage@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        progressCache.ReportShieldUse();
 	}
 	public void ReportWaveEnd(int WaveNum){
 		//for use when wave ends, to display quest and to check key item drop
@@ -177,6 +200,7 @@ public class QuestTracker : MonoBehaviour {
 		}
 		//check Kill Quest Progress via loading from cache here
 		int[] progressList = progressCache.GetKilledList();
+        int[] weaponUseList = progressCache.GetWeaponUseList();
 		foreach(QuestTrackerEntry entry in questEntry){
 			if(entry.questStatus==1){
 				//if KillQuest
@@ -187,22 +211,46 @@ public class QuestTracker : MonoBehaviour {
                         if (progressQty > 0)
                         {
                             qo.currentQuantityQuest+= progressQty;
-                            KillQuestStatusCheck(entry);
+                            if(qo.currentQuantityQuest>qo.tartgetQuantityQuest){
+                                qo.currentQuantityQuest = qo.tartgetQuantityQuest;
+                            }
+                            QuestStatusCheck(entry);
                         }
                     }
 
-					
-					
-
 				//if weapon quest @@@@@@@@@@@@@@@@@@@@@@@@@
+                //upgraded check is not active yet @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 				}else if(entry.questMode==2){
+                    foreach(QuestObjective qo in entry.objectives){
+                        int progressQty = weaponUseList[progressCache.GetIndexOfWeaponID(qo.WeaponId)];
+                        if(progressQty>0){
+                            qo.currentQuantityQuest+=progressQty;
+                            if(qo.currentQuantityQuest>qo.tartgetQuantityQuest){
+                                qo.currentQuantityQuest = qo.tartgetQuantityQuest;
+                            }
+                            //check if quest has been completed
+                            QuestStatusCheck(entry);
+                        }
+                    }
 					//(if weapon ID>0)check if entry.targetID==weapon.ID
 					//check if there's an upgradable requirement
+				}else //if ShieldQuest
+                    if (entry.questMode==101){
+				        if(entry.questStatus==1){
+                            int shieldUseCount = progressCache.GetWeaponUseList()[15];
+                            if(shieldUseCount>0){
+                                entry.objectives[0].currentQuantityQuest +=shieldUseCount;
+                                if(entry.objectives[0].currentQuantityQuest>entry.objectives[0].tartgetQuantityQuest){
+                                    entry.objectives[0].currentQuantityQuest = entry.objectives[0].tartgetQuantityQuest;
+                                    entry.questStatus = 2;
+                                }
+                            }
+                        }
+                    }
 				}
 			}
-		}
 
-		//also check if there's an ACTIVE PRIORITY QUEST OF TYPE TIMEATTACK @@@@@@@@@@@@@@@@@@@@@@@@
+		//also check if there's an ACTIVE PRIORITY QUEST OF TYPE TIMEATTACK
 		if(priorityQuest!=null){
 			if(priorityQuest.questMode==1){
 				if(priorityQuest.objectives[0].currentQuantityQuest>= priorityQuest.objectives[0].tartgetQuantityQuest){
@@ -210,10 +258,9 @@ public class QuestTracker : MonoBehaviour {
 				}
 			}
 		}
-
 		//PopulateQuestBox();
 	}
-	private void KillQuestStatusCheck(QuestTrackerEntry entry){
+	private void QuestStatusCheck(QuestTrackerEntry entry){
         //check if it is killquest or fetchquest
         int clearCount = 0;
         foreach(QuestObjective qo in entry.objectives)
@@ -228,12 +275,6 @@ public class QuestTracker : MonoBehaviour {
             entry.questStatus = 2;
         }
 	}
-    /*
-	public string GetNameOf(int EnemyID){
-		//@@@REFER TO AN ENEMY DATABASE OUTSIDE*******
-		return "";
-	}
-	 */
     public List<QuestTrackerEntry> GetEntryList()
     {
         return questEntry;
@@ -245,12 +286,14 @@ public class QuestTracker : MonoBehaviour {
     {
         updatedQuestList.Clear();
         unupdatedQuestList.Clear();
-        for (int i = 0; i < playerSav.activQuest.Count; i++)
+        
+        for (int i = 0; i < tempProgress.questObjectiveList.Count; i++)
         {
             bool changedFlag = false;
-            for (int j = 0; j < playerSav.activQuest[i].questObjective.Length; j++)
+            for (int j = 0; j < tempProgress.questObjectiveList[i].currentProgress.Length; j++)
             {
-                if (playerSav.activQuest[i].questObjective[j].currentQuantityQuest < questEntry[i].objectives[j].currentQuantityQuest)
+                
+                if (tempProgress.questObjectiveList[i].currentProgress[j] < questEntry[i].objectives[j].currentQuantityQuest)
                 {
                     changedFlag = true;
                 }
@@ -266,17 +309,45 @@ public class QuestTracker : MonoBehaviour {
         }
     }
 	public List<QuestTrackerEntry> GetUpdatedEntryList(){
-        //still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
-        //read from playersav, compare to current list
         //if the current target qty changes, then add to the quest tracker entry list;
         
 		return updatedQuestList;
 	}
 	public List<QuestTrackerEntry> GetNoProgressEntryList(){
-        //still in debug@@@@@@@@@@@@@@@@@@@@@@@@@
         //if the current target qty didnt change, then add to the quest tracker entry list;
         return unupdatedQuestList;
 	}
+    public bool GetPriorityIsUpdated(){
+        if(priorityQuest!=null){
+            bool changedFlag = false;
+            for (int j = 0; j < playerSav.priorityQuest.questObjective.Length; j++)
+            {
+                if (playerSav.priorityQuest.questObjective[j].currentQuantityQuest < priorityQuest.objectives[j].currentQuantityQuest)
+                {
+                    changedFlag = true;
+                }
+            }
+            return changedFlag;
+        }
+        return false;
+    }
+
+    //THIS SHOULD BE CALLED ON NEXT WAVE PRESSED@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    private void UpdateTempQuestProgress(){
+        //priority
+        for(int i=0;i<tempProgress.priorityObjectiveList.currentProgress.Length;i++){
+            tempProgress.priorityObjectiveList.currentProgress[i] = priorityQuest.objectives[i].currentQuantityQuest;
+        }
+
+        //normal quests
+        for(int i=0;i<tempProgress.questObjectiveList.Count;i++){
+            for(int j=0;j<tempProgress.questObjectiveList[i].currentProgress.Length;j++){
+                tempProgress.questObjectiveList[i].currentProgress[j] = questEntry[i].objectives[j].currentQuantityQuest;
+            }
+        }
+    }
+
+    //THIS SHOULD BE CALLED ON RETURN TO BAR PRESSED@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	public void SaveQuestProgress(){
 		//RETURN DATA TO playerSav
 		for(int i=0;i<playerSav.activQuest.Count;i++){

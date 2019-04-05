@@ -16,10 +16,10 @@ public class QuestProgressCache : MonoBehaviour {
 
 		//if weapon is upgraded, INDEX IS 20 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	}
-	public void ReportDeath(int EnemyID){
+	public void ReportDeath(int EnemyID, int WeaponID){
 		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@^^^also add killer weapon stats
 		killedList[GetIndexOfEnemyID(EnemyID)]++;
-		//weaponUseList[GetIndexOfWeaponID(WeaponID-----)]++;
+		weaponUseList[GetIndexOfWeaponID(WeaponID)]++;
 
 		//if weapon has been upgraded, also add weaponUseList[20]
 	}

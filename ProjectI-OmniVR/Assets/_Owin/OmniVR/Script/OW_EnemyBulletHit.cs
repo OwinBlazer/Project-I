@@ -18,7 +18,7 @@ public class OW_EnemyBulletHit : MonoBehaviour {
 			if (enemyStats.HP <= 0)
 			{
 				enemyStats.HP=0;
-				enemyStats.EnemyDeath();
+				enemyStats.EnemyDeath(_bullet.bulletID);
 			}
             // bisa cek bulletID dan level yang mengenai enemy disini
         }

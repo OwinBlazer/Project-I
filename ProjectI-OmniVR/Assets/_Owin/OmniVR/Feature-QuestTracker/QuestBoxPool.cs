@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestBoxPool : MonoBehaviour {
-	public static QuestBoxPool questBoxPool;
 	private List<QuestBox> questBoxList = new List<QuestBox>();
 	[SerializeField]int poolSize;
 	[SerializeField]GameObject QuestBoxPrefab;
 	private int useCount;
 	// Use this for initialization
 	void Awake(){
-		
-		if(questBoxPool!=null){
-			Destroy(gameObject);
-		}else{
-			questBoxPool = this;
-		}
 		for(int i=0;i<poolSize;i++){
 				GameObject tempObj = Instantiate(QuestBoxPrefab,transform);
 				tempObj.gameObject.SetActive(false);
 				questBoxList.Add(tempObj.GetComponent<QuestBox>());
 		}
+		Debug.Log("Pinged",gameObject);
 	}
 	public void ResetQuestBox(){
 		foreach(QuestBox qbox in questBoxList){
@@ -28,11 +22,11 @@ public class QuestBoxPool : MonoBehaviour {
 		}
 		useCount=0;
 	}
-	public QuestBox IssueQuestBox(QuestTrackerEntry entry){
+	public QuestBox IssueQuestBox(QuestTrackerEntry entry,bool isUpdated, bool isPriority){
 		if(useCount<poolSize){
 			QuestBox tempQuestBox = questBoxList[useCount];
 			//INITIALIZE TEMPQUESTBOX BASED ON ENTRY
-			tempQuestBox.InitQuestBox(entry.entryName,entry.objectiveText,entry.questIcon,entry.npcPortrait,entry.objectives.ToArray());
+			tempQuestBox.InitQuestBox(entry.entryName,entry.objectiveText,entry.npcPortrait,entry.questIcon,entry.objectives.ToArray(), entry.goldReward,isUpdated,entry.questStatus==2,isPriority);
 			useCount++;
 			return tempQuestBox;
 		}
