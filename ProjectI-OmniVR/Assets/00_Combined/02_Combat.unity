@@ -1377,6 +1377,34 @@ Prefab:
       propertyPath: m_Name
       value: GoblinPool (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1994212933710916, guid: 8776e59d782be114ca0e02d872502223, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768265950332270, guid: 8776e59d782be114ca0e02d872502223, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519518908707164, guid: 8776e59d782be114ca0e02d872502223, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255519043495148, guid: 8776e59d782be114ca0e02d872502223, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166216992366524, guid: 8776e59d782be114ca0e02d872502223, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077237226386456, guid: 8776e59d782be114ca0e02d872502223, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059156392491214, guid: 8776e59d782be114ca0e02d872502223, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8776e59d782be114ca0e02d872502223, type: 2}
   m_IsPrefabAsset: 0
@@ -2011,6 +2039,126 @@ Prefab:
         type: 2}
       propertyPath: m_ObstacleAvoidanceType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268177848650708, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559211106282740, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013596918271460, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167053051644206, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812571566918276, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952515731802792, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826011609382162, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650424176179900, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186693395627022, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445102745115890, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462862992434028, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957005990097704, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081173993766788, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828866306789206, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624748042205300, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321044385017908, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338316653325136, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558507146656438, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025540305087844, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603378593691884, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263297630278910, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739264832876940, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164379918109994, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180466699828798, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402222855100484, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463103529209038, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698399935486658, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565026356164216, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171908869246862, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582492695143038, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd3d0a2373f5564bb8fcc39a0c024b0, type: 2}
@@ -3423,6 +3571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSav: {fileID: 11400000, guid: 02a1cbacc4c6a914d925c868ca318f38, type: 2}
   progressCache: {fileID: 2144942897}
+  tempProgress: {fileID: 0}
 --- !u!4 &2144942899
 Transform:
   m_ObjectHideFlags: 0

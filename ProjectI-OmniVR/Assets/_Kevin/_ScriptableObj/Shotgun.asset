@@ -16,6 +16,5 @@ MonoBehaviour:
   level: 1
   maxAmmo: 2
   fireRate: 2
-  damage: 2
   bullet: {fileID: 1611945199401636, guid: 533e6b0b9d8e5e0488188ded3acdc34d, type: 2}
   bulletVelocity: 75

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class TerrainController : MonoBehaviour
-{
+public class TerrainController : MonoBehaviour {
 
     [SerializeField]
     private float uvScale = 1;
@@ -57,14 +56,12 @@ public class TerrainController : MonoBehaviour
 
     public bool a;
 
-    private void Awake()
-    {
+    private void Awake() {
         seed = (Random.Range(4, 8));
         a = false;
     }
 
-    public void InitialLoad()
-    {
+    public void InitialLoad() {
         DestroyTerrain();
 
         Level = new GameObject("Level").transform;
@@ -82,8 +79,7 @@ public class TerrainController : MonoBehaviour
         RandomizeInitState();
     }
 
-    private void Update()
-    {
+    private void Update() {
         if (!a)
         {
             if (noise)
@@ -140,18 +136,14 @@ public class TerrainController : MonoBehaviour
             previousCenterTiles = centerTiles.ToArray();
 
             a = true;
-        }
+        }       
     }
 
     //Helper methods below
-    private void ActivateOrCreateTile(int xIndex, int yIndex, List<GameObject> tileObjects)
-    {
-        if (!terrainTiles.ContainsKey(new Vector2(xIndex, yIndex)))
-        {
+    private void ActivateOrCreateTile(int xIndex, int yIndex, List<GameObject> tileObjects) {
+        if (!terrainTiles.ContainsKey(new Vector2(xIndex, yIndex))) {
             tileObjects.Add(CreateTile(xIndex, yIndex));
-        }
-        else
-        {
+        } else {
             GameObject t = terrainTiles[new Vector2(xIndex, yIndex)];
             tileObjects.Add(t);
             if (!t.activeSelf)
@@ -159,8 +151,7 @@ public class TerrainController : MonoBehaviour
         }
     }
 
-    private GameObject CreateTile(int xIndex, int yIndex)
-    {
+    private GameObject CreateTile(int xIndex, int yIndex) {
         GameObject terrain = Instantiate(
             terrainTilePrefab,
             Vector3.zero,
@@ -191,8 +182,7 @@ public class TerrainController : MonoBehaviour
         return terrain;
     }
 
-    private Vector2 NoiseOffset(int xIndex, int yIndex)
-    {
+    private Vector2 NoiseOffset(int xIndex, int yIndex) {
         Vector2 noiseOffset = new Vector2(
             (xIndex * noiseScale + startOffset.x) % noiseRange.x,
             (yIndex * noiseScale + startOffset.y) % noiseRange.y
@@ -205,18 +195,15 @@ public class TerrainController : MonoBehaviour
         return noiseOffset;
     }
 
-    private Vector2 TileFromPosition(Vector3 position)
-    {
+    private Vector2 TileFromPosition(Vector3 position) {
         return new Vector2(Mathf.FloorToInt(position.x / terrainSize.x + .5f), Mathf.FloorToInt(position.z / terrainSize.z + .5f));
     }
 
-    private void RandomizeInitState()
-    {
+    private void RandomizeInitState() {
         Random.InitState((int)System.DateTime.UtcNow.Ticks);//casting a long to an int "loops" it (like modulo)
     }
 
-    private bool HaveTilesChanged(List<Vector2> centerTiles)
-    {
+    private bool HaveTilesChanged(List<Vector2> centerTiles) {
         if (previousCenterTiles.Length != centerTiles.Count)
             return true;
         for (int i = 0; i < previousCenterTiles.Length; i++)
@@ -225,8 +212,7 @@ public class TerrainController : MonoBehaviour
         return false;
     }
 
-    public void DestroyTerrain()
-    {
+    public void DestroyTerrain() {
         water.parent = null;
         playerTransform.parent = null;
         foreach (Transform t in gameTransforms)
@@ -235,15 +221,13 @@ public class TerrainController : MonoBehaviour
         terrainTiles.Clear();
     }
 
-    private static string TrimEnd(string str, string end)
-    {
+    private static string TrimEnd(string str, string end) {
         if (str.EndsWith(end))
             return str.Substring(0, str.LastIndexOf(end));
         return str;
     }
 
-    public static float[][] GetGrayScalePixels(Texture2D texture2D)
-    {
+    public static float[][] GetGrayScalePixels(Texture2D texture2D) {
         List<float> grayscale = texture2D.GetPixels().Select(c => c.grayscale).ToList();
 
         List<List<float>> grayscale2d = new List<List<float>>();

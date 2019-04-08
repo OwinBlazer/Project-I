@@ -4,23 +4,30 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour {
-    public string enemyID;
-    private NavMeshAgent nav;
-    private Animator anim;
+public class Enemy : MonoBehaviour
+{
     public EnemyScriptableObj enemyScriptbleObj;
+    public string enemyID;
 
-    public bool walking, attacking, dead;
+    NavMeshAgent nav;
+    Transform player;
 
-    public Transform player;
-    public float attackRange;
-    public float HP;
-    public float speed;
-    public float damage;
+    Animator anim;
+    bool walking, attacking, dead;
+
+    float attackRange;
+    float speed;
+    float damage;
+
+    float maxHP;
+    public float curHP;
+    public GameObject canvasHP;
     public Text textHP;
+    public Image imageHP;
+    public float timerCanvasHP = 2;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         GetDataFromScriptableObject();
 
@@ -29,54 +36,51 @@ public class Enemy : MonoBehaviour {
         nav = GetComponent<NavMeshAgent>();
         nav.speed = speed;
         nav.acceleration = speed;      
-
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Vector3.Distance(transform.position, player.position) <= attackRange)
+        if (curHP > 0)
         {
-            walking = false;
-            attacking = true;
-            dead = false;
-
-            nav.velocity = Vector3.zero;
-            nav.isStopped = true;
-
-            anim.SetBool("isWalking", false);
-            anim.SetBool("isAttacking", true);
-        }
-        else
-        {
-            walking = true;
-            attacking = false;
-            dead = false;
-
-            nav.SetDestination(player.position);
-
-            if (anim.enabled)
+            if (Vector3.Distance(transform.position, player.position) <= attackRange)
             {
-                anim.SetBool("isWalking", true);
-                anim.SetBool("isAttacking", false);
+                walking = false;
+                attacking = true;
+                dead = false;
+
+                nav.velocity = Vector3.zero;
+                nav.isStopped = true;
+
+                anim.SetBool("isWalking", false);
+                anim.SetBool("isAttacking", true);
+            }
+            else
+            {
+                walking = true;
+                attacking = false;
+                dead = false;
+
+                nav.SetDestination(player.position);
+
+                if (anim.enabled)
+                {
+                    anim.SetBool("isWalking", true);
+                    anim.SetBool("isAttacking", false);
+                }
             }
         }
-
-        if (HP <= 0)
-        {
-            EnemyDeath();
-            textHP.text = "";
-        }
         else
         {
-            textHP.text = "HP : " + HP.ToString();
+            EnemyDeath();
         }
     }
 
     void GetDataFromScriptableObject()
     {
         enemyID = enemyScriptbleObj.enemyID;
-        HP = enemyScriptbleObj.HP;
+        maxHP = enemyScriptbleObj.HP;
+        curHP = enemyScriptbleObj.HP;
         attackRange = enemyScriptbleObj.attackRange;
         speed = enemyScriptbleObj.speed;
         damage = enemyScriptbleObj.damage;
@@ -96,8 +100,9 @@ public class Enemy : MonoBehaviour {
         nav.isStopped = true;
         Destroy(GetComponent<BoxCollider>());
 
+        canvasHP.SetActive(false);
         Destroy(gameObject, 5);
-        //Invoke("AddEnemyToPool", 2);
+
         //call quest tracker, send this enemy ID
     }
 
@@ -106,23 +111,34 @@ public class Enemy : MonoBehaviour {
         if (collision.gameObject.tag == "Bullet")
         {
             Bullet _bullet = collision.gameObject.GetComponent<Bullet>();
-            HP -= _bullet.damage;
+            curHP -= _bullet.damage;
 
+            StartCoroutine(ActivateCanvasHP());
             // bisa cek bulletID dan level yang mengenai enemy disini
         }
     }
 
+    IEnumerator ActivateCanvasHP()
+    {
+        canvasHP.SetActive(true);
+        imageHP.fillAmount = curHP / maxHP;
+        textHP.text = "HP : " + curHP.ToString();
+
+        yield return new WaitForSeconds(timerCanvasHP);
+        canvasHP.SetActive(false);
+    }
+
     void AddEnemyToPool()
     {
-        GetDataFromScriptableObject();
+        //GetDataFromScriptableObject();
 
-        if (enemyID == "EN1")
-        {
-            PoolEnemyBandit.InstanceEnemyBandit.AddToPool(gameObject);
-        }
-        else if (enemyID == "EN2")
-        {
-            PoolEnemyGoblin.InstanceEnemyGoblin.AddToPool(gameObject);
-        }
+        //if (enemyID == "EN1")
+        //{
+        //    PoolEnemyBandit.InstanceEnemyBandit.AddToPool(gameObject);
+        //}
+        //else if (enemyID == "EN2")
+        //{
+        //    PoolEnemyGoblin.InstanceEnemyGoblin.AddToPool(gameObject);
+        //}
     }
 }

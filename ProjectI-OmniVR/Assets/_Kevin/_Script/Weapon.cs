@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour
         level = weaponScriptableObj.level;
         maxAmmo = weaponScriptableObj.maxAmmo;
         fireRate = weaponScriptableObj.fireRate;
-        damage = weaponScriptableObj.damage;
+        //damage = weaponScriptableObj.damage;
         bulletVelocity = weaponScriptableObj.bulletVelocity;
     }
 

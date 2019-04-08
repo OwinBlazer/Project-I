@@ -339,6 +339,7 @@
     <Compile Include="Assets\_Kevin\_Script\DestroyObjSphere.cs" />
     <Compile Include="Assets\_Kevin\_Script\DistanceTracker.cs" />
     <Compile Include="Assets\_Kevin\_Script\Enemy.cs" />
+    <Compile Include="Assets\_Kevin\_Script\EnemyNotification.cs" />
     <Compile Include="Assets\_Kevin\_Script\MoveScene.cs" />
     <Compile Include="Assets\_Kevin\_Script\ObjectPooling\PoolEnemyBandit.cs" />
     <Compile Include="Assets\_Kevin\_Script\ObjectPooling\PoolEnemyGoblin.cs" />
@@ -423,7 +424,10 @@
     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSampleScript.cs" />
     <Compile Include="Assets\_Owin\OmniVR\02_Feature-JsonSaveLoading\SaveSystem.cs" />
     <Compile Include="Assets\_Owin\OmniVR\03_Feature_PriorityQuest-Warper\OW_DungeonSelector.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\QuestBoxDisplayManager.cs" />
     <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\QuestBoxObjective.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\QuestBoxPopulator.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\04_QuestTest\Test_QuestReportSimulator.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttack_Hitbox.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditAttackTrigger.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Feature-BanditAttacks\BanditSoloAI.cs" />
@@ -475,11 +479,13 @@
     <Compile Include="Assets\_Owin\OmniVR\Script\Projectile_Grenade.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Script\Projectile_Grenade_V2.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Script\Test_EnemyHit.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\Script\Test_NavFind.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Script\Test_Pool.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Script\UsageWarning.cs" />
     <Compile Include="Assets\_Owin\OmniVR\Script\VRTK_GrabWhenTouch.cs" />
     <Compile Include="Assets\_Owin\OmniVR\ScriptableObject\PlayerSettingData.cs" />
     <Compile Include="Assets\_Owin\OmniVR\ScriptableObject\QuestObjective.cs" />
+    <Compile Include="Assets\_Owin\OmniVR\ScriptableObject\QuestTempProgress.cs" />
     <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\Resource\SampleDataReader.cs" />
     <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\SampleData.cs" />
     <Compile Include="Assets\_Owin\OmniVR\VRTK_UISingleDragDropZoneData\VRTK_UIDropDragSingle.cs" />

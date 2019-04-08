@@ -11,7 +11,7 @@ public class WeaponScriptableObj : ScriptableObject
     public int level;
     public int maxAmmo;
     public float fireRate;
-    public float damage;
+    //public float damage;
     public GameObject bullet;
     public float bulletVelocity;
 }
