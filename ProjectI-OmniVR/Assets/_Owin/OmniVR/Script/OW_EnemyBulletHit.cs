@@ -18,6 +18,7 @@ public class OW_EnemyBulletHit : MonoBehaviour {
 			if (enemyStats.HP <= 0)
 			{
 				enemyStats.HP=0;
+                OW_LootSpawner.lootSpawner.SpawnItemFor(enemyStats,transform);
 				enemyStats.EnemyDeath(_bullet.bulletID);
 			}
             // bisa cek bulletID dan level yang mengenai enemy disini

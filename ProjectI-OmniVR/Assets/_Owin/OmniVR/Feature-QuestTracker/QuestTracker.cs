@@ -34,15 +34,20 @@ public class QuestTracker : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-        //@@@@@@@@@@@@@@@@@THIS IS ONLY FOR DEBUG PURPOSES. LOAD AND UNLOAD BEFORE QUEST BOX POPULATING@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        //@@@@@@@@@@@@@@@@@THIS IS ONLY FOR DEBUG PURPOSES. LOAD AND UNLOAD BEFORE WAVE STARTS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		LoadQuest(1);
+        //^^^^^^^^^^replace "1" with current wave!
+        OW_LootSpawner lootSpawner = FindObjectOfType<OW_LootSpawner>();
+        if(lootSpawner!=null){
+            lootSpawner.LoadQuestDrop();
+        }
 	}
 	
 	private void LoadQuest(int wave){
 		//if wave is 1, load from playersav, else draw from tempQuestProgress
         int i=0;
         if(wave==1){
-            tempProgress.questObjectiveList = new List<ObjectiveCurrentProgress>();
+            tempProgress.ResetTempProgress();
         }
 		foreach(Quest q in playerSav.activQuest){
 			QuestTrackerEntry tempEntry = new QuestTrackerEntry();
@@ -76,7 +81,7 @@ public class QuestTracker : MonoBehaviour {
                         break;
                 }
                 newObjective.locationID = qo.locationID;
-                newObjective.itemChance = qo.itemChance;
+                newObjective.itemToDrop = qo.itemToDrop;
                 newObjective.WeaponId = qo.WeaponId;
                 tempEntry.objectives.Add(newObjective);
                 j++;
@@ -133,7 +138,7 @@ public class QuestTracker : MonoBehaviour {
                             break;
                     }
                     newObjective.locationID = qo.locationID;
-                    newObjective.itemChance = qo.itemChance;
+                    newObjective.itemToDrop = qo.itemToDrop;
                     newObjective.WeaponId = qo.WeaponId;
                     priorityQuest.objectives.Add(newObjective);
                     j++;
@@ -182,27 +187,38 @@ public class QuestTracker : MonoBehaviour {
 		//THIS FUNCTION IS ONLY CALLED IN THE "UNIQUE ROOM" ON THE TIMER FINISH SCRIPT@@@@@@@@@@@@@@@@@@@@@@@@@
 	}
 	public void ReportShieldUse(){
-        //use caching to store shield usage@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        //use caching to store shield usage
         progressCache.ReportShieldUse();
 	}
+    public void ReportQuestItemGet(int questIndex, int objectiveIndex){
+        progressCache.ReportQuestItemGet(questIndex,objectiveIndex);
+    }
 	public void ReportWaveEnd(int WaveNum){
-		//for use when wave ends, to display quest and to check key item drop
-		foreach(QuestTrackerEntry entry in questEntry){
-			if(entry.questStatus==1){
-				//if WaveQuest
-				if(entry.questMode==0){
-					if(WaveNum>entry.objectives[0].tartgetQuantityQuest){
-						entry.objectives[0].currentQuantityQuest=1;
-						entry.questStatus = 2;
-					}
-				}
-			}
-		}
+		
 		//check Kill Quest Progress via loading from cache here
 		int[] progressList = progressCache.GetKilledList();
         int[] weaponUseList = progressCache.GetWeaponUseList();
+        ObjectiveCache[] itemDropList = progressCache.GetQuestItemList();
+        int i=0;
 		foreach(QuestTrackerEntry entry in questEntry){
 			if(entry.questStatus==1){
+                //if fetchQuest
+                if(entry.questMode==0){
+                    //read into progress cache the drops
+                    //add
+                    int j=0;
+                    foreach(QuestObjective qo in entry.objectives){
+                        int progressQty = itemDropList[i].questObjectives[j];
+                        if(progressQty>0){
+                            qo.currentQuantityQuest+=progressQty;
+                            if(qo.currentQuantityQuest>qo.tartgetQuantityQuest){
+                                qo.currentQuantityQuest = qo.tartgetQuantityQuest;
+                            }
+                            QuestStatusCheck(entry);
+                        }
+                        j++;
+                    }
+                }else
 				//if KillQuest
 				if(entry.questMode==1){
                     foreach(QuestObjective qo in entry.objectives)
@@ -248,6 +264,7 @@ public class QuestTracker : MonoBehaviour {
                         }
                     }
 				}
+                i++;
 			}
 
 		//also check if there's an ACTIVE PRIORITY QUEST OF TYPE TIMEATTACK
@@ -362,5 +379,9 @@ public class QuestTracker : MonoBehaviour {
             playerSav.priorityQuest.questObjective = priorityQuest.objectives.ToArray();
             playerSav.priorityQuest.questStatus = priorityQuest.questStatus;
         }
+        playerSav.gold = tempProgress.GoldCache;
+
+        
+        tempProgress.ResetTempProgress();
 	}
 }

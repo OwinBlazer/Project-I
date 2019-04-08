@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class ObjectiveCache{
+	public int[] questObjectives;
+}
 public class QuestProgressCache : MonoBehaviour {
 	private int[] killedList = new int[50];
 	private int[] weaponUseList = new int[20];
-
+	private ObjectiveCache[] questItemList = new ObjectiveCache[20];
 	public void OnEnable(){
 		ResetCache();
 	}
@@ -23,7 +27,15 @@ public class QuestProgressCache : MonoBehaviour {
 
 		//if weapon has been upgraded, also add weaponUseList[20]
 	}
-
+	public void ReportQuestItemGet(int questIndex, int objectiveIndex){
+		if(questItemList[questIndex]==null){
+			questItemList[questIndex] = new ObjectiveCache();
+		}
+		if(questItemList[questIndex].questObjectives==null){
+			questItemList[questIndex].questObjectives = new int[4];
+		}
+		questItemList[questIndex].questObjectives[objectiveIndex]++;
+	}
 	public void ReportShieldUse(){
 		int indexOfShield = 15;
 		weaponUseList[indexOfShield]++;
@@ -62,5 +74,9 @@ public class QuestProgressCache : MonoBehaviour {
 	}
 	public int[] GetWeaponUseList(){
 		return weaponUseList;
+	}
+
+	public ObjectiveCache[] GetQuestItemList(){
+		return questItemList;
 	}
 }
