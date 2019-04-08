@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     Transform player;
 
     Animator anim;
-    bool walking, attacking, dead;
+    public bool walking, attacking, dead;
 
     float attackRange;
     float speed;
@@ -108,17 +108,17 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            Bullet _bullet = collision.gameObject.GetComponent<Bullet>();
-            curHP -= _bullet.damage;
+        //if (collision.gameObject.tag == "Bullet")
+        //{
+        //    Bullet _bullet = collision.gameObject.GetComponent<Bullet>();
+        //    curHP -= _bullet.damage;
 
-            StartCoroutine(ActivateCanvasHP());
-            // bisa cek bulletID dan level yang mengenai enemy disini
-        }
+        //    StartCoroutine(ActivateCanvasHP());
+        //    // bisa cek bulletID dan level yang mengenai enemy disini
+        //}
     }
 
-    IEnumerator ActivateCanvasHP()
+    public IEnumerator ActivateCanvasHP()
     {
         canvasHP.SetActive(true);
         imageHP.fillAmount = curHP / maxHP;

@@ -56,8 +56,9 @@ public class TerrainController : MonoBehaviour {
 
     public bool a;
 
-    private void Awake() {
-        seed = (Random.Range(4, 8));
+    private void Awake()
+    {
+        seed = (Random.Range(1, 50)); //4,9 
         a = false;
     }
 

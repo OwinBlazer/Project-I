@@ -335,6 +335,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Kevin\_Script\Bullet.cs" />
+    <Compile Include="Assets\_Kevin\_Script\ColliderBody.cs" />
+    <Compile Include="Assets\_Kevin\_Script\ColliderHead.cs" />
     <Compile Include="Assets\_Kevin\_Script\ControllerLaserPointer.cs" />
     <Compile Include="Assets\_Kevin\_Script\DestroyObjSphere.cs" />
     <Compile Include="Assets\_Kevin\_Script\DistanceTracker.cs" />
