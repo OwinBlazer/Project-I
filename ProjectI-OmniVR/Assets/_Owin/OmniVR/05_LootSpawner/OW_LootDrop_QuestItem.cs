@@ -6,6 +6,7 @@ public class OW_LootDrop_QuestItem : OW_LootDrop_BaseClass
 {
 	int questID, objectiveID;
 	[SerializeField]ParticleSystem bling;
+	[SerializeField]ParticleSystem shine;
 	public void SetQuestID(int questIndex, int objectiveIndex){
 		questIndex = questID;
 		objectiveID = objectiveIndex;
@@ -14,6 +15,7 @@ public class OW_LootDrop_QuestItem : OW_LootDrop_BaseClass
     {
         QuestTracker.questTracker.ReportQuestItemGet(questID,objectiveID);
 		bling.Play();
-		Destroy(gameObject,bling.main.duration*3);
+		shine.Stop();
+		Destroy(gameObject,bling.main.duration);
     }
 }

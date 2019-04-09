@@ -190,6 +190,7 @@
      <Compile Include="Assets\_Owin\OmniVR\Script\ItemReader.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_EnemyBulletHit.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_EnemyStats.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Script\OW_HPManager.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\PlayerDodger\AIActionCall.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\PlayerDodger\Bapho_AnimEvent.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\PlayerDodger\Bapho_AttackHitbox.cs" />

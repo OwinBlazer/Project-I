@@ -10,7 +10,8 @@ public class OW_EnemyStats : MonoBehaviour {
 
     public Transform player;
     public float attackRange;
-    public float HP;
+    public float maxHP;
+    public float curHP;
     public float speed;
     public float damage;
 	void Start(){
@@ -33,7 +34,8 @@ public class OW_EnemyStats : MonoBehaviour {
     void GetDataFromScriptableObject()
     {
         enemyID = enemyScriptbleObj.enemyID;
-        HP = enemyScriptbleObj.HP;
+        maxHP = enemyScriptbleObj.HP;
+        curHP = enemyScriptbleObj.HP;
         attackRange = enemyScriptbleObj.attackRange;
         speed = enemyScriptbleObj.speed;
         damage = enemyScriptbleObj.damage;
@@ -60,4 +62,5 @@ public class OW_EnemyStats : MonoBehaviour {
             return -1;
         }
     }
+
 }

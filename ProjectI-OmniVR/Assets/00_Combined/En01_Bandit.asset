@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyID: EN0
   enemyName: Bandit
-  HP: 10
-  speed: 3.5
+  HP: 2
+  speed: 10
   attackRange: 5
   damage: 1

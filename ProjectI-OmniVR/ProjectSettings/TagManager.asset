@@ -8,6 +8,7 @@ TagManager:
   - QuestTracker
   - Terrain
   - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - 
   - Enemy
   - Item
-  - 
-  - 
+  - EnemyHurtbox
+  - PlayerBullet
   - 
   - 
   - 
