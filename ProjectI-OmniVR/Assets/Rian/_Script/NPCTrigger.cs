@@ -34,23 +34,24 @@ using UnityEngine;
 
         public void TriggeredObject()
         {
-        if (questActivated == true)
-        {
-            panelQuest.transform.position = canvasLocation.position;
-            CheckQuest();
-            if (questNotAvailable == false && questNotConfirm == false)
+            if (questActivated == true)
             {
-                DialogueTrigger();
+                Debug.Log(questNotAvailable+" along with "+questNotConfirm);
+                panelQuest.transform.position = canvasLocation.position;
+                CheckQuest();
+                if (questNotAvailable == false && questNotConfirm == false)
+                {
+                    DialogueTrigger();
+                }
+                else if (questNotAvailable == true && questNotConfirm == false)
+                {
+                    questManager.DefaultDialogue(quest[i]);
+                }
+                else if (questNotConfirm == true)
+                {
+                    questManager.RewardDialogue(quest[i]);
+                }
             }
-            else if (questNotAvailable == true && questNotConfirm == false)
-            {
-                questManager.DefaultDialogue(quest[i]);
-            }
-            else if (questNotConfirm == true)
-            {
-                questManager.RewardDialogue(quest[i]);
-            }
-        }
         }
 
         public void DialogueTrigger()

@@ -37,14 +37,18 @@ MonoBehaviour:
   declineDialogue: "\u201COh?! You chickening out? That\u2019s disappointing!\u201D"
   objective: Create as much damage within time limit
   goldReward: 300
-  questStatus: 1
+  questStatus: 0
   questMode: 0
   questObjective:
   - targetEnemyID: 1
     currentQuantityQuest: 0
     tartgetQuantityQuest: 200
     locationID: 0
-    itemChance: 0
+    itemToDrop:
+      itemPrefab: {fileID: 0}
+      baseChance: 0
+      growth: 0
+      minimumWaves: 0
     WeaponId: 0
   timeQuest: 120
   sceneToLoad: 02a_TimeAtack_Lisa2

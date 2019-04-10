@@ -32,7 +32,7 @@
 
         protected virtual void InteractableObjectUsed(object sender, InteractableObjectEventArgs e)
         {
-            toProcedural.QuestDone();
+            toProcedural.ExitBar();
         }
 
         protected virtual void InteractableObjectUnused(object sender, InteractableObjectEventArgs e)

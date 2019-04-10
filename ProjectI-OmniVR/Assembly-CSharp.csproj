@@ -175,6 +175,7 @@
      <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\BGMusicLoader.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\SFXPlayer.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Feature-SoundLoader\SFXSoundSelector.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Script\ActivatorTeleport.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\AttachToBody.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\AttachToHead.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\Combat_ItemHandler.cs" />

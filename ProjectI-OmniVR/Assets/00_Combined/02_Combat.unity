@@ -695,39 +695,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 23727480058210894, guid: 0fdfb3d412e74f34d9aaa0702fb586e0,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5b2fa54d125ba364e875990ebe5c8522, type: 2}
     - target: {fileID: 1023809907882792, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
       propertyPath: m_Name
       value: bakedArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 1023809907882792, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 64047444651156906, guid: 0fdfb3d412e74f34d9aaa0702fb586e0,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4945751011147080, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 27.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4945751011147080, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4945751011147080, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 27.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1023809907882792, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fdfb3d412e74f34d9aaa0702fb586e0, type: 2}
@@ -1635,7 +1605,7 @@ GameObject:
   - component: {fileID: 640224110}
   - component: {fileID: 640224109}
   - component: {fileID: 640224108}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: NavmeshNoGo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1653,8 +1623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d07ce676d7afda4dabb3b0f7dd5e654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
+  m_OverrideArea: 1
+  m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
 --- !u!65 &640224109
@@ -4268,7 +4238,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
