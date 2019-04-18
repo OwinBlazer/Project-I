@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114803380874475564}
   m_Layer: 8
   m_Name: Goblin_V2 (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 114597411200813244}
   m_Layer: 8
   m_Name: Goblin_V2 (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 4438487306932150}
   - component: {fileID: 114055337101861366}
   - component: {fileID: 114824232435101620}
+  - component: {fileID: 114412236149184042}
   m_Layer: 8
   m_Name: GoblinPlatoonController_V2
   m_TagString: Untagged
@@ -552,7 +553,7 @@ GameObject:
   - component: {fileID: 114759614931052012}
   m_Layer: 8
   m_Name: Goblin_V2 (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +647,7 @@ GameObject:
   - component: {fileID: 114687870454264820}
   m_Layer: 8
   m_Name: Goblin_V2 (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,7 +709,7 @@ GameObject:
   - component: {fileID: 114805740508639676}
   m_Layer: 8
   m_Name: Goblin_V2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3487,6 +3488,17 @@ MonoBehaviour:
   maxRad: 50
   maxMag: 0.1
   aiAttack: {fileID: 114214829433257472}
+--- !u!114 &114412236149184042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307736661279642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f117388700d06ba4db91b38d7afd4344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114451595442278204
 MonoBehaviour:
   m_ObjectHideFlags: 1

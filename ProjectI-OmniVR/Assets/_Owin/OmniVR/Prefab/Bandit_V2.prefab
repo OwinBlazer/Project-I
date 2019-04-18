@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 114112286056940740}
   - component: {fileID: 95085927248807596}
   - component: {fileID: 114890147673191928}
+  - component: {fileID: 114452075780044888}
   m_Layer: 8
   m_Name: Bandit_V2
   m_TagString: Enemy
@@ -863,6 +864,17 @@ MonoBehaviour:
   imageHP: {fileID: 114754174526728196}
   timerCanvasHP: 2
   enemyStats: {fileID: 114112286056940740}
+--- !u!114 &114452075780044888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1864124395833476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f117388700d06ba4db91b38d7afd4344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114617175024198082
 MonoBehaviour:
   m_ObjectHideFlags: 1
