@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: 363213388a6416a4cb664f114fbf00a2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bench
+    100002: Bird Cage
+    100004: Candle
+    100006: //RootNode
+    100008: Chair
+    100010: Chair 1
+    100012: Chair 10
+    100014: Chair 11
+    100016: Chair 12
+    100018: Chair 13
+    100020: Chair 14
+    100022: Chair 15
+    100024: Chair 16
+    100026: Chair 17
+    100028: Chair 18
+    100030: Chair 19
+    100032: Chair 2
+    100034: Chair 20
+    100036: Chair 21
+    100038: Chair 22
+    100040: Chair 23
+    100042: Chair 3
+    100044: Chair 4
+    100046: Chair 5
+    100048: Chair 6
+    100050: Chair 7
+    100052: Chair 8
+    100054: Chair 9
+    100056: Flag
+    100058: Frame
+    100060: Java Lamp
+    100062: Lantern
+    100064: Object052
+    100066: Object074
+    100068: Pot 1
+    100070: Pot 2
+    100072: Rock
+    100074: sakaguru
+    100076: Spitroast
+    100078: Stage
+    100080: Table
+    100082: Table 1
+    100084: Table 2
+    100086: Table 3
+    100088: Table 4
+    100090: Table 5
+    100092: Tree
+    400000: Bench
+    400002: Bird Cage
+    400004: Candle
+    400006: //RootNode
+    400008: Chair
+    400010: Chair 1
+    400012: Chair 10
+    400014: Chair 11
+    400016: Chair 12
+    400018: Chair 13
+    400020: Chair 14
+    400022: Chair 15
+    400024: Chair 16
+    400026: Chair 17
+    400028: Chair 18
+    400030: Chair 19
+    400032: Chair 2
+    400034: Chair 20
+    400036: Chair 21
+    400038: Chair 22
+    400040: Chair 23
+    400042: Chair 3
+    400044: Chair 4
+    400046: Chair 5
+    400048: Chair 6
+    400050: Chair 7
+    400052: Chair 8
+    400054: Chair 9
+    400056: Flag
+    400058: Frame
+    400060: Java Lamp
+    400062: Lantern
+    400064: Object052
+    400066: Object074
+    400068: Pot 1
+    400070: Pot 2
+    400072: Rock
+    400074: sakaguru
+    400076: Spitroast
+    400078: Stage
+    400080: Table
+    400082: Table 1
+    400084: Table 2
+    400086: Table 3
+    400088: Table 4
+    400090: Table 5
+    400092: Tree
+    2100000: Rock
+    2100002: Table
+    2100004: Spitroast
+    2100006: Chair
+    2100008: Frame
+    2100010: Pot 1
+    2100012: Pot 2
+    2100014: Bench
+    2100016: Sangkar
+    2100018: Java Lamp
+    2100020: Saka Guru
+    2100022: Tree
+    2100024: Candle
+    2100026: Lantern
+    2100028: Stage
+    2100030: Flag
+    2300000: Bench
+    2300002: Bird Cage
+    2300004: Candle
+    2300006: Chair
+    2300008: Chair 1
+    2300010: Chair 10
+    2300012: Chair 11
+    2300014: Chair 12
+    2300016: Chair 13
+    2300018: Chair 14
+    2300020: Chair 15
+    2300022: Chair 16
+    2300024: Chair 17
+    2300026: Chair 18
+    2300028: Chair 19
+    2300030: Chair 2
+    2300032: Chair 20
+    2300034: Chair 21
+    2300036: Chair 22
+    2300038: Chair 23
+    2300040: Chair 3
+    2300042: Chair 4
+    2300044: Chair 5
+    2300046: Chair 6
+    2300048: Chair 7
+    2300050: Chair 8
+    2300052: Chair 9
+    2300054: Flag
+    2300056: Frame
+    2300058: Java Lamp
+    2300060: Lantern
+    2300062: Pot 1
+    2300064: Pot 2
+    2300066: Rock
+    2300068: sakaguru
+    2300070: Spitroast
+    2300072: Stage
+    2300074: Table
+    2300076: Table 1
+    2300078: Table 2
+    2300080: Table 3
+    2300082: Table 4
+    2300084: Table 5
+    2300086: Tree
+    3300000: Bench
+    3300002: Bird Cage
+    3300004: Candle
+    3300006: Chair
+    3300008: Chair 1
+    3300010: Chair 10
+    3300012: Chair 11
+    3300014: Chair 12
+    3300016: Chair 13
+    3300018: Chair 14
+    3300020: Chair 15
+    3300022: Chair 16
+    3300024: Chair 17
+    3300026: Chair 18
+    3300028: Chair 19
+    3300030: Chair 2
+    3300032: Chair 20
+    3300034: Chair 21
+    3300036: Chair 22
+    3300038: Chair 23
+    3300040: Chair 3
+    3300042: Chair 4
+    3300044: Chair 5
+    3300046: Chair 6
+    3300048: Chair 7
+    3300050: Chair 8
+    3300052: Chair 9
+    3300054: Flag
+    3300056: Frame
+    3300058: Java Lamp
+    3300060: Lantern
+    3300062: Pot 1
+    3300064: Pot 2
+    3300066: Rock
+    3300068: sakaguru
+    3300070: Spitroast
+    3300072: Stage
+    3300074: Table
+    3300076: Table 1
+    3300078: Table 2
+    3300080: Table 3
+    3300082: Table 4
+    3300084: Table 5
+    3300086: Tree
+    4300000: Rock
+    4300002: Table
+    4300004: Spitroast
+    4300006: Chair
+    4300008: Chair
+    4300010: Chair
+    4300012: Table
+    4300014: Chair
+    4300016: Chair
+    4300018: Chair
+    4300020: Frame
+    4300022: Chair
+    4300024: Pot 1
+    4300026: Chair
+    4300028: Chair
+    4300030: Pot 2
+    4300032: Chair
+    4300034: Bench
+    4300036: Table
+    4300038: Bird Cage
+    4300040: Chair
+    4300042: Chair
+    4300044: Chair
+    4300046: Java Lamp
+    4300048: Chair
+    4300050: Chair
+    4300052: Chair
+    4300054: Chair
+    4300056: Chair
+    4300058: Chair
+    4300060: Table
+    4300062: Chair
+    4300064: Chair
+    4300066: Table
+    4300068: Chair
+    4300070: Table
+    4300072: sakaguru
+    4300074: Tree
+    4300076: Chair
+    4300078: Chair
+    4300080: Candle
+    4300082: Lantern
+    4300084: Stage
+    4300086: Flag
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: a0230258e0a6d144fbc69dbae615ac26
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Axe
+    100002: Bow
+    100004: Box035
+    100006: Crossbow
+    100008: Hanger
+    100010: Keris
+    100012: Lance 1
+    100014: Lance 1 1
+    100016: Lance 1 2
+    100018: Lance 2
+    100020: Lance 2 1
+    100022: Lance 2 2
+    100024: schyte
+    100026: Shield traditional
+    100028: Shield Viking
+    100030: Shield Viking 1
+    100032: Shield Viking 2
+    100034: Shield Viking 3
+    100036: Sword
+    100038: Sword 1
+    100040: Sword 2
+    100042: Torch
+    100044: //RootNode
+    100046: weapon rack
+    100048: weapon rack 1
+    400000: Axe
+    400002: Bow
+    400004: Box035
+    400006: Crossbow
+    400008: Hanger
+    400010: Keris
+    400012: Lance 1
+    400014: Lance 1 1
+    400016: Lance 1 2
+    400018: Lance 2
+    400020: Lance 2 1
+    400022: Lance 2 2
+    400024: schyte
+    400026: Shield traditional
+    400028: Shield Viking
+    400030: Shield Viking 1
+    400032: Shield Viking 2
+    400034: Shield Viking 3
+    400036: Sword
+    400038: Sword 1
+    400040: Sword 2
+    400042: Torch
+    400044: //RootNode
+    400046: weapon rack
+    400048: weapon rack 1
+    2100000: Lance 2
+    2100002: initialShadingGroup
+    2100004: lance 1
+    2100006: Torch
+    2100008: Axe
+    2100010: Shield Viking
+    2100012: Sword
+    2100014: Shield
+    2100016: Bow
+    2100018: Crossbow
+    2100020: Keris
+    2100022: Weapon Rack
+    2300000: Axe
+    2300002: Bow
+    2300004: Box035
+    2300006: Crossbow
+    2300008: Hanger
+    2300010: Keris
+    2300012: Lance 1
+    2300014: Lance 1 1
+    2300016: Lance 1 2
+    2300018: Lance 2
+    2300020: Lance 2 1
+    2300022: Lance 2 2
+    2300024: schyte
+    2300026: Shield traditional
+    2300028: Shield Viking
+    2300030: Shield Viking 1
+    2300032: Shield Viking 2
+    2300034: Shield Viking 3
+    2300036: Sword
+    2300038: Sword 1
+    2300040: Sword 2
+    2300042: Torch
+    2300044: weapon rack
+    2300046: weapon rack 1
+    3300000: Axe
+    3300002: Bow
+    3300004: Box035
+    3300006: Crossbow
+    3300008: Hanger
+    3300010: Keris
+    3300012: Lance 1
+    3300014: Lance 1 1
+    3300016: Lance 1 2
+    3300018: Lance 2
+    3300020: Lance 2 1
+    3300022: Lance 2 2
+    3300024: schyte
+    3300026: Shield traditional
+    3300028: Shield Viking
+    3300030: Shield Viking 1
+    3300032: Shield Viking 2
+    3300034: Shield Viking 3
+    3300036: Sword
+    3300038: Sword 1
+    3300040: Sword 2
+    3300042: Torch
+    3300044: weapon rack
+    3300046: weapon rack 1
+    4300000: Lance 2
+    4300002: Lance 2
+    4300004: Lance 2
+    4300006: Hanger
+    4300008: Lance 1
+    4300010: Lance 1
+    4300012: Torch
+    4300014: Axe
+    4300016: Shield Viking
+    4300018: Shield Viking
+    4300020: Lance 1
+    4300022: Sword
+    4300024: Shield traditional
+    4300026: Bow
+    4300028: Sword
+    4300030: Crossbow
+    4300032: Shield Viking
+    4300034: Keris
+    4300036: Box035
+    4300038: weapon rack
+    4300040: Shield Viking
+    4300042: weapon rack
+    4300044: schyte
+    4300046: Sword
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

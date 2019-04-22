@@ -10,10 +10,11 @@ public class SpawnEntry {
 }
 
 public class OW_SpawnTable : MonoBehaviour {
+    private int activeCount;
     [SerializeField] SpawnEntry[] spawnList;
 	// Use this for initialization
 	void Start () {
-		
+		activeCount = 0;
 	}
 
     public GameObject SpawnEnemyRandom(Transform position)
@@ -37,6 +38,7 @@ public class OW_SpawnTable : MonoBehaviour {
         {
             if (spawnList[i].spawnCurr < spawnList[i].spawnLimit)
             {
+                activeCount++;
                 spawnList[i].spawnCurr++;
                 tempObject = spawnList[i].enemyPool.IssueFromPool(position);
                 tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(i, this);
@@ -49,6 +51,7 @@ public class OW_SpawnTable : MonoBehaviour {
         }
         else
         {
+            activeCount++;
             tempObject = spawnList[i].enemyPool.IssueFromPool(position);
             tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(i,this);
             return tempObject;
@@ -69,14 +72,22 @@ public class OW_SpawnTable : MonoBehaviour {
         {
             if (spawnList[index].spawnLimit > 0)
             {
-                spawnList[index].spawnCurr++;
-                GameObject tempObject = spawnList[index].enemyPool.IssueFromPool(position);
-                tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(index, this);
-                return tempObject;
+                if(spawnList[index].spawnCurr<spawnList[index].spawnLimit){
+                    activeCount++;
+                    spawnList[index].spawnCurr++;
+                    GameObject tempObject = spawnList[index].enemyPool.IssueFromPool(position);
+                    tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(index, this);
+                    return tempObject;
+                }else{
+                    return null;
+                }
             }
             else
             {
-                return null;
+                activeCount++;
+                GameObject tempObject = spawnList[index].enemyPool.IssueFromPool(position);
+                tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(index, this);
+                return tempObject;
             }
         }
         else
@@ -87,5 +98,9 @@ public class OW_SpawnTable : MonoBehaviour {
     public void ReportInactive(int index)
     {
         spawnList[index].spawnCurr--;
+        activeCount--;
+    }
+    public int GetActiveNum(){
+        return activeCount;
     }
 }

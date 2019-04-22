@@ -3986,6 +3986,7 @@ GameObject:
   - component: {fileID: 1734670658}
   - component: {fileID: 1734670657}
   - component: {fileID: 1734670661}
+  - component: {fileID: 1734670662}
   m_Layer: 0
   m_Name: Controller
   m_TagString: WorldObject
@@ -4146,6 +4147,17 @@ MonoBehaviour:
     spawnChance: 1
     spawnLimit: 0
     spawnCurr: 0
+--- !u!114 &1734670662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734670656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02db95e3f3670a442997806622b3fbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757729820
 GameObject:
   m_ObjectHideFlags: 0

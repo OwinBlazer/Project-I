@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: 90837cc98dd111747a4226006aec0714
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bar Stool
+    100004: Bar Stool 1
+    100006: Bar Stool 2
+    100008: Bar Stool 3
+    100010: Bar Stool 4
+    100012: Bar Table
+    100014: Bar Table Wood
+    100016: Bar_Vase
+    100018: Bar_Vase 1
+    100020: Bar_Vase 10
+    100022: Bar_Vase 11
+    100024: Bar_Vase 12
+    100026: Bar_Vase 13
+    100028: Bar_Vase 14
+    100030: Bar_Vase 15
+    100032: Bar_Vase 16
+    100034: Bar_Vase 17
+    100036: Bar_Vase 2
+    100038: Bar_Vase 3
+    100040: Bar_Vase 4
+    100042: Bar_Vase 5
+    100044: Bar_Vase 6
+    100046: Bar_Vase 7
+    100048: Bar_Vase 8
+    100050: Bar_Vase 9
+    100052: Barrel Stand
+    100054: Barrel Stand 1
+    100056: Beer Keg
+    100058: Beer Keg 1
+    100060: Beer Keg 2
+    100062: Beer Keg 3
+    100064: Beer Keg 4
+    100066: Beer Keg 5
+    100068: Beer Mug 1
+    100070: Beer Mug 1 1
+    100072: Beer Mug 1 2
+    100074: Beer Mug 1 3
+    100076: Beer Mug 2
+    100078: Beer Mug 2 1
+    100080: Beer Mug 2 2
+    100082: Beer Mug 2 3
+    100084: Beer Mug 3
+    100086: Beer tap
+    100088: Beer tap 1
+    100090: Beer tap 2
+    100092: Beer tap 3
+    100094: Beer tap 4
+    100096: Bucket
+    100098: Cellar Door
+    100100: Chest
+    100102: Chicken Tip
+    100104: Drink Cabinet
+    100106: Drink Cabinet 1
+    100108: Liquor Bottle 1
+    100110: Liquor Bottle 1 1
+    100112: Liquor Bottle 1 2
+    100114: Liquor Bottle 2
+    100116: Liquor Bottle 2 1
+    100118: Liquor Bottle 3
+    100120: Liquor Bottle 3 1
+    100122: Liquor Bottle 3 2
+    100124: Liquor Bottle 3 3
+    100126: Liquor Bottle 3 4
+    100128: Liquor Bottle 3 5
+    100130: Liquor Bottle 4
+    100132: Liquor Bottle 4 1
+    100134: Liquor Bottle 4 2
+    100136: Liquor Bottle 4 3
+    100138: Liquor Bottle 4 4
+    100140: Liquor Bottle 5
+    100142: Liquor Bottle 5 1
+    100144: Liquor Bottle 5 2
+    100146: Liquor Bottle 5 3
+    100148: Liquor Bottle 6
+    100150: Liquor Bottle 6 1
+    100152: Menu
+    100154: Shot Glass
+    100156: Shot Glass 1
+    100158: Wine Glass 1
+    100160: Wine Glass 1 1
+    100162: Wine Glass 1 2
+    100164: Wine Glass 1 3
+    100166: Wine Glass 2
+    100168: Wine Glass 2 1
+    400000: //RootNode
+    400002: Bar Stool
+    400004: Bar Stool 1
+    400006: Bar Stool 2
+    400008: Bar Stool 3
+    400010: Bar Stool 4
+    400012: Bar Table
+    400014: Bar Table Wood
+    400016: Bar_Vase
+    400018: Bar_Vase 1
+    400020: Bar_Vase 10
+    400022: Bar_Vase 11
+    400024: Bar_Vase 12
+    400026: Bar_Vase 13
+    400028: Bar_Vase 14
+    400030: Bar_Vase 15
+    400032: Bar_Vase 16
+    400034: Bar_Vase 17
+    400036: Bar_Vase 2
+    400038: Bar_Vase 3
+    400040: Bar_Vase 4
+    400042: Bar_Vase 5
+    400044: Bar_Vase 6
+    400046: Bar_Vase 7
+    400048: Bar_Vase 8
+    400050: Bar_Vase 9
+    400052: Barrel Stand
+    400054: Barrel Stand 1
+    400056: Beer Keg
+    400058: Beer Keg 1
+    400060: Beer Keg 2
+    400062: Beer Keg 3
+    400064: Beer Keg 4
+    400066: Beer Keg 5
+    400068: Beer Mug 1
+    400070: Beer Mug 1 1
+    400072: Beer Mug 1 2
+    400074: Beer Mug 1 3
+    400076: Beer Mug 2
+    400078: Beer Mug 2 1
+    400080: Beer Mug 2 2
+    400082: Beer Mug 2 3
+    400084: Beer Mug 3
+    400086: Beer tap
+    400088: Beer tap 1
+    400090: Beer tap 2
+    400092: Beer tap 3
+    400094: Beer tap 4
+    400096: Bucket
+    400098: Cellar Door
+    400100: Chest
+    400102: Chicken Tip
+    400104: Drink Cabinet
+    400106: Drink Cabinet 1
+    400108: Liquor Bottle 1
+    400110: Liquor Bottle 1 1
+    400112: Liquor Bottle 1 2
+    400114: Liquor Bottle 2
+    400116: Liquor Bottle 2 1
+    400118: Liquor Bottle 3
+    400120: Liquor Bottle 3 1
+    400122: Liquor Bottle 3 2
+    400124: Liquor Bottle 3 3
+    400126: Liquor Bottle 3 4
+    400128: Liquor Bottle 3 5
+    400130: Liquor Bottle 4
+    400132: Liquor Bottle 4 1
+    400134: Liquor Bottle 4 2
+    400136: Liquor Bottle 4 3
+    400138: Liquor Bottle 4 4
+    400140: Liquor Bottle 5
+    400142: Liquor Bottle 5 1
+    400144: Liquor Bottle 5 2
+    400146: Liquor Bottle 5 3
+    400148: Liquor Bottle 6
+    400150: Liquor Bottle 6 1
+    400152: Menu
+    400154: Shot Glass
+    400156: Shot Glass 1
+    400158: Wine Glass 1
+    400160: Wine Glass 1 1
+    400162: Wine Glass 1 2
+    400164: Wine Glass 1 3
+    400166: Wine Glass 2
+    400168: Wine Glass 2 1
+    2100000: Bar Vase
+    2100002: Bar Stool
+    2100004: Barrel
+    2100006: Bucket
+    2100008: underground
+    2100010: Chest
+    2100012: bar Table 2
+    2100014: Tip
+    2100016: Shelf
+    2100018: Barrel Stand
+    2100020: Liquor 1
+    2100022: Liquor 2
+    2100024: Liquor 3
+    2100026: Liquor 4
+    2100028: Liquor 5
+    2100030: Liquor 6
+    2100032: wine and Shot Glass
+    2100034: Beer Mug 2
+    2100036: Beer Mug 1
+    2100038: Beer Mug 3
+    2100040: Beer Tap
+    2100042: Bar Menu
+    2100044: Bar Table
+    2300000: Bar Stool
+    2300002: Bar Stool 1
+    2300004: Bar Stool 2
+    2300006: Bar Stool 3
+    2300008: Bar Stool 4
+    2300010: Bar Table
+    2300012: Bar Table Wood
+    2300014: Bar_Vase
+    2300016: Bar_Vase 1
+    2300018: Bar_Vase 10
+    2300020: Bar_Vase 11
+    2300022: Bar_Vase 12
+    2300024: Bar_Vase 13
+    2300026: Bar_Vase 14
+    2300028: Bar_Vase 15
+    2300030: Bar_Vase 16
+    2300032: Bar_Vase 17
+    2300034: Bar_Vase 2
+    2300036: Bar_Vase 3
+    2300038: Bar_Vase 4
+    2300040: Bar_Vase 5
+    2300042: Bar_Vase 6
+    2300044: Bar_Vase 7
+    2300046: Bar_Vase 8
+    2300048: Bar_Vase 9
+    2300050: Barrel Stand
+    2300052: Barrel Stand 1
+    2300054: Beer Keg
+    2300056: Beer Keg 1
+    2300058: Beer Keg 2
+    2300060: Beer Keg 3
+    2300062: Beer Keg 4
+    2300064: Beer Keg 5
+    2300066: Beer Mug 1
+    2300068: Beer Mug 1 1
+    2300070: Beer Mug 1 2
+    2300072: Beer Mug 1 3
+    2300074: Beer Mug 2
+    2300076: Beer Mug 2 1
+    2300078: Beer Mug 2 2
+    2300080: Beer Mug 2 3
+    2300082: Beer Mug 3
+    2300084: Beer tap
+    2300086: Beer tap 1
+    2300088: Beer tap 2
+    2300090: Beer tap 3
+    2300092: Beer tap 4
+    2300094: Bucket
+    2300096: Cellar Door
+    2300098: Chest
+    2300100: Chicken Tip
+    2300102: Drink Cabinet
+    2300104: Drink Cabinet 1
+    2300106: Liquor Bottle 1
+    2300108: Liquor Bottle 1 1
+    2300110: Liquor Bottle 1 2
+    2300112: Liquor Bottle 2
+    2300114: Liquor Bottle 2 1
+    2300116: Liquor Bottle 3
+    2300118: Liquor Bottle 3 1
+    2300120: Liquor Bottle 3 2
+    2300122: Liquor Bottle 3 3
+    2300124: Liquor Bottle 3 4
+    2300126: Liquor Bottle 3 5
+    2300128: Liquor Bottle 4
+    2300130: Liquor Bottle 4 1
+    2300132: Liquor Bottle 4 2
+    2300134: Liquor Bottle 4 3
+    2300136: Liquor Bottle 4 4
+    2300138: Liquor Bottle 5
+    2300140: Liquor Bottle 5 1
+    2300142: Liquor Bottle 5 2
+    2300144: Liquor Bottle 5 3
+    2300146: Liquor Bottle 6
+    2300148: Liquor Bottle 6 1
+    2300150: Menu
+    2300152: Shot Glass
+    2300154: Shot Glass 1
+    2300156: Wine Glass 1
+    2300158: Wine Glass 1 1
+    2300160: Wine Glass 1 2
+    2300162: Wine Glass 1 3
+    2300164: Wine Glass 2
+    2300166: Wine Glass 2 1
+    3300000: Bar Stool
+    3300002: Bar Stool 1
+    3300004: Bar Stool 2
+    3300006: Bar Stool 3
+    3300008: Bar Stool 4
+    3300010: Bar Table
+    3300012: Bar Table Wood
+    3300014: Bar_Vase
+    3300016: Bar_Vase 1
+    3300018: Bar_Vase 10
+    3300020: Bar_Vase 11
+    3300022: Bar_Vase 12
+    3300024: Bar_Vase 13
+    3300026: Bar_Vase 14
+    3300028: Bar_Vase 15
+    3300030: Bar_Vase 16
+    3300032: Bar_Vase 17
+    3300034: Bar_Vase 2
+    3300036: Bar_Vase 3
+    3300038: Bar_Vase 4
+    3300040: Bar_Vase 5
+    3300042: Bar_Vase 6
+    3300044: Bar_Vase 7
+    3300046: Bar_Vase 8
+    3300048: Bar_Vase 9
+    3300050: Barrel Stand
+    3300052: Barrel Stand 1
+    3300054: Beer Keg
+    3300056: Beer Keg 1
+    3300058: Beer Keg 2
+    3300060: Beer Keg 3
+    3300062: Beer Keg 4
+    3300064: Beer Keg 5
+    3300066: Beer Mug 1
+    3300068: Beer Mug 1 1
+    3300070: Beer Mug 1 2
+    3300072: Beer Mug 1 3
+    3300074: Beer Mug 2
+    3300076: Beer Mug 2 1
+    3300078: Beer Mug 2 2
+    3300080: Beer Mug 2 3
+    3300082: Beer Mug 3
+    3300084: Beer tap
+    3300086: Beer tap 1
+    3300088: Beer tap 2
+    3300090: Beer tap 3
+    3300092: Beer tap 4
+    3300094: Bucket
+    3300096: Cellar Door
+    3300098: Chest
+    3300100: Chicken Tip
+    3300102: Drink Cabinet
+    3300104: Drink Cabinet 1
+    3300106: Liquor Bottle 1
+    3300108: Liquor Bottle 1 1
+    3300110: Liquor Bottle 1 2
+    3300112: Liquor Bottle 2
+    3300114: Liquor Bottle 2 1
+    3300116: Liquor Bottle 3
+    3300118: Liquor Bottle 3 1
+    3300120: Liquor Bottle 3 2
+    3300122: Liquor Bottle 3 3
+    3300124: Liquor Bottle 3 4
+    3300126: Liquor Bottle 3 5
+    3300128: Liquor Bottle 4
+    3300130: Liquor Bottle 4 1
+    3300132: Liquor Bottle 4 2
+    3300134: Liquor Bottle 4 3
+    3300136: Liquor Bottle 4 4
+    3300138: Liquor Bottle 5
+    3300140: Liquor Bottle 5 1
+    3300142: Liquor Bottle 5 2
+    3300144: Liquor Bottle 5 3
+    3300146: Liquor Bottle 6
+    3300148: Liquor Bottle 6 1
+    3300150: Menu
+    3300152: Shot Glass
+    3300154: Shot Glass 1
+    3300156: Wine Glass 1
+    3300158: Wine Glass 1 1
+    3300160: Wine Glass 1 2
+    3300162: Wine Glass 1 3
+    3300164: Wine Glass 2
+    3300166: Wine Glass 2 1
+    4300000: Bar_Vase
+    4300002: Bar_Vase
+    4300004: Bar_Vase
+    4300006: Bar_Vase
+    4300008: Bar_Vase
+    4300010: Bar_Vase
+    4300012: Bar_Vase
+    4300014: Bar Stool
+    4300016: Beer Keg
+    4300018: Bucket
+    4300020: Cellar Door
+    4300022: Chest
+    4300024: Bar Table Wood
+    4300026: Bar Stool
+    4300028: Chicken Tip
+    4300030: Drink Cabinet
+    4300032: Beer Keg
+    4300034: Barrel Stand
+    4300036: Bar Stool
+    4300038: Liquor Bottle 1
+    4300040: Liquor Bottle 2
+    4300042: Liquor Bottle 3
+    4300044: Liquor Bottle 4
+    4300046: Liquor Bottle 5
+    4300048: Liquor Bottle 6
+    4300050: Liquor Bottle 3
+    4300052: Liquor Bottle 4
+    4300054: Bar_Vase
+    4300056: Bar_Vase
+    4300058: Bar_Vase
+    4300060: Liquor Bottle 5
+    4300062: Beer Keg
+    4300064: Barrel Stand
+    4300066: Drink Cabinet
+    4300068: Liquor Bottle 1
+    4300070: Liquor Bottle 2
+    4300072: Liquor Bottle 3
+    4300074: Liquor Bottle 4
+    4300076: Liquor Bottle 5
+    4300078: Liquor Bottle 6
+    4300080: Liquor Bottle 3
+    4300082: Liquor Bottle 4
+    4300084: Liquor Bottle 5
+    4300086: Bar Stool
+    4300088: Bar_Vase
+    4300090: Bar_Vase
+    4300092: Bar_Vase
+    4300094: Bar_Vase
+    4300096: Bar_Vase
+    4300098: Bar_Vase
+    4300100: Bar_Vase
+    4300102: Bar_Vase
+    4300104: Beer Keg
+    4300106: Beer Keg
+    4300108: Beer Keg
+    4300110: Shot Glass
+    4300112: Wine Glass 2
+    4300114: Wine Glass 1
+    4300116: Beer Mug 2
+    4300118: Beer Mug 1
+    4300120: Beer Mug 3
+    4300122: Beer Mug 2
+    4300124: Wine Glass 1
+    4300126: Beer Mug 2
+    4300128: Beer Mug 1
+    4300130: Shot Glass
+    4300132: Wine Glass 1
+    4300134: Beer Mug 1
+    4300136: Wine Glass 2
+    4300138: Wine Glass 1
+    4300140: Beer Mug 2
+    4300142: Beer Mug 1
+    4300144: Liquor Bottle 1
+    4300146: Liquor Bottle 3
+    4300148: Liquor Bottle 4
+    4300150: Liquor Bottle 3
+    4300152: Beer tap
+    4300154: Beer tap
+    4300156: Beer tap
+    4300158: Beer tap
+    4300160: Beer tap
+    4300162: Bar Stool
+    4300164: Menu
+    4300166: Bar Table
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

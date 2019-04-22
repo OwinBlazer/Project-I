@@ -1,0 +1,305 @@
+fileFormatVersion: 2
+guid: 1d219bb33539c0845be85b9f614f7387
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 4 alchemy bottle
+    100002: 4 alchemy bottle 1
+    100004: Anvil
+    100006: Barrel
+    100008: Beaker glass
+    100010: Big hammer
+    100012: Big hammer 1
+    100014: Chair
+    100016: Clay Glass
+    100018: Clay Glass 1
+    100020: Crystal Potion
+    100022: Crystal Potion 1
+    100024: //RootNode
+    100026: Crystal Shop Table
+    100028: Furnace
+    100030: Little Hammer
+    100032: Mat
+    100034: Mind Stone
+    100036: Object035
+    100038: Object061
+    100040: Object072
+    100042: paper
+    100044: Pestle
+    100046: Pipet
+    100048: Potion Bottle 1
+    100050: Potion Bottle 1 1
+    100052: Potion Bottle 2
+    100054: Potion Bottle 3
+    100056: Potion Bottle 4
+    100058: Power stone
+    100060: Rack
+    100062: Reality stone
+    100064: Soul stone
+    100066: Space stone
+    100068: Tang
+    100070: Tang 1
+    100072: Time stone
+    100074: weight
+    400000: 4 alchemy bottle
+    400002: 4 alchemy bottle 1
+    400004: Anvil
+    400006: Barrel
+    400008: Beaker glass
+    400010: Big hammer
+    400012: Big hammer 1
+    400014: Chair
+    400016: Clay Glass
+    400018: Clay Glass 1
+    400020: Crystal Potion
+    400022: Crystal Potion 1
+    400024: //RootNode
+    400026: Crystal Shop Table
+    400028: Furnace
+    400030: Little Hammer
+    400032: Mat
+    400034: Mind Stone
+    400036: Object035
+    400038: Object061
+    400040: Object072
+    400042: paper
+    400044: Pestle
+    400046: Pipet
+    400048: Potion Bottle 1
+    400050: Potion Bottle 1 1
+    400052: Potion Bottle 2
+    400054: Potion Bottle 3
+    400056: Potion Bottle 4
+    400058: Power stone
+    400060: Rack
+    400062: Reality stone
+    400064: Soul stone
+    400066: Space stone
+    400068: Tang
+    400070: Tang 1
+    400072: Time stone
+    400074: weight
+    2100000: Crystal Shop Table
+    2100002: initialShadingGroup
+    2100004: Clay Glass
+    2100006: Anvil
+    2100008: Big Hammer
+    2100010: Tang
+    2100012: Crystal Potion
+    2100014: Chair
+    2100016: Potion Bottle 2
+    2100018: Beaker Glass
+    2100020: 4 alchemy bottle
+    2100022: Potion Bottle 1
+    2100024: Potion Bottle 3
+    2100026: Magnifying glass
+    2100028: wire_227153153
+    2100030: Potion Bottle 4
+    2100032: Mat
+    2100034: Pestle
+    2100036: Pipet
+    2100038: Power Stone
+    2100040: Mind Stone
+    2100042: TIme Stone
+    2100044: Reality Stone
+    2100046: Soul Stone
+    2100048: Space Stone
+    2100050: Rak Atas
+    2100052: Furnace
+    2100054: Barrel
+    2100056: Little Hammer
+    2300000: 4 alchemy bottle
+    2300002: 4 alchemy bottle 1
+    2300004: Anvil
+    2300006: Barrel
+    2300008: Beaker glass
+    2300010: Big hammer
+    2300012: Big hammer 1
+    2300014: Chair
+    2300016: Clay Glass
+    2300018: Clay Glass 1
+    2300020: Crystal Potion
+    2300022: Crystal Potion 1
+    2300024: Crystal Shop Table
+    2300026: Furnace
+    2300028: Little Hammer
+    2300030: Mat
+    2300032: Mind Stone
+    2300034: Object035
+    2300036: Object061
+    2300038: Object072
+    2300040: paper
+    2300042: Pestle
+    2300044: Pipet
+    2300046: Potion Bottle 1
+    2300048: Potion Bottle 1 1
+    2300050: Potion Bottle 2
+    2300052: Potion Bottle 3
+    2300054: Potion Bottle 4
+    2300056: Power stone
+    2300058: Rack
+    2300060: Reality stone
+    2300062: Soul stone
+    2300064: Space stone
+    2300066: Tang
+    2300068: Tang 1
+    2300070: Time stone
+    2300072: weight
+    3300000: 4 alchemy bottle
+    3300002: 4 alchemy bottle 1
+    3300004: Anvil
+    3300006: Barrel
+    3300008: Beaker glass
+    3300010: Big hammer
+    3300012: Big hammer 1
+    3300014: Chair
+    3300016: Clay Glass
+    3300018: Clay Glass 1
+    3300020: Crystal Potion
+    3300022: Crystal Potion 1
+    3300024: Crystal Shop Table
+    3300026: Furnace
+    3300028: Little Hammer
+    3300030: Mat
+    3300032: Mind Stone
+    3300034: Object035
+    3300036: Object061
+    3300038: Object072
+    3300040: paper
+    3300042: Pestle
+    3300044: Pipet
+    3300046: Potion Bottle 1
+    3300048: Potion Bottle 1 1
+    3300050: Potion Bottle 2
+    3300052: Potion Bottle 3
+    3300054: Potion Bottle 4
+    3300056: Power stone
+    3300058: Rack
+    3300060: Reality stone
+    3300062: Soul stone
+    3300064: Space stone
+    3300066: Tang
+    3300068: Tang 1
+    3300070: Time stone
+    3300072: weight
+    4300000: Crystal Shop Table
+    4300002: paper
+    4300004: Clay Glass
+    4300006: Anvil
+    4300008: Big hammer
+    4300010: Tang
+    4300012: Big hammer
+    4300014: Crystal Potion
+    4300016: Crystal Potion
+    4300018: Chair
+    4300020: Potion Bottle 2
+    4300022: Beaker glass
+    4300024: 4 alchemy bottle
+    4300026: Potion Bottle 1
+    4300028: Clay Glass
+    4300030: Potion Bottle 3
+    4300032: weight
+    4300034: Object035
+    4300036: Potion Bottle 1
+    4300038: Potion Bottle 4
+    4300040: Object061
+    4300042: Mat
+    4300044: Object072
+    4300046: Pestle
+    4300048: Pipet
+    4300050: 4 alchemy bottle
+    4300052: Power stone
+    4300054: Mind Stone
+    4300056: Time stone
+    4300058: Reality stone
+    4300060: Soul stone
+    4300062: Space stone
+    4300064: Tang
+    4300066: Rack
+    4300068: Furnace
+    4300070: Barrel
+    4300072: Little Hammer
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
