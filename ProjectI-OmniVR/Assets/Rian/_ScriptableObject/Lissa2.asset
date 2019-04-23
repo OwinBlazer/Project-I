@@ -40,7 +40,8 @@ MonoBehaviour:
   questStatus: 0
   questMode: 0
   questObjective:
-  - targetEnemyID: 1
+  - objectiveText: Havoc Created
+    targetEnemyID: 1
     currentQuantityQuest: 0
     tartgetQuantityQuest: 200
     locationID: 0

@@ -59,11 +59,11 @@ public class QuestProgressCache : MonoBehaviour {
 		switch(gunID){
 
 			//Handgun
-			case 0: index=gunID;
+			case 1: index=0;
 			break;
 
-			//???@@@@@@@@@@@@@@@@@@@@@@@@
-			case 1: index=gunID;
+			//shotgun
+			case 2: index=1;
 			break;
 		}
 		return index;

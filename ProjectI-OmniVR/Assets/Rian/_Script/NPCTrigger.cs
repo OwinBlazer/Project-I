@@ -38,6 +38,7 @@ using UnityEngine;
             {
                 Debug.Log(questNotAvailable+" along with "+questNotConfirm);
                 panelQuest.transform.position = canvasLocation.position;
+                panelQuest.transform.rotation = canvasLocation.rotation;
                 CheckQuest();
                 if (questNotAvailable == false && questNotConfirm == false)
                 {

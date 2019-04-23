@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: PlayerTempProgress
   m_EditorClassIdentifier: 
   questObjectiveList:
-  - currentProgress: 00000000000000000000000000000000
   - currentProgress: 00000000
   - currentProgress: 00000000
   priorityObjectiveList:
     currentProgress: 00000000
-  GoldCache: 10
+  GoldCache: 40
+  waveNum: 2

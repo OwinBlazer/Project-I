@@ -10,9 +10,9 @@ public class Test_QuestReportSimulator : MonoBehaviour {
 		//Debug.Log((tracker!=null)+"start");
 	}
 
-	public void FinishWave(int waveNum){
+	public void FinishWave(){
 		QuestTracker tracker =  GameObject.FindObjectOfType<QuestTracker>();
-		tracker.ReportWaveEnd(waveNum);
+		tracker.ReportWaveEnd();
 		//Debug.Log((tracker!=null)+"finish");
 	}
 }

@@ -60,37 +60,8 @@ MonoBehaviour:
   questStatus: 1
   questMode: 1
   questObjective:
-  - targetEnemyID: 1
-    currentQuantityQuest: 0
-    tartgetQuantityQuest: 60
-    locationID: 0
-    itemToDrop:
-      itemPrefab: {fileID: 0}
-      baseChance: 0
-      growth: 0
-      minimumWaves: 0
-    WeaponId: 0
-  - targetEnemyID: 1
-    currentQuantityQuest: 0
-    tartgetQuantityQuest: 60
-    locationID: 0
-    itemToDrop:
-      itemPrefab: {fileID: 0}
-      baseChance: 0
-      growth: 0
-      minimumWaves: 0
-    WeaponId: 0
-  - targetEnemyID: 1
-    currentQuantityQuest: 0
-    tartgetQuantityQuest: 60
-    locationID: 0
-    itemToDrop:
-      itemPrefab: {fileID: 0}
-      baseChance: 0
-      growth: 0
-      minimumWaves: 0
-    WeaponId: 0
-  - targetEnemyID: 1
+  - objectiveText: Goblins
+    targetEnemyID: 1
     currentQuantityQuest: 0
     tartgetQuantityQuest: 60
     locationID: 0

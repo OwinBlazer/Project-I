@@ -12,6 +12,8 @@ public class OW_SpawnTableFlag : MonoBehaviour {
     }
     private void OnDisable()
     {
-        spawnTable.ReportInactive(assignedIndex);
+        if(spawnTable!=null){
+            spawnTable.ReportInactive(assignedIndex);
+        }
     }
 }

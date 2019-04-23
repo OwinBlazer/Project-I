@@ -57,6 +57,7 @@ public class OW_LootSpawner : MonoBehaviour {
 	}
 	public void SpawnItemFor(OW_EnemyStats enemyStats,Transform location){
 		int i=0;
+		Debug.Log("Item requested for "+enemyStats.transform.parent.parent.name);
 		foreach(ItemDropEntry entry in LootTableEntries[enemyStats.GetEnemyID()].itemDropEntry){
 			float RNG = Random.Range(0f,1f);
 			if(RNG<entry.baseChance+entry.chanceGrowth*(wave - entry.minimumWaves)){

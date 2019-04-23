@@ -23,6 +23,7 @@ public class QuestTracker : MonoBehaviour {
 	[SerializeField]PlayerSO playerSav;
 	[SerializeField]QuestProgressCache progressCache;
     [SerializeField]QuestTempProgress tempProgress;
+    [SerializeField]QuestBoxPopulator questBoxManager;
     private List<QuestTrackerEntry> unupdatedQuestList = new List<QuestTrackerEntry>();
     private List<QuestTrackerEntry> updatedQuestList = new List<QuestTrackerEntry>();
     private void Awake(){
@@ -35,8 +36,7 @@ public class QuestTracker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //@@@@@@@@@@@@@@@@@THIS IS ONLY FOR DEBUG PURPOSES. LOAD AND UNLOAD BEFORE WAVE STARTS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-		LoadQuest(1);
-        //^^^^^^^^^^replace "1" with current wave!
+		LoadQuest(GetCurrentWave());
         OW_LootSpawner lootSpawner = FindObjectOfType<OW_LootSpawner>();
         if(lootSpawner!=null){
             lootSpawner.LoadQuestDrop();
@@ -63,6 +63,7 @@ public class QuestTracker : MonoBehaviour {
             foreach(QuestObjective qo in q.questObjective)
             {
                 QuestObjective newObjective = new QuestObjective();
+                newObjective.objectiveText = qo.objectiveText;
                 newObjective.targetEnemyID = qo.targetEnemyID;
                 
                 if(wave==1){
@@ -169,7 +170,7 @@ public class QuestTracker : MonoBehaviour {
                 {
                     //if all objectives cleared
                     FindObjectOfType<QuestTimer>().StopTimer();
-                    ReportWaveEnd(1);
+                    ReportWaveEnd();
                 }
             }
 		}
@@ -183,7 +184,7 @@ public class QuestTracker : MonoBehaviour {
 				priorityQuest.questStatus = 2;
 			}
 		}
-		ReportWaveEnd(1);
+		ReportWaveEnd();
 		//THIS FUNCTION IS ONLY CALLED IN THE "UNIQUE ROOM" ON THE TIMER FINISH SCRIPT@@@@@@@@@@@@@@@@@@@@@@@@@
 	}
 	public void ReportShieldUse(){
@@ -193,7 +194,7 @@ public class QuestTracker : MonoBehaviour {
     public void ReportQuestItemGet(int questIndex, int objectiveIndex){
         progressCache.ReportQuestItemGet(questIndex,objectiveIndex);
     }
-	public void ReportWaveEnd(int WaveNum){
+	public void ReportWaveEnd(){
 		
 		//check Kill Quest Progress via loading from cache here
 		int[] progressList = progressCache.GetKilledList();
@@ -275,7 +276,9 @@ public class QuestTracker : MonoBehaviour {
 				}
 			}
 		}
-		//PopulateQuestBox();
+
+        tempProgress.waveNum++;
+		questBoxManager.PopulateQuestBox();
 	}
 	private void QuestStatusCheck(QuestTrackerEntry entry){
         //check if it is killquest or fetchquest
@@ -309,7 +312,7 @@ public class QuestTracker : MonoBehaviour {
             bool changedFlag = false;
             for (int j = 0; j < tempProgress.questObjectiveList[i].currentProgress.Length; j++)
             {
-                
+                Debug.Log("With values of quest objective length "+tempProgress.questObjectiveList[i].currentProgress.Length);
                 if (tempProgress.questObjectiveList[i].currentProgress[j] < questEntry[i].objectives[j].currentQuantityQuest)
                 {
                     changedFlag = true;
@@ -335,7 +338,7 @@ public class QuestTracker : MonoBehaviour {
         return unupdatedQuestList;
 	}
     public bool GetPriorityIsUpdated(){
-        if(priorityQuest!=null){
+        if(priorityQuest.objectives.Count>0){
             bool changedFlag = false;
             for (int j = 0; j < playerSav.priorityQuest.questObjective.Length; j++)
             {
@@ -383,5 +386,15 @@ public class QuestTracker : MonoBehaviour {
 
         
         tempProgress.ResetTempProgress();
+        tempProgress.waveNum = 1; 
 	}
+
+    private int GetCurrentWave(){
+        if(tempProgress.waveNum<=1){
+            tempProgress.waveNum=1;
+            return 1;
+        }else{
+            return tempProgress.waveNum;
+        }
+    }
 }

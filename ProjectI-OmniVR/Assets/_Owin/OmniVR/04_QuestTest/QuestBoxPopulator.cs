@@ -5,7 +5,8 @@ using UnityEngine;
 public class QuestBoxPopulator : MonoBehaviour {
 	[SerializeField]QuestBoxPool qBoxPool1;
 	[SerializeField]QuestBoxPool qBoxPool2;
-	[SerializeField]QuestTracker questTracker; 
+	[SerializeField]QuestTracker questTracker;
+	[SerializeField]QuestBoxDisplayManager displayManager; 
 	// Use this for initialization
 	void Start () {
 		
@@ -36,7 +37,8 @@ public class QuestBoxPopulator : MonoBehaviour {
 			qBoxPool2.IssueQuestBox(entry,false,false);
 			//Debug.Log("Issued");
 		}
-		
+
+		displayManager.InitializeBox();
         //CHECK IF THERE IS AN ACTIVE PRIORITY QUEST FOR ESCORT.
         //IF YES AND COMPLETE, PLAY CUTSCENE after POPULATING BOX@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         //add event to the next button

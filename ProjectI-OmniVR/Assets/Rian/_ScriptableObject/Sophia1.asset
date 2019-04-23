@@ -38,7 +38,8 @@ MonoBehaviour:
   questStatus: 1
   questMode: 1
   questObjective:
-  - targetEnemyID: 0
+  - objectiveText: Bandits
+    targetEnemyID: 0
     currentQuantityQuest: 0
     tartgetQuantityQuest: 30
     locationID: 0

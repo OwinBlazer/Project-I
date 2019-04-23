@@ -40,7 +40,7 @@ public class QuestBox : MonoBehaviour {
         }
         for(int i = 0; i < objList.Length; i++)
         {
-            objBox[i].InitializeObjBox(name, objList[i].currentQuantityQuest, objList[i].tartgetQuantityQuest);
+            objBox[i].InitializeObjBox(objList[i].objectiveText, objList[i].currentQuantityQuest, objList[i].tartgetQuantityQuest);
         }
 		QuestObjective.text = objective;
         NPCPortrait.sprite = npcSprite;

@@ -11,6 +11,7 @@ public class OW_QuestItemDropEntry {
 
 [System.Serializable]
 public class QuestObjective {
+    public string objectiveText;
     public int targetEnemyID;//targetid for enemy target 0 : Bandit, 1 : Goblin
 
    public int currentQuantityQuest;//currentquantityquest

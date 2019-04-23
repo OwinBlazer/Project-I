@@ -41,7 +41,9 @@ public class OW_SpawnTable : MonoBehaviour {
                 activeCount++;
                 spawnList[i].spawnCurr++;
                 tempObject = spawnList[i].enemyPool.IssueFromPool(position);
-                tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(i, this);
+                if(tempObject!=null){
+                    tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(i, this);
+                }
                 return tempObject;
             }
             else
@@ -53,7 +55,9 @@ public class OW_SpawnTable : MonoBehaviour {
         {
             activeCount++;
             tempObject = spawnList[i].enemyPool.IssueFromPool(position);
-            tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(i,this);
+            if(tempObject!=null){
+                tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(i, this);
+            }
             return tempObject;
         }
     }
@@ -76,7 +80,9 @@ public class OW_SpawnTable : MonoBehaviour {
                     activeCount++;
                     spawnList[index].spawnCurr++;
                     GameObject tempObject = spawnList[index].enemyPool.IssueFromPool(position);
-                    tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(index, this);
+                    if(tempObject!=null){
+                        tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(index, this);
+                    }
                     return tempObject;
                 }else{
                     return null;
@@ -86,7 +92,9 @@ public class OW_SpawnTable : MonoBehaviour {
             {
                 activeCount++;
                 GameObject tempObject = spawnList[index].enemyPool.IssueFromPool(position);
-                tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(index, this);
+                if(tempObject!=null){
+                    tempObject.GetComponent<OW_SpawnTableFlag>().AssignIndex(index, this);
+                }
                 return tempObject;
             }
         }

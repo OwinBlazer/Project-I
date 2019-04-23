@@ -192,6 +192,7 @@
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_EnemyBulletHit.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_EnemyStats.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_HPManager.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Script\OW_SceneLoader.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_SpawnTable.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_SpawnTableFlag.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_WaveSystem.cs" />

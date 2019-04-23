@@ -43,7 +43,8 @@ MonoBehaviour:
   questStatus: 0
   questMode: 0
   questObjective:
-  - targetEnemyID: 0
+  - objectiveText: Basement Key
+    targetEnemyID: 0
     currentQuantityQuest: 0
     tartgetQuantityQuest: 3
     locationID: 0
