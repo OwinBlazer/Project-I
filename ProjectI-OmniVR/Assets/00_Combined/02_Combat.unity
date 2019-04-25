@@ -4426,6 +4426,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 611c8384ec5990c42a59945eddda53e2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &713483081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1596447893662646, guid: 611c8384ec5990c42a59945eddda53e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 713483080}
 --- !u!1 &760849065
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,6 +6519,7 @@ GameObject:
   - component: {fileID: 1234244276}
   - component: {fileID: 1234244275}
   - component: {fileID: 1234244280}
+  - component: {fileID: 1234244281}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6646,6 +6652,22 @@ SpriteShapeRenderer:
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+--- !u!114 &1234244281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234244274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e2a30d62d3ba44b9ad6be963b526a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointerComponentList:
+  - {fileID: 1615809856}
+  GunObjectList:
+  - {fileID: 760849065}
+  - {fileID: 713483081}
 --- !u!1 &1240899838
 GameObject:
   m_ObjectHideFlags: 0
