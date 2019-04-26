@@ -111,4 +111,8 @@ public class OW_SpawnTable : MonoBehaviour {
     public int GetActiveNum(){
         return activeCount;
     }
+
+    public SpawnEntry[] GetSpawnList(){
+        return spawnList;
+    }
 }

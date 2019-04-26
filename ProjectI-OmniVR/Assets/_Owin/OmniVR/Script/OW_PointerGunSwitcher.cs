@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using VRTK;
 public class OW_PointerGunSwitcher : MonoBehaviour {
-    [SerializeField] MonoBehaviour[] PointerComponentList;
+    [SerializeField] VRTK_Pointer[] PointerComponentList;
     [SerializeField] GameObject[] GunObjectList;
+    private List<VRTK.VRTK_ControllerEvents.ButtonAlias> activationTrigger = new List<VRTK.VRTK_ControllerEvents.ButtonAlias>();
     private void Start()
     {
+        for(int i=0;i<PointerComponentList.Length;i++){
+            activationTrigger.Add(PointerComponentList[i].activationButton);
+        }
         SwitchToGun();
     }
     public void SwitchToGun()
     {
-        foreach(MonoBehaviour m in PointerComponentList)
-        {
-            m.enabled = false;
+        for(int i=0;i<PointerComponentList.Length;i++){
+            PointerComponentList[i].activationButton = VRTK.VRTK_ControllerEvents.ButtonAlias.Undefined;
         }
         foreach(GameObject go in GunObjectList)
         {
@@ -23,9 +26,11 @@ public class OW_PointerGunSwitcher : MonoBehaviour {
 
     public void SwitchToPointer()
     {
-        foreach (MonoBehaviour m in PointerComponentList)
+        int i=0;
+        foreach(VRTK_Pointer p in PointerComponentList)
         {
-            m.enabled = true;
+            p.activationButton = activationTrigger[i];
+            i++;
         }
         foreach (GameObject go in GunObjectList)
         {

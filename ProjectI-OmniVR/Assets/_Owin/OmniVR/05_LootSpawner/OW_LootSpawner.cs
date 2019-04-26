@@ -12,6 +12,7 @@ public class ItemDropEntry{
 }
 [System.Serializable]
 public class LootTableEntry{
+	public int enemyID;
 	public List<ItemDropEntry> itemDropEntry;
 }
 public class OW_LootSpawner : MonoBehaviour {
@@ -37,7 +38,7 @@ public class OW_LootSpawner : MonoBehaviour {
 		for(int i=0;i<allActiveQuest.Count;i++){
 			for(int j=0;j<allActiveQuest[i].objectives.Count;j++){
 				QuestObjective tempObjective = allActiveQuest[i].objectives[j];
-				if(tempObjective.itemToDrop.itemPrefab!=null){
+				if(tempObjective.itemToDrop.itemPrefab!=null&&GetEnemyIndex(tempObjective.targetEnemyID)!=-1){
 					OW_QuestItemDropEntry tempObjectiveDrop = tempObjective.itemToDrop;
 					ItemDropEntry loadedItemEntry = new ItemDropEntry();
 					loadedItemEntry.itemPrefab = tempObjectiveDrop.itemPrefab;
@@ -50,14 +51,14 @@ public class OW_LootSpawner : MonoBehaviour {
 					if(questItem!=null){
 						questItem.SetQuestID(i,j);
 					}
-					LootTableEntries[tempObjective.targetEnemyID].itemDropEntry.Add(loadedItemEntry);
+					LootTableEntries[GetEnemyIndex(tempObjective.targetEnemyID)].itemDropEntry.Add(loadedItemEntry);
 				}
 			}
 		}
 	}
 	public void SpawnItemFor(OW_EnemyStats enemyStats,Transform location){
 		int i=0;
-		Debug.Log("Item requested for "+enemyStats.transform.parent.parent.name);
+		//Debug.Log("Item requested for "+enemyStats.transform.parent.parent.name);
 		foreach(ItemDropEntry entry in LootTableEntries[enemyStats.GetEnemyID()].itemDropEntry){
 			float RNG = Random.Range(0f,1f);
 			if(RNG<entry.baseChance+entry.chanceGrowth*(wave - entry.minimumWaves)){
@@ -78,5 +79,14 @@ public class OW_LootSpawner : MonoBehaviour {
 
 	public void ReduceCount(int enemyID, int entryID){
 		LootTableEntries[enemyID].itemDropEntry[entryID].currSpawnQty--;
+	}
+
+	private int GetEnemyIndex(int enemyID){
+		for(int i=0;i<LootTableEntries.Count;i++){
+			if(LootTableEntries[i].enemyID==enemyID){
+				return i;
+			}
+		}
+		return -1;
 	}
 }

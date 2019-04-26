@@ -97,7 +97,6 @@ public class OW_WaveSystem : MonoBehaviour {
 				//trigger wave end here
 				//start the report screen pop up
 				questTracker.ReportWaveEnd();
-
 				this.enabled = false;
 			}
 		}

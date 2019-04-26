@@ -16,7 +16,6 @@ public class OW_EnemyBulletHit : MonoBehaviour {
             Bullet _bullet = collision.gameObject.GetComponent<Bullet>();
             float prevHP = enemyStats.curHP;
             enemyStats.curHP -= _bullet.damage*dmgMult;
-            Debug.Log("enemy hit!"+_bullet.damage,gameObject);
             hPManager.ActivateCanvasHP();
 			if (enemyStats.curHP <= 0&&prevHP>0)
 			{

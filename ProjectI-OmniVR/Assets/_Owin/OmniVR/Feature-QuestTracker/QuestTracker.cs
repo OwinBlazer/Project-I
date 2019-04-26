@@ -24,6 +24,7 @@ public class QuestTracker : MonoBehaviour {
 	[SerializeField]QuestProgressCache progressCache;
     [SerializeField]QuestTempProgress tempProgress;
     [SerializeField]QuestBoxPopulator questBoxManager;
+	[SerializeField]OW_PointerGunSwitcher gunPointerSwitcher;
     private List<QuestTrackerEntry> unupdatedQuestList = new List<QuestTrackerEntry>();
     private List<QuestTrackerEntry> updatedQuestList = new List<QuestTrackerEntry>();
     private void Awake(){
@@ -277,6 +278,7 @@ public class QuestTracker : MonoBehaviour {
 			}
 		}
 
+        gunPointerSwitcher.SwitchToPointer();
         tempProgress.waveNum++;
 		questBoxManager.PopulateQuestBox();
 	}
@@ -353,10 +355,12 @@ public class QuestTracker : MonoBehaviour {
     }
 
     //THIS SHOULD BE CALLED ON NEXT WAVE PRESSED@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    private void UpdateTempQuestProgress(){
-        //priority
-        for(int i=0;i<tempProgress.priorityObjectiveList.currentProgress.Length;i++){
-            tempProgress.priorityObjectiveList.currentProgress[i] = priorityQuest.objectives[i].currentQuantityQuest;
+    public void UpdateTempQuestProgress(){
+        if(priorityQuest!=null){
+            //priority
+            for(int i=0;i<tempProgress.priorityObjectiveList.currentProgress.Length;i++){
+                tempProgress.priorityObjectiveList.currentProgress[i] = priorityQuest.objectives[i].currentQuantityQuest;
+            }
         }
 
         //normal quests
@@ -367,7 +371,7 @@ public class QuestTracker : MonoBehaviour {
         }
     }
 
-    //THIS SHOULD BE CALLED ON RETURN TO BAR PRESSED@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //THIS SHOULD BE CALLED ON RETURN TO BAR PRESSED
 	public void SaveQuestProgress(){
 		//RETURN DATA TO playerSav
 		for(int i=0;i<playerSav.activQuest.Count;i++){

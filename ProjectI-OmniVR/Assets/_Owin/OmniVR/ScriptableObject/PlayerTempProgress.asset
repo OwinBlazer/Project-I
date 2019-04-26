@@ -16,5 +16,5 @@ MonoBehaviour:
   - currentProgress: 00000000
   priorityObjectiveList:
     currentProgress: 00000000
-  GoldCache: 40
-  waveNum: 2
+  GoldCache: 0
+  waveNum: 0

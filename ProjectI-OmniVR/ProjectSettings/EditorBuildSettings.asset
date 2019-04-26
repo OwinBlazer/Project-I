@@ -4,4 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/00_Combined/01_Bar.unity
+    guid: 532894ed4f830bb46aa03ece6e2075af
+  - enabled: 1
+    path: Assets/00_Combined/02_Combat.unity
+    guid: 9dc7b7cc524cd1247b15e54eccffc7e8
+  - enabled: 1
+    path: Assets/00_Combined/02a_TimeAtack_Lisa2.unity
+    guid: ddbe8e4cf0e6e7b44998b588b28a87d3
+  m_configObjects: {}
