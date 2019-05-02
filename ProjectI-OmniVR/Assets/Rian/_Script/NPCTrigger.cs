@@ -40,6 +40,7 @@ using UnityEngine;
                 panelQuest.transform.position = canvasLocation.position;
                 panelQuest.transform.rotation = canvasLocation.rotation;
                 CheckQuest();
+                questManager.questing = quest[i];
                 if (questNotAvailable == false && questNotConfirm == false)
                 {
                     DialogueTrigger();
@@ -58,7 +59,6 @@ using UnityEngine;
         public void DialogueTrigger()
         {
             questManager.StartDialogue(quest[i]);
-            questManager.questing = quest[i];
         }
 
         public void CheckQuest()

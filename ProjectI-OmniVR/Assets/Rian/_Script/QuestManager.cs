@@ -161,13 +161,13 @@ public class QuestManager : MonoBehaviour {
 
     public void Decline()
     {
-        PanelQuest.SetActive(false);
         isReward = false;
         isConfirm = false;
         if (questing.questStatus == 2)
         {
             RewardConfirm();
         }
+        PanelQuest.SetActive(false);
     }
 
     public void ConfirmQuest()

@@ -192,6 +192,7 @@
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_DisableClearParticle.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_EnemyBulletHit.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_EnemyStats.cs" />
+     <Compile Include="Assets\_Owin\OmniVR\Script\OW_GameOverHandler.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_HPManager.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_PointerGunSwitcher.cs" />
      <Compile Include="Assets\_Owin\OmniVR\Script\OW_QuestTimerStarter.cs" />

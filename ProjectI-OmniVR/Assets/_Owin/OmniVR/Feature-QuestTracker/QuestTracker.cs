@@ -9,6 +9,7 @@ public class QuestTrackerEntry{
     public List<QuestObjective> objectives = new List<QuestObjective>();
 	public int questMode;
 	//questmode 0 = kill, 1 = fetch
+    //if priority 0 = survival, 1 = time attack
 	public int questStatus;
 	public Sprite questIcon;
 	public Sprite npcPortrait;
@@ -393,6 +394,9 @@ public class QuestTracker : MonoBehaviour {
         tempProgress.waveNum = 1; 
 	}
 
+    public void ResetProgress(){
+        tempProgress.ResetTempProgress();
+    }
     private int GetCurrentWave(){
         if(tempProgress.waveNum<=1){
             tempProgress.waveNum=1;

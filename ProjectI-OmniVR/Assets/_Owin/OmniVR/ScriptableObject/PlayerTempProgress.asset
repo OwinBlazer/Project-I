@@ -11,10 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cee7d8b5c5254d408c26d5807facaeb, type: 3}
   m_Name: PlayerTempProgress
   m_EditorClassIdentifier: 
-  questObjectiveList:
-  - currentProgress: 00000000
-  - currentProgress: 00000000
+  questObjectiveList: []
   priorityObjectiveList:
     currentProgress: 00000000
   GoldCache: 0
-  waveNum: 0
+  waveNum: 1

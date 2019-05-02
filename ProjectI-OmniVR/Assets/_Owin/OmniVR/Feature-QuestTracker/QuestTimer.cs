@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class QuestTimer : MonoBehaviour {
+	[SerializeField]OW_GameOverHandler gameOverHandler;
 	private float timerTarget;
 	private int questMode;
 	private float startingTime;
@@ -33,6 +34,7 @@ public class QuestTimer : MonoBehaviour {
 	}
 	private IEnumerator TimedEndQuest(){
 		yield return new WaitForSecondsRealtime (timerTarget);
+		Debug.Log("Boeing");
 		//CHECK IF MODE
 		if(questMode==0){
 			//WIN
@@ -40,7 +42,7 @@ public class QuestTimer : MonoBehaviour {
 			//end wave
 		}else{
 			//LOSE
-			//trigger loss;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			gameOverHandler.TriggerGameOver();
 		}
 	}
 }

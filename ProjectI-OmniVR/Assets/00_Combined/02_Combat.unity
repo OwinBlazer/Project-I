@@ -5835,6 +5835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fedca985e7b5ba4da175c3a06b883cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverHandler: {fileID: 0}
 --- !u!4 &1077813021
 Transform:
   m_ObjectHideFlags: 0
@@ -10238,7 +10239,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 3d6c92dd661235546ae3ba2d613d4096, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fc29dd7478a23554ebe2b644e5c6fe37, type: 2}
 --- !u!65 &1768712254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11078,7 +11079,7 @@ GameObject:
   - component: {fileID: 1899007997}
   - component: {fileID: 1899007996}
   - component: {fileID: 1899007995}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: NavmeshNoGo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

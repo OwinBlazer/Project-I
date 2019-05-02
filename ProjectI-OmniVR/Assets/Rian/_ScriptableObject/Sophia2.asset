@@ -46,7 +46,7 @@ MonoBehaviour:
   - objectiveText: Basement Key
     targetEnemyID: 0
     currentQuantityQuest: 0
-    tartgetQuantityQuest: 3
+    tartgetQuantityQuest: 1
     locationID: 0
     itemToDrop:
       itemPrefab: {fileID: 1450548826563346, guid: 88f0d044c057d1d4f879478d6bce90a7,

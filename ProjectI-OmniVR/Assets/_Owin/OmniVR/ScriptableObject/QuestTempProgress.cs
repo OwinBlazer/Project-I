@@ -10,6 +10,7 @@ public class QuestTempProgress : ScriptableObject {
 	public int GoldCache;
 	public int waveNum;
 	public void ResetTempProgress(){
+		priorityObjectiveList = new ObjectiveCurrentProgress();
 		questObjectiveList = new List<ObjectiveCurrentProgress>();
 		GoldCache = 0;
 		waveNum = 1;

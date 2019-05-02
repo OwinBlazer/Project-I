@@ -38,7 +38,7 @@ MonoBehaviour:
   objective: Create as much damage within time limit
   goldReward: 300
   questStatus: 0
-  questMode: 0
+  questMode: 1
   questObjective:
   - objectiveText: Havoc Created
     targetEnemyID: 1
@@ -51,7 +51,7 @@ MonoBehaviour:
       growth: 0
       minimumWaves: 0
     WeaponId: 0
-  timeQuest: 120
+  timeQuest: 20
   sceneToLoad: 02a_TimeAtack_Lisa2
   questIcon: {fileID: 21300000, guid: f6e6acbe07068e448ada3d7aaeb72562, type: 3}
   npcPortrait: {fileID: 21300000, guid: cd484f3efdf1b1b47b6176a59713dd65, type: 3}

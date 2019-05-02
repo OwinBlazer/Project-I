@@ -11,12 +11,18 @@ public class SpawnEntry {
 
 public class OW_SpawnTable : MonoBehaviour {
     private int activeCount;
+    List<OW_LootDrop_BaseClass> lootTracker  =new List<OW_LootDrop_BaseClass>();
     [SerializeField] SpawnEntry[] spawnList;
 	// Use this for initialization
 	void Start () {
 		activeCount = 0;
 	}
-
+    public void LootTrackAdd(OW_LootDrop_BaseClass loot){
+        lootTracker.Add(loot);
+    }
+    public void LootTrackRemove(OW_LootDrop_BaseClass loot){
+        lootTracker.Remove(loot);
+    }
     public GameObject SpawnEnemyRandom(Transform position)
     {
         float total = 0;

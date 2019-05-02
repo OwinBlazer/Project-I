@@ -35,7 +35,7 @@ MonoBehaviour:
     all your help back then...I am sorry...\u201D"
   objective: Defeat 30 Bandits
   goldReward: 150
-  questStatus: 1
+  questStatus: 0
   questMode: 1
   questObjective:
   - objectiveText: Bandits
