@@ -28,8 +28,12 @@ public class OW_EnemyStats : MonoBehaviour {
 	   //attackRange contacts the local playerFinder
 		playerFinder.GetNavMeshAgent().speed = speed;
 		playerFinder.GetNavMeshAgent().stoppingDistance = attackRange;
+        OW_WaveSystem.waveSystem.SpawnTrackerAdd(this);
     }
-	
+    private void OnDisable()
+    {
+        OW_WaveSystem.waveSystem.SpawnTrackerRemove(this);
+    }
 
     void GetDataFromScriptableObject()
     {

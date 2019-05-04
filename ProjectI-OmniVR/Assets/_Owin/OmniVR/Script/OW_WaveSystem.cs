@@ -6,6 +6,7 @@ class DirectionLane{
 	public Transform[] spawnLane;
 }
 public class OW_WaveSystem : MonoBehaviour {
+    public static OW_WaveSystem waveSystem;
 	[Tooltip("0 ends wave when time limit is reached\n1 ends wave when spawn limit is reached\n2 ends wave if EITHER spawn limit or time limit is reached\n3 ends wave if BOTH spawn limit and time limit are reached")][SerializeField][Range(0,3)]int waveEndType;
 	// 0 := Time Based
 	// 1 := Spawn Based
@@ -23,15 +24,40 @@ public class OW_WaveSystem : MonoBehaviour {
 	[Tooltip("Every spawn point, divided by each direction possible")][SerializeField]DirectionLane[] spawnPoint;
 	[SerializeField]OW_SpawnTable spawnTable;
 	[SerializeField]QuestTracker questTracker;
-
+    private List<OW_EnemyStats> enemyTracker;
 	private float startTime;
 	private int spawnNum;
 	private bool spawnEnd;
 	// Use this for initialization
 	void Start () {
+        if (waveSystem != null)
+        {
+            enabled = false;
+        }
+        else
+        {
+            waveSystem = this;
+        }
 		Initialize();
 	}
-	private void Initialize(){
+
+    public void SpawnTrackerAdd(OW_EnemyStats enemy)
+    {
+        enemyTracker.Add(enemy);
+    }
+
+    public void SpawnTrackerRemove(OW_EnemyStats enemy)
+    {
+        enemyTracker.Remove(enemy);
+    }
+    public void KillAllEnemy()
+    {
+        foreach(OW_EnemyStats enemy in enemyTracker)
+        {
+            enemy.EnemyDeath(-1);
+        }
+    }
+    private void Initialize(){
 		timeDirectionCurr = GetDirectionTime();
 		timeSpawnIntervalCurr = GetSpawnTime();
 		//randomize chosen direction

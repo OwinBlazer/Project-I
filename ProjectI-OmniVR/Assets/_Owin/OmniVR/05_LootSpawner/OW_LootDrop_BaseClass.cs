@@ -16,8 +16,14 @@ public abstract class OW_LootDrop_BaseClass : MonoBehaviour {
 	}
 	private void OnEnable(){
 		isShot = false;
-	}
-	public void SetSpawnID(int enemyID, int entryID){
+        OW_LootSpawner.lootSpawner.AddToTracker(this);
+
+    }
+    private void OnDisable()
+    {
+        OW_LootSpawner.lootSpawner.RemoveFromTracker(this);
+    }
+    public void SetSpawnID(int enemyID, int entryID){
 		this.enemyID = enemyID;
 		this.entryID = entryID;
 	}

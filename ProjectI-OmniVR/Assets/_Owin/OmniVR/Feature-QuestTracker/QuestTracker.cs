@@ -197,9 +197,12 @@ public class QuestTracker : MonoBehaviour {
         progressCache.ReportQuestItemGet(questIndex,objectiveIndex);
     }
 	public void ReportWaveEnd(){
-		
-		//check Kill Quest Progress via loading from cache here
-		int[] progressList = progressCache.GetKilledList();
+
+        OW_LootSpawner.lootSpawner.CollectAllDrops();
+        OW_WaveSystem.waveSystem.KillAllEnemy();
+
+        //check Kill Quest Progress via loading from cache here
+        int[] progressList = progressCache.GetKilledList();
         int[] weaponUseList = progressCache.GetWeaponUseList();
         ObjectiveCache[] itemDropList = progressCache.GetQuestItemList();
         int i=0;

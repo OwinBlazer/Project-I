@@ -22,8 +22,11 @@ public class QuestProgressCache : MonoBehaviour {
 	}
 	public void ReportDeath(int EnemyID, int WeaponID){
 		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@^^^also add killer weapon stats
-		killedList[GetIndexOfEnemyID(EnemyID)]++;
-		weaponUseList[GetIndexOfWeaponID(WeaponID)]++;
+        if (WeaponID >= 0&&EnemyID>=0)
+        {
+            killedList[GetIndexOfEnemyID(EnemyID)]++;
+            weaponUseList[GetIndexOfWeaponID(WeaponID)]++;
+        }
 
 		//if weapon has been upgraded, also add weaponUseList[20]
 	}

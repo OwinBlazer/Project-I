@@ -21,6 +21,7 @@ public class OW_LootSpawner : MonoBehaviour {
 	//[SerializeField]EnemySpawnCounter@@@@@@@@@@@@@@@@@@@@@@@@@@
 	//entry index is enemy ID
 	public List<LootTableEntry> LootTableEntries;
+    private List<OW_LootDrop_BaseClass> lootTracker = new List<OW_LootDrop_BaseClass>();
 	[SerializeField]QuestTracker questTracker;
 	// Use this for initialization
 	void Start () {
@@ -89,4 +90,20 @@ public class OW_LootSpawner : MonoBehaviour {
 		}
 		return -1;
 	}
+
+    public void RemoveFromTracker(OW_LootDrop_BaseClass item)
+    {
+        lootTracker.Remove(item);
+    }
+    public void AddToTracker(OW_LootDrop_BaseClass item)
+    {
+        lootTracker.Add(item);
+    }
+    public void CollectAllDrops()
+    {
+        foreach(OW_LootDrop_BaseClass loot in lootTracker)
+        {
+            loot.CollectItem();
+        }
+    }
 }
